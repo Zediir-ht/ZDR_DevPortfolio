@@ -223,3 +223,20 @@
     gap: var(--sp-xl);
   }
 }
+
+/* Dark mode */
+:global([data-theme="dark"]) .input,
+:global([data-theme="dark"]) .textarea {
+  background: var(--c-bg);
+  color: var(--c-dark);
+  border-color: var(--c-border);
+}
+
+:global([data-theme="dark"]) .infoCard {
+  background: var(--c-bg);
+  border-color: var(--c-border);
+}
+
+:global([data-theme="dark"]) .mapCard {
+  background: var(--c-bg-alt);
+}

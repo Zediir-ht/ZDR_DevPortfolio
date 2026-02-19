@@ -30,7 +30,7 @@ const cardVariants = {
 
 export default function About() {
   return (
-    <SectionWrapper id="a-propos" alt className={styles.bgImage}>
+    <SectionWrapper id="a-propos" className={styles.bgImage}>
       {/* En-tête de section */}
       <div className={styles.header}>
         <span className={styles.label}>À propos</span>

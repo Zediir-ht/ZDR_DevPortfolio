@@ -241,3 +241,10 @@
   color: var(--c-gray);
   line-height: 1.6;
 }
+
+/* Dark mode */
+:global([data-theme="dark"]) .card,
+:global([data-theme="dark"]) .seoItem {
+  background: var(--c-bg-alt);
+  border-color: var(--c-border);
+}

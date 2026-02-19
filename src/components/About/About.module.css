@@ -5,16 +5,6 @@
   position: relative;
 }
 
-.bgImage::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('/occ.jpg') center center / 70% no-repeat;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .bgImage::after {
   content: '';
   position: absolute;
@@ -149,6 +139,13 @@
   .skills {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Dark mode */
+:global([data-theme="dark"]) .skillCard,
+:global([data-theme="dark"]) .valueBadge {
+  background: var(--c-bg-alt);
+  border-color: var(--c-border);
 }
 
 @media (max-width: 480px) {
