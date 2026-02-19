@@ -192,7 +192,13 @@
   .grid { max-width: 100%; }
   .card { align-items: center; text-align: center; }
   .features { align-items: center; }
-  .seoGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .pricing { justify-content: center; }
 }
 
 /* Bloc SEO / Référencement */
@@ -254,6 +260,14 @@
   font-size: var(--fs-sm);
   color: var(--c-gray);
   line-height: 1.6;
+}
+
+/* SEO grid responsive */
+@media (max-width: 768px) {
+  .seoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
 }
 
 /* Dark mode */

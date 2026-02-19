@@ -206,7 +206,26 @@ main::before {
     --sp-3xl: 4rem;
     --sp-2xl: 3rem;
   }
+
+  body::before {
+    width: 350px;
+    height: 350px;
+    top: -80px;
+    right: -100px;
+  }
+
+  body::after {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    left: -80px;
+  }
+
+  main::before {
+    background-size: 80%;
+  }
 }
+
 @media (max-width: 480px) {
   :root {
     --fs-5xl: 1.875rem;
@@ -214,4 +233,14 @@ main::before {
     --sp-3xl: 3rem;
   }
   .container { padding: 0 var(--sp-sm); }
+
+  body::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  body::after {
+    width: 200px;
+    height: 200px;
+  }
 }

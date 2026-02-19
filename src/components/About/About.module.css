@@ -153,6 +153,15 @@
   }
 }
 
+@media (max-width: 480px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  .values {
+    justify-content: center;
+  }
+}
+
 /* Dark mode */
 :global([data-theme="dark"]) .skillCard,
 :global([data-theme="dark"]) .valueBadge {
