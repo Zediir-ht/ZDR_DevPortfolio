@@ -1,0 +1,191 @@
+/* Header.module.css */
+
+/* ---------- Barre fixe ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: var(--sp-md) 0;
+  transition: background var(--tr), box-shadow var(--tr), padding var(--tr);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-xs) 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-lg);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  flex-shrink: 0;
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--c-dark);
+  transition: color var(--tr-fast), transform var(--tr-fast);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logoAccent {
+  color: var(--c-accent);
+  background: linear-gradient(90deg, var(--c-accent), #ff7b5e, var(--c-accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoShimmer 3s ease-in-out infinite;
+}
+
+@keyframes logoShimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ---------- Nav desktop ---------- */
+.desktopNav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desktopNav ul {
+  display: flex;
+  gap: var(--sp-lg);
+}
+
+.desktopNav a {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-gray);
+  position: relative;
+  padding: var(--sp-xs) 0;
+  transition: color var(--tr-fast);
+}
+
+.desktopNav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--c-accent);
+  transition: width var(--tr);
+}
+
+.desktopNav a:hover {
+  color: var(--c-dark);
+}
+
+.desktopNav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  position: relative;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--r-full);
+  background: var(--c-accent);
+  color: var(--c-white);
+  overflow: hidden;
+  transition: background var(--tr-fast), transform var(--tr-fast), box-shadow var(--tr-fast);
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::after {
+  left: 120%;
+}
+
+.cta:hover {
+  background: var(--c-accent-dk);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(227,83,54,.35);
+}
+
+/* ---------- Hamburger ---------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--c-dark);
+  border-radius: 2px;
+  transition: transform var(--tr), opacity var(--tr);
+}
+
+.burgerOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- Mobile nav overlay ---------- */
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--c-white);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-lg) 0;
+}
+
+.mobileNav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.mobileNav a {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--c-dark);
+  padding: var(--sp-xs) var(--sp-lg);
+}
+
+.mobileNav a:hover { color: var(--c-accent); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .desktopNav,
+  .cta { display: none; }
+  .burger { display: flex; }
+  .mobileNav { display: block; }
+}

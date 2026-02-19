@@ -1,0 +1,225 @@
+/* Contact.module.css */
+
+/* En-tête */
+.header {
+  text-align: center;
+  margin-bottom: var(--sp-2xl);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--sp-xs);
+}
+
+.title { font-weight: 800; color: var(--c-dark); }
+.accent { color: var(--c-accent); }
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--c-gray);
+  max-width: 480px;
+  margin: var(--sp-sm) auto 0;
+}
+
+/* Grille 2 colonnes */
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--sp-2xl);
+  align-items: start;
+}
+
+/* ---------- Formulaire ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+/* Honeypot caché */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.labelField {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-dark);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-base);
+  color: var(--c-dark);
+  background: var(--c-bg-alt);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-md);
+  transition: border-color var(--tr-fast), box-shadow var(--tr-fast);
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(227,83,54,.12);
+}
+
+.inputError {
+  border-color: var(--c-danger) !important;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error {
+  font-size: var(--fs-xs);
+  color: var(--c-danger);
+  font-weight: 500;
+}
+
+/* Bouton */
+.submitBtn {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--c-white);
+  background: var(--c-accent);
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background var(--tr-fast);
+}
+
+.submitBtn:hover {
+  background: var(--c-accent-dk);
+}
+
+.success {
+  font-size: var(--fs-sm);
+  color: var(--c-success);
+  font-weight: 500;
+  text-align: center;
+  padding: var(--sp-sm);
+  background: rgba(16,185,129,.08);
+  border-radius: var(--r-md);
+}
+
+.errorMsg {
+  font-size: var(--fs-sm);
+  color: var(--c-danger);
+  font-weight: 500;
+  text-align: center;
+  padding: var(--sp-sm);
+  background: rgba(239,68,68,.08);
+  border-radius: var(--r-md);
+}
+
+/* ---------- Informations ---------- */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.infoCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-sm);
+  padding: var(--sp-md);
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  transition: box-shadow var(--tr);
+}
+
+.infoCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227,83,54,.08);
+  color: var(--c-accent);
+  border-radius: var(--r-md);
+}
+
+.infoTitle {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: 0.15rem;
+}
+
+.infoLink {
+  font-size: var(--fs-sm);
+  color: var(--c-accent);
+  font-weight: 500;
+  transition: color var(--tr-fast);
+}
+
+.infoLink:hover { color: var(--c-accent-dk); }
+
+.infoText {
+  font-size: var(--fs-sm);
+  color: var(--c-gray);
+  margin: 0;
+}
+
+/* ---------- Mini carte stylisée ---------- */
+.mapCard {
+  background: var(--c-dark);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.mapIframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+.mapText {
+  padding: var(--sp-md);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--c-gray);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+}

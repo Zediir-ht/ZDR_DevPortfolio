@@ -1,0 +1,26 @@
+/* SectionWrapper.module.css */
+.section {
+  padding: var(--sp-3xl) 0;
+  position: relative;
+}
+
+/* Grille de points subtile */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(227,83,54,.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
+}
+
+.alt {
+  background: var(--c-bg-alt);
+}
+
+.inner {
+  width: 100%;
+}
