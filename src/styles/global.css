@@ -10,6 +10,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Aquire';
+  src: url('../fonts/Aquire/Aquire/Aquire-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aquire';
+  src: url('../fonts/Aquire/Aquire/Aquire.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aquire';
+  src: url('../fonts/Aquire/Aquire/Aquire-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Couleurs */
   --c-bg:         #ffffff;

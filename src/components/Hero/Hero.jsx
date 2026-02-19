@@ -97,30 +97,33 @@ export default function Hero() {
           className={styles.blurCircle}
           aria-hidden="true"
         />
-        {/* Badge */}
-        <motion.span className={styles.badge} variants={itemVariants}>
-          Développeur Web Full Stack · Rodez
-        </motion.span>
 
-        {/* Titre principal */}
-        <motion.h1 className={styles.title} variants={itemVariants}>
-          Transformez vos idées<br />
-          en <span className={styles.highlight}>expériences digitales</span>
-        </motion.h1>
+        {/* Colonne gauche — Texte */}
+        <div className={styles.textCol}>
+          <motion.h1 className={styles.title} variants={itemVariants}>
+            Transformez vos idées<br />
+            en <span className={styles.highlight}>expériences digitales</span>
+          </motion.h1>
 
-        {/* Sous-titre */}
-        <motion.p className={styles.subtitle} variants={itemVariants}>
-          Sites web performants, designs modernes et solutions sur mesure
-          pour donner vie à votre activité en ligne.
-        </motion.p>
+          <motion.p className={styles.subtitle} variants={itemVariants}>
+            Sites web performants, designs modernes et solutions sur mesure
+            pour donner vie à votre activité en ligne.
+          </motion.p>
+        </div>
 
-        {/* CTA */}
-        <motion.div className={styles.actions} variants={itemVariants}>
+        {/* Colonne droite — CTA */}
+        <motion.div className={styles.actionsCol} variants={itemVariants}>
           <a href="#contact" className={styles.btnPrimary}>
-            Démarrer un projet
+            <span>Démarrer un projet</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </a>
           <a href="#services" className={styles.btnSecondary}>
-            Découvrir l'offre
+            <span>Découvrir l'offre</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
           </a>
         </motion.div>
       </motion.div>
