@@ -1,6 +1,32 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
+/**
+ * Applique les options de simulation au WebGL manager.
+ * Factorisé pour éviter la duplication entre l'init et le useEffect de mise à jour.
+ */
+function applySimulationOptions(webgl, opts) {
+  if (!webgl) return;
+  const sim = webgl.output?.simulation;
+  if (!sim) return;
+  const prevRes = sim.options.resolution;
+  Object.assign(sim.options, {
+    mouse_force: opts.mouseForce,
+    cursor_size: opts.cursorSize,
+    isViscous: opts.isViscous,
+    viscous: opts.viscous,
+    iterations_viscous: opts.iterationsViscous,
+    iterations_poisson: opts.iterationsPoisson,
+    dt: opts.dt,
+    BFECC: opts.BFECC,
+    resolution: opts.resolution,
+    isBounce: opts.isBounce,
+  });
+  if (opts.resolution !== prevRes) {
+    sim.resize();
+  }
+}
+
 export default function LiquidEther({
   mouseForce = 20,
   cursorSize = 100,
@@ -202,10 +228,10 @@ export default function LiquidEther({
           if (!this.container) return;
           const rect = this.container.getBoundingClientRect();
           if (rect.width === 0 || rect.height === 0) return;
-          const nx = (event.clientX - rect.left) / rect.width;
-          const ny = (event.clientY - rect.top) / rect.height;
+          const normX = (event.clientX - rect.left) / rect.width;
+          const normY = (event.clientY - rect.top) / rect.height;
           this.takeoverFrom.copy(this.coords);
-          this.takeoverTo.set(nx * 2 - 1, -(ny * 2 - 1));
+          this.takeoverTo.set(normX * 2 - 1, -(normY * 2 - 1));
           this.takeoverStartTime = performance.now();
           this.takeoverActive = true;
           this.hasUserControl = true;
@@ -236,22 +262,24 @@ export default function LiquidEther({
       onDocumentLeave() {
         this.isHoverInside = false;
       }
-      update() {
-        if (this.takeoverActive) {
-          const t = (performance.now() - this.takeoverStartTime) / (this.takeoverDuration * 1000);
-          if (t >= 1) {
-            this.takeoverActive = false;
-            this.coords.copy(this.takeoverTo);
-            this.coords_old.copy(this.coords);
-            this.diff.set(0, 0);
-          } else {
-            const k = t * t * (3 - 2 * t);
-            this.coords.copy(this.takeoverFrom).lerp(this.takeoverTo, k);
-          }
+      _updateTakeover() {
+        const t = (performance.now() - this.takeoverStartTime) / (this.takeoverDuration * 1000);
+        if (t >= 1) {
+          this.takeoverActive = false;
+          this.coords.copy(this.takeoverTo);
+          this.coords_old.copy(this.coords);
+          this.diff.set(0, 0);
+        } else {
+          const k = t * t * (3 - 2 * t);
+          this.coords.copy(this.takeoverFrom).lerp(this.takeoverTo, k);
         }
+      }
+      update() {
+        if (this.takeoverActive) this._updateTakeover();
         this.diff.subVectors(this.coords, this.coords_old);
         this.coords_old.copy(this.coords);
-        if (this.coords_old.x === 0 && this.coords_old.y === 0) this.diff.set(0, 0);
+        const isOrigin = this.coords_old.x === 0 && this.coords_old.y === 0;
+        if (isOrigin) this.diff.set(0, 0);
         if (this.isAutoActive && !this.takeoverActive) this.diff.multiplyScalar(this.autoIntensity);
       }
     }
@@ -1019,25 +1047,10 @@ export default function LiquidEther({
     webglRef.current = webgl;
 
     const applyOptionsFromProps = () => {
-      if (!webglRef.current) return;
-      const sim = webglRef.current.output?.simulation;
-      if (!sim) return;
-      const prevRes = sim.options.resolution;
-      Object.assign(sim.options, {
-        mouse_force: mouseForce,
-        cursor_size: cursorSize,
-        isViscous,
-        viscous,
-        iterations_viscous: iterationsViscous,
-        iterations_poisson: iterationsPoisson,
-        dt,
-        BFECC,
-        resolution,
-        isBounce
+      applySimulationOptions(webglRef.current, {
+        mouseForce, cursorSize, isViscous, viscous,
+        iterationsViscous, iterationsPoisson, dt, BFECC, resolution, isBounce
       });
-      if (resolution !== prevRes) {
-        sim.resize();
-      }
     };
     applyOptionsFromProps();
 
@@ -1115,20 +1128,9 @@ export default function LiquidEther({
   useEffect(() => {
     const webgl = webglRef.current;
     if (!webgl) return;
-    const sim = webgl.output?.simulation;
-    if (!sim) return;
-    const prevRes = sim.options.resolution;
-    Object.assign(sim.options, {
-      mouse_force: mouseForce,
-      cursor_size: cursorSize,
-      isViscous,
-      viscous,
-      iterations_viscous: iterationsViscous,
-      iterations_poisson: iterationsPoisson,
-      dt,
-      BFECC,
-      resolution,
-      isBounce
+    applySimulationOptions(webgl, {
+      mouseForce, cursorSize, isViscous, viscous,
+      iterationsViscous, iterationsPoisson, dt, BFECC, resolution, isBounce
     });
     if (webgl.autoDriver) {
       webgl.autoDriver.enabled = autoDemo;
@@ -1139,9 +1141,6 @@ export default function LiquidEther({
         webgl.autoDriver.mouse.autoIntensity = autoIntensity;
         webgl.autoDriver.mouse.takeoverDuration = takeoverDuration;
       }
-    }
-    if (resolution !== prevRes) {
-      sim.resize();
     }
   }, [
     mouseForce,
