@@ -6,23 +6,6 @@
  */
 
 /**
- * Échappe les caractères HTML dangereux pour empêcher les attaques XSS.
- * @param {string} str — chaîne brute saisie par l'utilisateur
- * @returns {string} — chaîne échappée prête pour l'affichage
- */
-export function escapeHtml(str) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#x27;',
-    '/': '&#x2F;',
-  };
-  return String(str).replace(/[&<>"'/]/g, (char) => map[char]);
-}
-
-/**
  * Supprime les balises HTML / script d'une chaîne.
  * @param {string} str
  * @returns {string}

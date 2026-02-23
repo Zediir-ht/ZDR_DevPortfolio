@@ -3,7 +3,6 @@
  * ----------
  * Pied de page avec mentions légales, liens rapides et coordonnées.
  */
-import React from 'react';
 import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();

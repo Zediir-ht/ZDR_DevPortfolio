@@ -4,7 +4,7 @@
  * Modales « Mentions légales » et « Politique de confidentialité ».
  * Ouvertes via les liens du Footer, affichées en overlay plein écran.
  */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Legal.module.css';
 

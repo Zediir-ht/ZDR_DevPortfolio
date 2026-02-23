@@ -4,7 +4,6 @@
  * Section « À propos » : présentation orientée partenaire local,
  * avec des bénéfices métiers concrets au lieu de barres de compétences.
  */
-import React from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import AveyronMap from '../AveyronMap/AveyronMap';

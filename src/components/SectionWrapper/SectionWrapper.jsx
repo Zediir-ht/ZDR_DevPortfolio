@@ -6,7 +6,7 @@
  *  – une animation d'apparition au scroll (framer-motion)
  *  – un fond alterné si `alt` est passé
  */
-import React from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import styles from './SectionWrapper.module.css';
 

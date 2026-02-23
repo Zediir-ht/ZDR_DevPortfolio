@@ -5,7 +5,6 @@
  * (L'Essentiel Local & La Vitrine Premium), option maintenance,
  * bloc subventions Pass Occitanie, et argumentaire SEO.
  */
-import React from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './Services.module.css';

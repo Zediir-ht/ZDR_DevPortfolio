@@ -6,20 +6,14 @@
  * avec un effet de survol qui met en valeur le canton
  * et affiche son nom. Les villes-clés sont signalées par des marqueurs.
  */
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './AveyronMap.module.css';
 import aveyronRaw from './aveyron.svg?raw';
 
-/* Villes-clés avec positions approximatives dans le viewBox (2107 × 2278) */
-const CITIES = [
-  { name: 'Rodez',       x: 1220, y: 780,  main: true },
-  { name: 'Millau',      x: 1350, y: 1400, main: true },
-  { name: 'Villefranche', x: 680, y: 750,  main: false },
-  { name: 'Decazeville', x: 600,  y: 500,  main: false },
-  { name: 'Espalion',    x: 1050, y: 500,  main: false },
-  { name: 'Saint-Affrique', x: 1050, y: 1550, main: false },
-];
+/* Dimensions du viewBox SVG */
+const SVG_WIDTH = 2107;
+const SVG_HEIGHT = 2278;
 
 /* Noms lisibles pour chaque ID de canton */
 const CANTON_LABELS = {

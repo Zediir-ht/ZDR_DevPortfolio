@@ -1,6 +1,35 @@
 # 🚀 Zdr_DEV — Portfolio
 
-Portfolio professionnel pour **Zdr_DEV**, développeur web full stack basé à Rodez (Aveyron).
+Portfolio professionnel pour **Zdr_DEV** (Corentin Mayrand), développeur web indépendant basé à Rodez (Aveyron, 12). Site vitrine orienté conversion de clients locaux : artisans, commerçants, restaurateurs.
+
+🔗 **En ligne** : [zdr-dev-portfolio.vercel.app](https://zdr-dev-portfolio.vercel.app)
+
+## Installation
+
+```bash
+# Cloner le dépôt
+git clone https://github.com/Zediir-ht/ZDR_DevPortfolio.git
+cd ZDR_DevPortfolio
+
+# Installer les dépendances
+npm install
+```
+
+## Usage
+
+```bash
+# Lancer en développement (http://localhost:3000)
+npm run dev
+
+# Build production
+npm run build
+
+# Preview du build
+npm run preview
+
+# Déployer sur Vercel
+npx vercel --prod
+```
 
 ## Stack technique
 
@@ -8,8 +37,11 @@ Portfolio professionnel pour **Zdr_DEV**, développeur web full stack basé à R
 | ------------ | ------------------------ |
 | Framework    | React 18 + Vite 6       |
 | Animations   | Framer Motion 11         |
+| 3D / WebGL   | Three.js (LiquidEther)   |
 | Styles       | CSS Modules              |
+| Formulaire   | Formspree                |
 | Sécurité     | Sanitization XSS custom  |
+| Déploiement  | Vercel                   |
 
 ## Lancer le projet
 
@@ -62,6 +94,19 @@ src/
 - HTML sémantique (`<main>`, `<section>`, `<nav>`, `<footer>`)
 - Attributs `aria-*` pour l'accessibilité
 
+## API
+
+Le formulaire de contact utilise [Formspree](https://formspree.io) comme backend. L'endpoint est configuré dans `Contact.jsx` :
+
+```
+POST https://formspree.io/f/xnjbzypl
+Content-Type: application/json
+
+{ "name": "...", "email": "...", "message": "..." }
+```
+
+Aucune autre API externe n'est utilisée.
+
 ## Licence
 
-© 2026 Zdr_DEV — Tous droits réservés.
+MIT — voir [LICENSE](LICENSE).

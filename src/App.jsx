@@ -5,7 +5,7 @@
  * La structure est intentionnellement plate pour le SEO (un seul
  * flux de contenu dans la page).
  */
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
