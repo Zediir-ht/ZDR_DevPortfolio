@@ -118,11 +118,11 @@ export default function Contact() {
       <div className={styles.header}>
         <span className={styles.label}>Contact</span>
         <h2 className={styles.title}>
-          Parlons de votre <span className={styles.accent}>projet</span>
+          Discutons de votre <span className={styles.accent}>projet</span>
         </h2>
         <p className={styles.subtitle}>
-          Une idée, une question, un devis ? Envoyez-moi un message,
-          je vous réponds sous 24 h.
+          Dites-moi simplement ce que vous faites et ce dont vous avez besoin.
+          Je vous recontacte sous 24 h, on en discute comme des voisins.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default function Contact() {
           {/* Nom */}
           <div className={styles.field}>
             <label htmlFor="contact-name" className={styles.labelField}>
-              Nom complet
+              Votre nom
             </label>
             <input
               id="contact-name"
@@ -161,7 +161,7 @@ export default function Contact() {
               autoComplete="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Jean Dupont"
+              placeholder="Ex : Marie Martin"
               maxLength={100}
               className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
               aria-describedby={errors.name ? 'err-name' : undefined}
@@ -174,7 +174,7 @@ export default function Contact() {
           {/* Email */}
           <div className={styles.field}>
             <label htmlFor="contact-email" className={styles.labelField}>
-              Adresse email
+              Votre email (pour vous recontacter)
             </label>
             <input
               id="contact-email"
@@ -183,7 +183,7 @@ export default function Contact() {
               autoComplete="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="jean@exemple.fr"
+              placeholder="marie@moncommerce.fr"
               maxLength={254}
               className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
               aria-describedby={errors.email ? 'err-email' : undefined}
@@ -196,7 +196,7 @@ export default function Contact() {
           {/* Message */}
           <div className={styles.field}>
             <label htmlFor="contact-message" className={styles.labelField}>
-              Votre message
+              Parlez-moi de votre activité et de vos besoins
             </label>
             <textarea
               id="contact-message"
@@ -204,7 +204,7 @@ export default function Contact() {
               autoComplete="off"
               value={form.message}
               onChange={handleChange}
-              placeholder="Décrivez votre projet ou posez votre question…"
+              placeholder="Ex : Je suis boulanger à Rodez et j'aimerais un site pour présenter mes produits et prendre des commandes…"
               rows={5}
               maxLength={2000}
               className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
@@ -222,7 +222,7 @@ export default function Contact() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Envoyer le message
+            ☕ Discuter de mon projet
           </motion.button>
 
           {/* Feedback */}
@@ -235,7 +235,7 @@ export default function Contact() {
                 exit={{ opacity: 0 }}
                 role="alert"
               >
-                ✅ Message envoyé avec succès ! Je vous recontacte rapidement.
+                ✅ C'est envoyé ! Je vous recontacte sous 24 h pour en discuter.
               </motion.p>
             )}
             {status === 'error' && (
@@ -300,7 +300,7 @@ export default function Contact() {
             </div>
             <div>
               <h4 className={styles.infoTitle}>Disponibilité</h4>
-              <p className={styles.infoText}>Lun – Ven · 9h – 18h</p>
+              <p className={styles.infoText}>Lun – Ven · 9h – 18h<br />RDV possible à Rodez, Millau ou en visio</p>
             </div>
           </div>
 
@@ -318,7 +318,9 @@ export default function Contact() {
               title="Localisation Rodez, Aveyron"
             />
             <p className={styles.mapText}>
-              Basé au cœur de l'Aveyron, j'interviens au niveau local.
+              Basé à Rodez, j'interviens dans tout l'Aveyron : Millau,
+              Villefranche-de-Rouergue, Decazeville, Espalion…
+              On peut se retrouver autour d'un café pour discuter de votre projet !
             </p>
           </div>
         </motion.aside>

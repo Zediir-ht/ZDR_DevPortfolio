@@ -8,7 +8,7 @@ import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
@@ -18,7 +18,10 @@ export default function Footer() {
             <span className={styles.accent}>Zdr</span>_DEV
           </h4>
           <p className={styles.tagline}>
-            Développeur Web Full Stack<br />Rodez · Aveyron
+            Votre voisin développeur<br />Rodez · Aveyron (12)
+          </p>
+          <p className={styles.tagline}>
+            Sites web pour artisans, commerçants<br />et restaurateurs du 12.
           </p>
         </div>
 
@@ -51,9 +54,21 @@ export default function Footer() {
       <div className={`container ${styles.bottom}`}>
         <p>© {CURRENT_YEAR} Zdr_DEV — Tous droits réservés.</p>
         <p className={styles.legal}>
-          <a href="#mentions-legales">Mentions légales</a>
+          <button
+            type="button"
+            className={styles.legalBtn}
+            onClick={() => onOpenLegal('mentions')}
+          >
+            Mentions légales
+          </button>
           <span className={styles.sep}>·</span>
-          <a href="#politique-confidentialite">Politique de confidentialité</a>
+          <button
+            type="button"
+            className={styles.legalBtn}
+            onClick={() => onOpenLegal('confidentialite')}
+          >
+            Politique de confidentialité
+          </button>
         </p>
       </div>
     </footer>

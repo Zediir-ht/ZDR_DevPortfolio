@@ -105,14 +105,14 @@ body {
 
 /* ========== Dark Mode ========== */
 [data-theme="dark"] {
-  --c-bg:         #0f172a;
-  --c-bg-alt:     #131c31;
+  --c-bg:         #000000;
+  --c-bg-alt:     #0a0a0a;
   --c-dark:       #f1f5f9;
   --c-dark-soft:  #e2e8f0;
   --c-gray:       #94a3b8;
   --c-gray-light: #475569;
-  --c-border:     #334155;
-  --c-white:      #1e293b;
+  --c-border:     #1a1a1a;
+  --c-white:      #111111;
 
   --shadow-sm:  0 1px 2px rgba(0,0,0,.3);
   --shadow-md:  0 4px 12px rgba(0,0,0,.4);

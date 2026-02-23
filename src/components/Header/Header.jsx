@@ -90,7 +90,7 @@ export default function Header() {
               </svg>
             )}
           </button>
-          <a href="#contact" className={styles.cta}>Me contacter</a>
+          <a href="#contact" className={styles.cta}>Audit gratuit</a>
         </div>
 
         {/* Hamburger mobile */}

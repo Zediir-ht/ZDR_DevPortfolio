@@ -56,13 +56,58 @@
 
 /* Grille 2 colonnes */
 .grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2xl);
+}
+
+/* ─── Ligne intro : portrait + texte ─── */
+.introRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: var(--sp-2xl);
   align-items: start;
 }
 
+/* Portrait */
+.portraitWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 280px;
+  z-index: 1;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  filter: grayscale(15%);
+  transition: filter var(--tr);
+}
+
+.portrait:hover {
+  filter: grayscale(0%);
+}
+
+.portraitAccent {
+  position: absolute;
+  inset: -8px;
+  border-radius: var(--r-lg);
+  border: 2px solid var(--c-accent);
+  opacity: 0.2;
+  z-index: -1;
+  transform: translate(12px, 12px);
+  pointer-events: none;
+}
+
 /* Texte */
+.text {
+  position: relative;
+  z-index: 1;
+}
+
 .text p {
   font-size: var(--fs-base);
   line-height: 1.8;
@@ -98,10 +143,10 @@
   border: 1px solid var(--c-border);
 }
 
-/* Compétences */
+/* Compétences → Bénéfices (pleine largeur sous l'intro) */
 .skills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-sm);
 }
 
@@ -120,33 +165,39 @@
   transform: translateY(-3px);
 }
 
+.benefitIcon {
+  margin-bottom: var(--sp-xs);
+}
+
 .skillCategory {
   font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--c-dark);
-  margin-bottom: var(--sp-xs);
+  margin-bottom: 0.3rem;
 }
 
-.techList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.techBadge {
+.benefitDesc {
   font-size: var(--fs-xs);
-  font-weight: 500;
-  color: var(--c-accent);
-  background: rgba(227,83,54,.08);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--r-sm);
+  color: var(--c-gray);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .grid {
+@media (max-width: 900px) {
+  .introRow {
     grid-template-columns: 1fr;
     gap: var(--sp-xl);
+    justify-items: center;
+  }
+  .portraitWrapper {
+    width: 220px;
+  }
+  .text {
+    text-align: center;
+  }
+  .values {
+    justify-content: center;
   }
   .skills {
     grid-template-columns: 1fr 1fr;
@@ -156,6 +207,9 @@
 @media (max-width: 480px) {
   .skills {
     grid-template-columns: 1fr;
+  }
+  .portraitWrapper {
+    width: 180px;
   }
   .values {
     justify-content: center;

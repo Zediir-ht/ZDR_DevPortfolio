@@ -1,0 +1,162 @@
+/* Legal.module.css */
+
+/* ─── Overlay plein écran ─── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-lg);
+}
+
+/* ─── Panneau modale ─── */
+.panel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bouton fermer */
+.closeBtn {
+  position: absolute;
+  top: var(--sp-sm);
+  right: var(--sp-sm);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--c-border);
+  border-radius: 50%;
+  background: var(--c-bg);
+  color: var(--c-gray);
+  cursor: pointer;
+  transition: color var(--tr-fast), border-color var(--tr-fast), background var(--tr-fast);
+}
+
+.closeBtn:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  background: rgba(227, 83, 54, 0.06);
+}
+
+/* ─── Contenu scrollable ─── */
+.content {
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-2xl);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Titre principal */
+.title {
+  font-family: 'Aquire', var(--ff);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--c-dark);
+  margin-bottom: var(--sp-xs);
+}
+
+.updated {
+  font-size: var(--fs-xs);
+  color: var(--c-gray);
+  margin-bottom: var(--sp-xl);
+}
+
+/* Blocs de section */
+.block {
+  margin-bottom: var(--sp-lg);
+}
+
+.block h3 {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: var(--sp-xs);
+}
+
+.block p {
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  color: var(--c-gray);
+  margin-bottom: var(--sp-xs);
+}
+
+.block ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-xs) 0 var(--sp-sm);
+}
+
+.block li {
+  position: relative;
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  color: var(--c-gray);
+  padding-left: 1.2rem;
+}
+
+.block li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--c-accent);
+  font-weight: 700;
+}
+
+.block li strong {
+  color: var(--c-dark);
+  font-weight: 600;
+}
+
+.block a {
+  color: var(--c-accent);
+  font-weight: 500;
+  transition: color var(--tr-fast);
+}
+
+.block a:hover {
+  color: var(--c-accent-dk);
+  text-decoration: underline;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .overlay {
+    padding: var(--sp-sm);
+    align-items: flex-end;
+  }
+
+  .panel {
+    max-height: 92vh;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+  }
+
+  .content {
+    padding: var(--sp-lg) var(--sp-md) var(--sp-xl);
+  }
+}
+
+/* ─── Dark mode ─── */
+:global([data-theme="dark"]) .panel {
+  background: var(--c-bg);
+  border-color: var(--c-border);
+}
+
+:global([data-theme="dark"]) .closeBtn {
+  background: var(--c-bg-alt);
+  border-color: var(--c-border);
+}

@@ -86,6 +86,19 @@
 
 .legal a:hover { color: var(--c-accent); }
 
+.legalBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--c-gray);
+  cursor: pointer;
+  transition: color var(--tr-fast);
+}
+
+.legalBtn:hover { color: var(--c-accent); }
+
 .sep { opacity: 0.4; }
 
 /* Responsive */

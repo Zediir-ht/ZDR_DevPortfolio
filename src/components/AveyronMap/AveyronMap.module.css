@@ -1,0 +1,278 @@
+/* AveyronMap.module.css */
+
+/* ——— Wrapper ——— */
+.wrapper {
+  margin-top: var(--sp-2xl);
+  padding: var(--sp-xl) 0;
+}
+
+/* ——— Header ——— */
+.mapHeader {
+  text-align: center;
+  margin-bottom: var(--sp-xl);
+}
+
+.mapTitle {
+  font-family: 'Aquire', var(--ff);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--c-dark);
+  margin-bottom: var(--sp-xs);
+}
+
+.accent {
+  background: linear-gradient(
+    137deg,
+    rgba(227, 83, 54, 1) 0%,
+    rgba(227, 77, 32, 1) 25%,
+    rgba(237, 221, 83, 1) 50%,
+    rgba(227, 83, 54, 1) 75%,
+    rgba(227, 77, 32, 1) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.mapSubtitle {
+  font-size: var(--fs-sm);
+  color: var(--c-gray);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ——— Conteneur de la carte ——— */
+.mapContainer {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  aspect-ratio: 2107 / 2278;
+  cursor: pointer;
+  transition: filter 0.4s ease, box-shadow 0.4s ease;
+  border-radius: var(--r-md);
+}
+
+.mapContainer:hover {
+  filter: drop-shadow(0 8px 24px rgba(227, 83, 54, 0.18));
+}
+
+/* ——— SVG injecté ——— */
+.svgWrap {
+  width: 100%;
+  height: 100%;
+}
+
+.svgWrap :global(svg) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ——— Cantons (paths) ——— */
+.canton {
+  fill: rgba(227, 83, 54, 0.08);
+  stroke: var(--c-accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform-origin: center;
+  transition:
+    fill 0.3s ease,
+    stroke-width 0.3s ease,
+    filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Animation d'apparition */
+.visible {
+  animation: cantonAppear 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes cantonAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Survol d'un canton */
+.hovered {
+  fill: rgba(227, 83, 54, 0.22);
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 8px rgba(227, 83, 54, 0.35));
+}
+
+/* ——— Overlay des marqueurs de villes ——— */
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Point ville principal */
+.cityDotMain {
+  fill: var(--c-accent);
+  stroke: var(--c-white);
+  stroke-width: 4;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Point ville secondaire */
+.cityDot {
+  fill: var(--c-dark);
+  stroke: var(--c-white);
+  stroke-width: 3;
+  opacity: 0.8;
+}
+
+/* Halo pulsant */
+.cityHalo {
+  fill: none;
+  stroke: var(--c-accent);
+  stroke-width: 2;
+  opacity: 0.5;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    r: 28;
+    opacity: 0.5;
+  }
+  50% {
+    r: 40;
+    opacity: 0;
+  }
+}
+
+/* Labels de villes */
+.cityLabelMain {
+  font-family: 'Aquire', var(--ff);
+  font-size: 42px;
+  font-weight: 700;
+  fill: var(--c-dark);
+  letter-spacing: 0.5px;
+}
+
+.cityLabel {
+  font-family: var(--ff);
+  font-size: 34px;
+  font-weight: 500;
+  fill: var(--c-gray);
+}
+
+/* ——— Tooltip ——— */
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -100%);
+  background: var(--c-dark);
+  color: var(--c-white);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--c-dark);
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 768px) {
+  .mapContainer {
+    max-width: 400px;
+  }
+
+  .cityLabelMain {
+    font-size: 36px;
+  }
+
+  .cityLabel {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapContainer {
+    max-width: 300px;
+  }
+
+  .cityLabelMain {
+    font-size: 30px;
+  }
+
+  .cityLabel {
+    font-size: 24px;
+  }
+
+  .mapSubtitle {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ——— Dark mode ——— */
+:global([data-theme='dark']) .canton {
+  fill: rgba(227, 83, 54, 0.1);
+  stroke: rgba(227, 83, 54, 0.7);
+}
+
+:global([data-theme='dark']) .hovered {
+  fill: rgba(227, 83, 54, 0.3);
+  stroke: var(--c-accent);
+  filter: drop-shadow(0 0 12px rgba(227, 83, 54, 0.5));
+}
+
+:global([data-theme='dark']) .cityDot {
+  fill: var(--c-gray);
+}
+
+:global([data-theme='dark']) .cityLabelMain {
+  fill: var(--c-white);
+}
+
+:global([data-theme='dark']) .cityLabel {
+  fill: rgba(255, 255, 255, 0.65);
+}
+
+:global([data-theme='dark']) .tooltip {
+  background: var(--c-white);
+  color: var(--c-dark);
+}
+
+:global([data-theme='dark']) .tooltip::after {
+  border-top-color: var(--c-white);
+}

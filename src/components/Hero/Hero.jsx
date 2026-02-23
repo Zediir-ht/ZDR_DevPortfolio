@@ -100,27 +100,38 @@ export default function Hero() {
 
         {/* Colonne gauche — Texte */}
         <div className={styles.textCol}>
+          <motion.span className={styles.badge} variants={itemVariants}>
+          Votre partenaire web en Aveyron
+          </motion.span>
+
           <motion.h1 className={styles.title} variants={itemVariants}>
-            Transformez vos idées<br />
-            en <span className={styles.highlight}>expériences digitales</span>
+            Mon agence ruthénoise<br />
+            pour <span className={styles.highlight}>booster votre activité</span>
           </motion.h1>
 
           <motion.p className={styles.subtitle} variants={itemVariants}>
-            Sites web performants, designs modernes et solutions sur mesure
-            pour donner vie à votre activité en ligne.
+            Artisan, commerçant, restaurateur aveyronnais ? Je crée un site web
+            à votre image pour attirer la clientèle. Visible sur Google, adapté au mobile,
+            livré en 2 semaines.
           </motion.p>
+
+          <motion.div className={styles.trustBadges} variants={itemVariants}>
+            <span className={styles.trustItem}>✓ Devis gratuit en 24h</span>
+            <span className={styles.trustItem}>✓ Paiement en 3×</span>
+            <span className={styles.trustItem}>✓ Éligible Pass Occitanie</span>
+          </motion.div>
         </div>
 
         {/* Colonne droite — CTA */}
         <motion.div className={styles.actionsCol} variants={itemVariants}>
           <a href="#contact" className={styles.btnPrimary}>
-            <span>Démarrer un projet</span>
+            <span>Demander mon audit gratuit</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <a href="#services" className={styles.btnSecondary}>
-            <span>Découvrir l'offre</span>
+            <span>Voir les offres dès 600 €</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 9l6 6 6-6" />
             </svg>
