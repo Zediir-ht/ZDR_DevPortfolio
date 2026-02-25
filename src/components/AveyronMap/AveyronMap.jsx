@@ -146,8 +146,7 @@ export default function AveyronMap() {
          Ancré en <span className={styles.accent}>Aveyron</span>
         </h3>
         <p className={styles.mapSubtitle}>
-          Je me déplace dans tout le département — Rodez, Millau, Villefranche,
-          Decazeville, Espalion, Saint-Affrique… et partout entre les deux.
+          Je me déplace dans tout le département.
         </p>
       </motion.div>
 

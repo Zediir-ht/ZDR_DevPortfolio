@@ -69,8 +69,7 @@ export default function About() {
       <div className={styles.header}>
         <span className={styles.label}>À propos</span>
         <h2 className={styles.title}>
-          Votre voisin développeur,<br />
-          au service de <span className={styles.accent}>votre réussite</span>
+          On se connaît <span className={styles.accent}>pas encore ?</span>
         </h2>
       </div>
 
@@ -100,7 +99,7 @@ export default function About() {
             <p>
               Moi c'est <strong>Corentin Mayrand</strong>, ruthénois pure souche et
               développeur web indépendant. J'ai grandi ici, je connais nos rues, nos
-              marchés et les <em>gens qui font vivre le 12</em>.
+              marchés et les <em>gens qui font vivre l'Aveyron</em>.
             </p>
             <p>
               Je sais que les réalités d'un artisan à Rodez, d'un restaurateur à Millau
@@ -109,8 +108,8 @@ export default function About() {
               pour aider les <strong>pros de l'Aveyron</strong> à être enfin visibles en ligne.
             </p>
             <p>
-              Pas d'intermédiaire, pas de mauvaise surprise.
-              On se rencontre, on parle de votre activité, et je vous livre un site
+              Pas d'intermédiaire.
+              On parle de votre activité, et je vous livre un site
               qui <strong>ramène de vrais clients</strong> — à prix fixe, dans les délais.
             </p>
 
