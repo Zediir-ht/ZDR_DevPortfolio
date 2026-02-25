@@ -86,10 +86,13 @@ const valueBadgeVariants = {
   }),
 };
 
-/* Tilt 3D handler pour les cards */
+/* Tilt 3D handler pour les cards — séparé du motion.div */
+const isTouch = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
 function useTilt() {
   const ref = useRef(null);
   const onMouseMove = useCallback((e) => {
+    if (isTouch) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -98,6 +101,7 @@ function useTilt() {
     el.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1.02)`;
   }, []);
   const onMouseLeave = useCallback(() => {
+    if (isTouch) return;
     const el = ref.current;
     if (el) el.style.transform = '';
   }, []);
@@ -108,19 +112,18 @@ function BenefitCard({ benefit, index }) {
   const { ref, onMouseMove, onMouseLeave } = useTilt();
   return (
     <motion.div
-      ref={ref}
       className={styles.skillCard}
       custom={index}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={cardVariants}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
     >
-      <div className={styles.benefitIcon}>{benefit.icon}</div>
-      <h4 className={styles.skillCategory}>{benefit.title}</h4>
-      <p className={styles.benefitDesc}>{benefit.desc}</p>
+      <div ref={ref} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} style={{ transition: 'transform 0.2s ease' }}>
+        <div className={styles.benefitIcon}>{benefit.icon}</div>
+        <h4 className={styles.skillCategory}>{benefit.title}</h4>
+        <p className={styles.benefitDesc}>{benefit.desc}</p>
+      </div>
     </motion.div>
   );
 }

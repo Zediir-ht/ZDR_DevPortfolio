@@ -168,10 +168,13 @@ function AnimatedPrice({ target, suffix = ' €' }) {
   return <span ref={ref}>{value}{suffix}</span>;
 }
 
-/* ── Tilt 3D hook ── */
+/* ── Tilt 3D hook — tilt séparé du motion.div pour éviter les conflits ── */
+const isTouch = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
 function useTilt() {
   const ref = useRef(null);
   const onMouseMove = useCallback((e) => {
+    if (isTouch) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -180,6 +183,7 @@ function useTilt() {
     el.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
   }, []);
   const onMouseLeave = useCallback(() => {
+    if (isTouch) return;
     const el = ref.current;
     if (el) el.style.transform = '';
   }, []);
@@ -190,44 +194,43 @@ function OfferCard({ offer, index }) {
   const { ref, onMouseMove, onMouseLeave } = useTilt();
   return (
     <motion.div
-      ref={ref}
       className={`${styles.card} ${offer.highlight ? styles.cardHighlight : ''}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={cardVariants}
       custom={index}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
     >
-      {offer.badge && (
-        <span className={styles.cardBadge}>{offer.badge}</span>
-      )}
-      <span className={styles.cardType}>{offer.type}</span>
-      <h3 className={styles.cardName}>{offer.name}</h3>
+      <div ref={ref} className={styles.cardInner} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
+        {offer.badge && (
+          <span className={styles.cardBadge}>{offer.badge}</span>
+        )}
+        <span className={styles.cardType}>{offer.type}</span>
+        <h3 className={styles.cardName}>{offer.name}</h3>
 
-      <div className={styles.pricing}>
-        <span className={styles.price}>
-          <AnimatedPrice target={offer.price} />
-        </span>
+        <div className={styles.pricing}>
+          <span className={styles.price}>
+            <AnimatedPrice target={offer.price} />
+          </span>
+        </div>
+
+        <p className={styles.desc}>{offer.description}</p>
+
+        <ul className={styles.features}>
+          {offer.features.map((f) => (
+            <li key={f}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <a href="#contact" className={styles.cardBtn}>
+          Demander un devis gratuit
+        </a>
       </div>
-
-      <p className={styles.desc}>{offer.description}</p>
-
-      <ul className={styles.features}>
-        {offer.features.map((f) => (
-          <li key={f}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-              <path d="M20 6L9 17l-5-5" />
-            </svg>
-            {f}
-          </li>
-        ))}
-      </ul>
-
-      <a href="#contact" className={styles.cardBtn}>
-        Demander un devis gratuit
-      </a>
     </motion.div>
   );
 }
@@ -236,45 +239,44 @@ function SubCard({ sub, index }) {
   const { ref, onMouseMove, onMouseLeave } = useTilt();
   return (
     <motion.div
-      ref={ref}
       className={`${styles.card} ${sub.highlight ? styles.cardHighlight : ''}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={cardVariants}
       custom={index}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
     >
-      {sub.badge && (
-        <span className={styles.cardBadge}>{sub.badge}</span>
-      )}
-      <h3 className={styles.cardName}>{sub.name}</h3>
+      <div ref={ref} className={styles.cardInner} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
+        {sub.badge && (
+          <span className={styles.cardBadge}>{sub.badge}</span>
+        )}
+        <h3 className={styles.cardName}>{sub.name}</h3>
 
-      <div className={styles.pricing}>
-        <span className={styles.price}>
-          <AnimatedPrice target={sub.price} suffix="" />
-        </span>
-        <span className={styles.period}>{sub.period}</span>
+        <div className={styles.pricing}>
+          <span className={styles.price}>
+            <AnimatedPrice target={sub.price} suffix="" />
+          </span>
+          <span className={styles.period}>{sub.period}</span>
+        </div>
+
+        <p className={styles.engagement}>Sans engagement · annulable à tout moment</p>
+        <p className={styles.desc}>{sub.description}</p>
+
+        <ul className={styles.features}>
+          {sub.features.map((f) => (
+            <li key={f}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <a href="#contact" className={styles.cardBtn}>
+          Choisir cet abonnement
+        </a>
       </div>
-
-      <p className={styles.engagement}>Sans engagement · annulable à tout moment</p>
-      <p className={styles.desc}>{sub.description}</p>
-
-      <ul className={styles.features}>
-        {sub.features.map((f) => (
-          <li key={f}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-              <path d="M20 6L9 17l-5-5" />
-            </svg>
-            {f}
-          </li>
-        ))}
-      </ul>
-
-      <a href="#contact" className={styles.cardBtn}>
-        Choisir cet abonnement
-      </a>
     </motion.div>
   );
 }
