@@ -1,7 +1,7 @@
 {
   "name": "zdr-dev-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio professionnel – Zdr_DEV, Développeur Web Full Stack à Rodez (Aveyron)",
+  "description": "Création de sites web pour artisans et commerçants en Aveyron (Rodez) — dès 600 € + maintenance dès 29 €/mois",
   "private": true,
   "type": "module",
   "scripts": {
