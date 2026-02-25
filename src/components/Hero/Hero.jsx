@@ -105,12 +105,12 @@ export default function Hero() {
           </motion.span>
 
           <motion.h1 className={styles.title} variants={itemVariants}>
-            Mon agence ruthénoise<br />
-            pour <span className={styles.highlight}>booster votre activité</span>
+            L'agence ruthénoise<br />
+           au service <span className={styles.highlight}>de votre développement</span>
           </motion.h1>
 
           <motion.p className={styles.subtitle} variants={itemVariants}>
-            Artisan, commerçant, restaurateur aveyronnais ? Je crée un site web
+            Artisan, commerçant, restaurateur aveyronnais ? Je m'engage à crée un site web
             à votre image pour attirer la clientèle. Visible sur Google, adapté au mobile,
             livré en 2 semaines.
           </motion.p>

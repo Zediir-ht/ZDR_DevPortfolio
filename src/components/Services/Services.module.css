@@ -44,12 +44,27 @@
   margin: var(--sp-sm) auto 0;
 }
 
-/* Grille de cartes — 2 colonnes */
-.grid {
+/* Grille de cartes — 2 colonnes (offres création) */
+.gridTwo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-lg);
   max-width: 900px;
+  margin: 0 auto;
+}
+
+/* En-tête secondaire (abonnements) */
+.headerSub {
+  text-align: center;
+  margin: var(--sp-3xl) auto var(--sp-2xl);
+}
+
+/* Grille de cartes — 3 colonnes (abonnements) */
+.gridThree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -89,6 +104,19 @@
   padding: 0.25rem 0.75rem;
   border-radius: var(--r-full);
   letter-spacing: 0.02em;
+}
+
+.period {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--c-gray);
+}
+
+.engagement {
+  font-size: var(--fs-xs);
+  color: var(--c-accent);
+  font-weight: 600;
+  margin-bottom: var(--sp-xs);
 }
 
 .cardType {
@@ -198,63 +226,9 @@
   box-shadow: 0 4px 16px rgba(227,83,54,.3);
 }
 
-/* ─── Bloc Maintenance ─── */
-.maintenanceBlock {
-  max-width: 900px;
-  margin: var(--sp-xl) auto 0;
-  display: flex;
-  align-items: flex-start;
-  gap: var(--sp-xl);
-  background: var(--c-white);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  padding: var(--sp-lg);
-  transition: box-shadow var(--tr);
-}
-
-.maintenanceBlock:hover {
-  box-shadow: var(--shadow-md);
-}
-
-.maintenanceLeft {
-  flex: 1;
-}
-
-.maintenanceTitle {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--c-dark);
-  margin-bottom: var(--sp-xs);
-}
-
-.maintenanceDesc {
-  font-size: var(--fs-sm);
-  color: var(--c-gray);
-  line-height: 1.7;
-}
-
-.maintenanceFeatures {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.45rem;
-  flex-shrink: 0;
-}
-
-.maintenanceFeatures li {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: var(--fs-sm);
-  color: var(--c-dark-soft);
-  white-space: nowrap;
-}
-
 /* ─── Bloc Subventions ─── */
 .subsidyBlock {
-  max-width: 900px;
+  max-width: 1100px;
   margin: var(--sp-xl) auto 0;
   text-align: center;
   background: linear-gradient(135deg, rgba(227,83,54,.06) 0%, rgba(237,221,83,.06) 100%);
@@ -322,7 +296,7 @@
 
 /* ─── Bloc SEO / Bénéfices métiers ─── */
 .seoBlock {
-  max-width: 900px;
+  max-width: 1100px;
   margin: var(--sp-2xl) auto 0;
   text-align: center;
 }
@@ -382,25 +356,21 @@
 }
 
 /* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .gridThree {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
 @media (max-width: 900px) {
-  .grid {
+  .gridTwo {
     grid-template-columns: 1fr;
     max-width: 480px;
   }
   .card { align-items: center; text-align: center; }
   .features { align-items: center; }
   .pricing { justify-content: center; }
-  .maintenanceBlock {
-    flex-direction: column;
-    text-align: center;
-  }
-  .maintenanceFeatures {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-  .maintenanceFeatures li {
-    white-space: normal;
-  }
 }
 
 @media (max-width: 768px) {
@@ -410,16 +380,9 @@
   }
 }
 
-@media (max-width: 480px) {
-  .maintenanceFeatures {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Dark mode */
 :global([data-theme="dark"]) .card,
-:global([data-theme="dark"]) .seoItem,
-:global([data-theme="dark"]) .maintenanceBlock {
+:global([data-theme="dark"]) .seoItem {
   background: var(--c-bg-alt);
   border-color: var(--c-border);
 }

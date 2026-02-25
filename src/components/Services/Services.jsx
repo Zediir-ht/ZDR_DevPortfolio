@@ -1,15 +1,15 @@
 /**
  * Services.jsx
  * ------------
- * Section tarifs / services : deux cartes d'offres claires
- * (L'Essentiel Local & La Vitrine Premium), option maintenance,
+ * Section tarifs : deux offres à prix fixe (création de site)
+ * + trois formules d'abonnement mensuel (maintenance & suivi),
  * bloc subventions Pass Occitanie, et argumentaire SEO.
  */
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './Services.module.css';
 
-/* Données des offres */
+/* ── Offres à prix fixe (création) ── */
 const OFFERS = [
   {
     id: 'essentiel',
@@ -53,19 +53,58 @@ const OFFERS = [
   },
 ];
 
-const MAINTENANCE = {
-  name: 'Option Sérénité',
-  price: '39 €',
-  period: '/mois',
-  features: [
-    'Mises à jour régulières',
-    'Sauvegardes automatiques',
-    'Surveillance sécurité 24/7',
-    'Corrections de bugs incluses',
-    'Support par email & téléphone',
-    'Rapport mensuel de performance',
-  ],
-};
+/* ── Abonnements mensuels (maintenance & suivi) ── */
+const SUBSCRIPTIONS = [
+  {
+    id: 'tranquillite',
+    name: 'Tranquillité',
+    price: '29',
+    period: '€/mois',
+    description: 'Le minimum pour garder votre site en ligne, à jour et sécurisé.',
+    features: [
+      'Hébergement & nom de domaine',
+      'Certificat SSL (HTTPS)',
+      'Mises à jour de sécurité',
+      'Sauvegardes automatiques',
+      'Support par email',
+    ],
+    highlight: false,
+  },
+  {
+    id: 'serenite',
+    name: 'Sérénité',
+    price: '39',
+    period: '€/mois',
+    description: 'Votre site reste performant et évolue avec votre activité.',
+    features: [
+      'Tout Tranquillité inclus',
+      'Modifications mineures (2/mois)',
+      'Rapport mensuel de performance',
+      'Surveillance disponibilité 24/7',
+      'Corrections de bugs incluses',
+      'Support email & téléphone',
+    ],
+    highlight: true,
+    badge: '★ Populaire',
+  },
+  {
+    id: 'croissance',
+    name: 'Croissance',
+    price: '49',
+    period: '€/mois',
+    description: 'Un vrai partenariat pour développer votre visibilité en continu.',
+    features: [
+      'Tout Sérénité inclus',
+      'Modifications illimitées',
+      'Stratégie SEO locale mensuelle',
+      'Optimisation Google Maps continue',
+      'Réseaux sociaux : lien & intégration',
+      'Support prioritaire 7j/7',
+      'Refonte visuelle annuelle offerte',
+    ],
+    highlight: false,
+  },
+];
 
 /* Animation des cartes */
 const cardVariants = {
@@ -80,7 +119,7 @@ const cardVariants = {
 export default function Services() {
   return (
     <SectionWrapper id="services">
-      {/* En-tête */}
+      {/* ═══ En-tête — Offres création ═══ */}
       <div className={styles.header}>
         <span className={styles.label}>Services & Tarifs</span>
         <h2 className={styles.title}>
@@ -92,8 +131,8 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Grille des 2 offres */}
-      <div className={styles.grid}>
+      {/* Grille des 2 offres à prix fixe */}
+      <div className={styles.gridTwo}>
         {OFFERS.map((offer, i) => (
           <motion.div
             key={offer.id}
@@ -135,38 +174,61 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Option Maintenance */}
-      <motion.div
-        className={styles.maintenanceBlock}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={cardVariants}
-        custom={2}
-      >
-        <div className={styles.maintenanceLeft}>
-          <h3 className={styles.maintenanceTitle}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-            Option Sérénité — <span className={styles.accent}>{MAINTENANCE.price}{MAINTENANCE.period}</span>
-          </h3>
-          <p className={styles.maintenanceDesc}>
-            Votre site reste à jour, sécurisé et performant sans que vous ayez à y penser.
-            Concentrez-vous sur votre métier, je m'occupe du reste.
-          </p>
-        </div>
-        <ul className={styles.maintenanceFeatures}>
-          {MAINTENANCE.features.map((f) => (
-            <li key={f}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              {f}
-            </li>
-          ))}
-        </ul>
-      </motion.div>
+      {/* ═══ En-tête — Abonnements ═══ */}
+      <div className={styles.headerSub}>
+        <span className={styles.label}>Abonnements</span>
+        <h2 className={styles.title}>
+          Votre site <span className={styles.accent}>toujours au top</span>
+        </h2>
+        <p className={styles.subtitle}>
+          Un abonnement mensuel sans engagement pour que votre site reste rapide, sécurisé
+          et visible sur Google.
+        </p>
+      </div>
+
+      {/* Grille des 3 abonnements */}
+      <div className={styles.gridThree}>
+        {SUBSCRIPTIONS.map((sub, i) => (
+          <motion.div
+            key={sub.id}
+            className={`${styles.card} ${sub.highlight ? styles.cardHighlight : ''}`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+            custom={i}
+            whileHover={{ y: -6 }}
+          >
+            {sub.badge && (
+              <span className={styles.cardBadge}>{sub.badge}</span>
+            )}
+            <h3 className={styles.cardName}>{sub.name}</h3>
+
+            <div className={styles.pricing}>
+              <span className={styles.price}>{sub.price}</span>
+              <span className={styles.period}>{sub.period}</span>
+            </div>
+
+            <p className={styles.engagement}>Sans engagement · annulable à tout moment</p>
+            <p className={styles.desc}>{sub.description}</p>
+
+            <ul className={styles.features}>
+              {sub.features.map((f) => (
+                <li key={f}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a href="#contact" className={styles.cardBtn}>
+              Choisir cet abonnement
+            </a>
+          </motion.div>
+        ))}
+      </div>
 
       {/* Bloc Subventions — Pass Occitanie */}
       <motion.div
@@ -201,7 +263,7 @@ export default function Services() {
         </a>
       </motion.div>
 
-      {/* Bloc argumentaire — Bénéfices métiers (remplace les barres de compétences) */}
+      {/* Bloc argumentaire SEO */}
       <motion.div
         className={styles.seoBlock}
         initial="hidden"

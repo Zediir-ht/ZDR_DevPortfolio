@@ -90,9 +90,9 @@
   position: relative;
   z-index: 2;
   font-family: 'Aquire', var(--ff);
-  font-size: clamp(1.9rem, 5.5vw, 4.5rem);
+  font-size: clamp(1.5rem, 4vw, 3.2rem);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--c-dark);
 }
