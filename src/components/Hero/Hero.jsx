@@ -118,7 +118,6 @@ export default function Hero() {
           <motion.div className={styles.trustBadges} variants={itemVariants}>
             <span className={styles.trustItem}>✓ Devis gratuit en 24h</span>
             <span className={styles.trustItem}>✓ Paiement en 3×</span>
-            <span className={styles.trustItem}>✓ Éligible Pass Occitanie</span>
           </motion.div>
         </div>
 

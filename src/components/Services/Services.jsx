@@ -230,39 +230,6 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Bloc Subventions — Pass Occitanie */}
-      <motion.div
-        className={styles.subsidyBlock}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={cardVariants}
-        custom={3}
-      >
-        <div className={styles.subsidyIcon} aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M16 8h-6a2 2 0 100 4h4a2 2 0 010 4H8" />
-            <path d="M12 6v2m0 8v2" />
-          </svg>
-        </div>
-        <h3 className={styles.subsidyTitle}>
-          Jusqu'à <span className={styles.accent}>50 % de prise en charge</span> avec le Pass Occitanie
-        </h3>
-        <p className={styles.subsidyText}>
-          Vous êtes une TPE ou un artisan en Aveyron ? La Région Occitanie finance jusqu'à
-          la moitié de votre projet de digitalisation via le{' '}
-          <strong>Pass Occitanie Numérique</strong>. Concrètement, votre site « Essentiel Local »
-          pourrait ne vous coûter que <strong>300 €</strong> au lieu de 600 €.
-        </p>
-        <p className={styles.subsidyNote}>
-          Je vous accompagne gratuitement dans le montage du dossier. Parlons-en !
-        </p>
-        <a href="#contact" className={styles.subsidyBtn}>
-          Vérifier mon éligibilité
-        </a>
-      </motion.div>
-
       {/* Bloc argumentaire SEO */}
       <motion.div
         className={styles.seoBlock}

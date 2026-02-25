@@ -226,74 +226,6 @@
   box-shadow: 0 4px 16px rgba(227,83,54,.3);
 }
 
-/* ─── Bloc Subventions ─── */
-.subsidyBlock {
-  max-width: 1100px;
-  margin: var(--sp-xl) auto 0;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(227,83,54,.06) 0%, rgba(237,221,83,.06) 100%);
-  border: 1.5px solid rgba(227,83,54,.18);
-  border-radius: var(--r-lg);
-  padding: var(--sp-xl) var(--sp-lg);
-}
-
-.subsidyIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: rgba(227,83,54,.1);
-  border-radius: 50%;
-  margin-bottom: var(--sp-sm);
-}
-
-.subsidyTitle {
-  font-size: var(--fs-2xl);
-  font-weight: 800;
-  color: var(--c-dark);
-  margin-bottom: var(--sp-sm);
-}
-
-.subsidyText {
-  font-size: var(--fs-base);
-  color: var(--c-gray);
-  max-width: 620px;
-  margin: 0 auto var(--sp-sm);
-  line-height: 1.7;
-}
-
-.subsidyText strong {
-  color: var(--c-dark);
-  font-weight: 700;
-}
-
-.subsidyNote {
-  font-size: var(--fs-sm);
-  color: var(--c-accent);
-  font-weight: 600;
-  margin-bottom: var(--sp-md);
-}
-
-.subsidyBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  padding: 0.75rem 2rem;
-  border-radius: var(--r-full);
-  background: var(--c-accent);
-  color: #fff;
-  transition: all var(--tr-fast);
-}
-
-.subsidyBtn:hover {
-  background: var(--c-accent-dk);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(227,83,54,.3);
-}
-
 /* ─── Bloc SEO / Bénéfices métiers ─── */
 .seoBlock {
   max-width: 1100px;
@@ -385,9 +317,4 @@
 :global([data-theme="dark"]) .seoItem {
   background: var(--c-bg-alt);
   border-color: var(--c-border);
-}
-
-:global([data-theme="dark"]) .subsidyBlock {
-  background: linear-gradient(135deg, rgba(227,83,54,.08) 0%, rgba(237,221,83,.04) 100%);
-  border-color: rgba(227,83,54,.25);
 }
