@@ -4,6 +4,35 @@
   background: var(--c-dark);
   color: var(--c-gray-light);
   padding: var(--sp-2xl) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Separator gradient animé en haut du footer */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-accent), rgba(237, 221, 83, .6), var(--c-accent), transparent);
+  background-size: 200% 100%;
+  animation: footerLine 4s ease-in-out infinite;
+}
+
+@keyframes footerLine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Grille 3 colonnes */
@@ -12,7 +41,7 @@
   grid-template-columns: 2fr 1fr 1.5fr;
   gap: var(--sp-xl);
   padding-bottom: var(--sp-2xl);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
 /* Marque */
@@ -23,7 +52,9 @@
   margin-bottom: var(--sp-xs);
 }
 
-.accent { color: var(--c-accent); }
+.accent {
+  color: var(--c-accent);
+}
 
 .tagline {
   font-size: var(--fs-sm);
@@ -52,12 +83,34 @@
 .contact a {
   font-size: var(--fs-sm);
   color: var(--c-gray);
-  transition: color var(--tr-fast);
+  transition: color var(--tr-fast), transform var(--tr-fast);
+  display: inline-block;
+  position: relative;
+}
+
+/* Underline animé sur les liens */
+.links a::after,
+.contact a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--c-accent);
+  transition: width 0.3s ease;
+  border-radius: 1px;
 }
 
 .links a:hover,
 .contact a:hover {
   color: var(--c-accent);
+  transform: translateX(4px);
+}
+
+.links a:hover::after,
+.contact a:hover::after {
+  width: 100%;
 }
 
 .contact li {
@@ -84,7 +137,9 @@
   transition: color var(--tr-fast);
 }
 
-.legal a:hover { color: var(--c-accent); }
+.legal a:hover {
+  color: var(--c-accent);
+}
 
 .legalBtn {
   background: none;
@@ -97,9 +152,13 @@
   transition: color var(--tr-fast);
 }
 
-.legalBtn:hover { color: var(--c-accent); }
+.legalBtn:hover {
+  color: var(--c-accent);
+}
 
-.sep { opacity: 0.4; }
+.sep {
+  opacity: 0.4;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -107,6 +166,7 @@
     grid-template-columns: 1fr;
     gap: var(--sp-lg);
   }
+
   .bottom {
     flex-direction: column;
     gap: var(--sp-xs);

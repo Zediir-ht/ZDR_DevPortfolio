@@ -16,9 +16,14 @@
   margin-bottom: var(--sp-xs);
 }
 
-.title { font-family: 'Aquire', var(--ff); font-weight: 800; color: var(--c-dark); }
+.title {
+  font-family: 'Aquire', var(--ff);
+  font-weight: 800;
+  color: var(--c-dark);
+}
+
 .accent {
-  background: linear-gradient(137deg, rgba(227,83,54,1) 0%, rgba(227,77,32,1) 25%, rgba(237,221,83,1) 50%, rgba(227,83,54,1) 75%, rgba(227,77,32,1) 100%);
+  background: linear-gradient(137deg, rgba(227, 83, 54, 1) 0%, rgba(227, 77, 32, 1) 25%, rgba(237, 221, 83, 1) 50%, rgba(227, 83, 54, 1) 75%, rgba(227, 77, 32, 1) 100%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -27,9 +32,17 @@
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .subtitle {
@@ -74,6 +87,7 @@
   font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--c-dark);
+  transition: color var(--tr-fast);
 }
 
 .input,
@@ -85,14 +99,15 @@
   background: var(--c-bg-alt);
   border: 1.5px solid var(--c-border);
   border-radius: var(--r-md);
-  transition: border-color var(--tr-fast), box-shadow var(--tr-fast);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   outline: none;
 }
 
 .input:focus,
 .textarea:focus {
   border-color: var(--c-accent);
-  box-shadow: 0 0 0 3px rgba(227,83,54,.12);
+  box-shadow: 0 0 0 3px rgba(227, 83, 54, .12), 0 4px 16px rgba(227, 83, 54, .06);
+  transform: translateY(-1px);
 }
 
 .inputError {
@@ -110,7 +125,7 @@
   font-weight: 500;
 }
 
-/* Bouton */
+/* Bouton — shimmer continu */
 .submitBtn {
   display: block;
   width: 100%;
@@ -122,11 +137,39 @@
   border: none;
   border-radius: var(--r-md);
   cursor: pointer;
-  transition: background var(--tr-fast);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  animation: submitShimmer 5s ease-in-out infinite;
+}
+
+@keyframes submitShimmer {
+
+  0%,
+  70%,
+  100% {
+    left: -60%;
+  }
+
+  85% {
+    left: 120%;
+  }
 }
 
 .submitBtn:hover {
   background: var(--c-accent-dk);
+  box-shadow: 0 4px 20px rgba(227, 83, 54, .3);
 }
 
 .success {
@@ -135,8 +178,9 @@
   font-weight: 500;
   text-align: center;
   padding: var(--sp-sm);
-  background: rgba(16,185,129,.08);
+  background: rgba(16, 185, 129, .08);
   border-radius: var(--r-md);
+  border: 1px solid rgba(16, 185, 129, .2);
 }
 
 .errorMsg {
@@ -145,8 +189,9 @@
   font-weight: 500;
   text-align: center;
   padding: var(--sp-sm);
-  background: rgba(239,68,68,.08);
+  background: rgba(239, 68, 68, .08);
   border-radius: var(--r-md);
+  border: 1px solid rgba(239, 68, 68, .2);
 }
 
 /* ---------- Informations ---------- */
@@ -166,11 +211,13 @@
   background: var(--c-bg-alt);
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
-  transition: box-shadow var(--tr);
+  transition: box-shadow 0.4s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .infoCard:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 24px rgba(227, 83, 54, .08);
+  transform: translateY(-3px);
+  border-color: rgba(227, 83, 54, .15);
 }
 
 .infoIcon {
@@ -180,9 +227,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(227,83,54,.08);
+  background: rgba(227, 83, 54, .08);
   color: var(--c-accent);
   border-radius: var(--r-md);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.infoCard:hover .infoIcon {
+  transform: scale(1.1);
+  background: rgba(227, 83, 54, .15);
 }
 
 .infoTitle {
@@ -199,7 +252,9 @@
   transition: color var(--tr-fast);
 }
 
-.infoLink:hover { color: var(--c-accent-dk); }
+.infoLink:hover {
+  color: var(--c-accent-dk);
+}
 
 .infoText {
   font-size: var(--fs-sm);
@@ -212,6 +267,12 @@
   background: var(--c-dark);
   border-radius: var(--r-lg);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
 }
 
 .mapIframe {

@@ -3,7 +3,9 @@
  * ---------
  * Section « À propos » : présentation orientée partenaire local,
  * avec des bénéfices métiers concrets au lieu de barres de compétences.
+ * Animations : portrait parallax, tilt 3D sur cards, badges pop staggeré.
  */
+import { useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import AveyronMap from '../AveyronMap/AveyronMap';
@@ -52,25 +54,100 @@ const BENEFITS = [
   },
 ];
 
-/* Animation pour les cartes */
+/* Animation pour les cartes — stagger + spring */
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.5, ease: 'easeOut' },
+    scale: 1,
+    transition: { delay: i * 0.12, type: 'spring', stiffness: 120, damping: 14 },
   }),
 };
+
+/* Header label slide in */
+const labelVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const titleVariants = {
+  hidden: { opacity: 0, scale: 0.95, filter: 'blur(4px)' },
+  visible: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 0.6, ease: 'easeOut', delay: 0.1 } },
+};
+
+/* Value badges pop */
+const valueBadgeVariants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 250, damping: 12, delay: 0.3 + i * 0.08 },
+  }),
+};
+
+/* Tilt 3D handler pour les cards */
+function useTilt() {
+  const ref = useRef(null);
+  const onMouseMove = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1.02)`;
+  }, []);
+  const onMouseLeave = useCallback(() => {
+    const el = ref.current;
+    if (el) el.style.transform = '';
+  }, []);
+  return { ref, onMouseMove, onMouseLeave };
+}
+
+function BenefitCard({ benefit, index }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt();
+  return (
+    <motion.div
+      ref={ref}
+      className={styles.skillCard}
+      custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={cardVariants}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className={styles.benefitIcon}>{benefit.icon}</div>
+      <h4 className={styles.skillCategory}>{benefit.title}</h4>
+      <p className={styles.benefitDesc}>{benefit.desc}</p>
+    </motion.div>
+  );
+}
 
 export default function About() {
   return (
     <SectionWrapper id="a-propos" className={styles.bgImage}>
       {/* En-tête de section */}
       <div className={styles.header}>
-        <span className={styles.label}>À propos</span>
-        <h2 className={styles.title}>
+        <motion.span
+          className={styles.label}
+          variants={labelVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          À propos
+        </motion.span>
+        <motion.h2
+          className={styles.title}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           On se connaît <span className={styles.accent}>pas encore ?</span>
-        </h2>
+        </motion.h2>
       </div>
 
       <div className={styles.grid}>
@@ -78,10 +155,10 @@ export default function About() {
         <div className={styles.introRow}>
           <motion.div
             className={styles.portraitWrapper}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.85, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <img
               src="/portrait.png"
@@ -95,7 +172,13 @@ export default function About() {
           </motion.div>
 
           {/* Texte */}
-          <div className={styles.text}>
+          <motion.div
+            className={styles.text}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <p>
               Moi c'est <strong>Corentin Mayrand</strong>, ruthénois pure souche et
               développeur web indépendant. J'ai grandi ici, je connais nos rues, nos
@@ -113,31 +196,29 @@ export default function About() {
               qui <strong>ramène de vrais clients</strong> — à prix fixe, dans les délais.
             </p>
 
-            {/* Valeurs */}
+            {/* Valeurs — pop staggeré */}
             <div className={styles.values}>
-              {['Proximité', 'Transparence', 'Réactivité', 'Prix juste'].map((v) => (
-                <span key={v} className={styles.valueBadge}>✓ {v}</span>
+              {['Proximité', 'Transparence', 'Réactivité', 'Prix juste'].map((v, i) => (
+                <motion.span
+                  key={v}
+                  className={styles.valueBadge}
+                  custom={i}
+                  variants={valueBadgeVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  ✓ {v}
+                </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Bénéfices métiers (au lieu des compétences techniques) */}
+        {/* Bénéfices métiers (tilt 3D) */}
         <div className={styles.skills}>
           {BENEFITS.map((benefit, i) => (
-            <motion.div
-              key={benefit.title}
-              className={styles.skillCard}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-            >
-              <div className={styles.benefitIcon}>{benefit.icon}</div>
-              <h4 className={styles.skillCategory}>{benefit.title}</h4>
-              <p className={styles.benefitDesc}>{benefit.desc}</p>
-            </motion.div>
+            <BenefitCard key={benefit.title} benefit={benefit} index={i} />
           ))}
         </div>
       </div>

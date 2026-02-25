@@ -103,6 +103,33 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* ========== Cursor Glow ========== */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  margin-left: -160px;
+  margin-top: -160px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(circle, rgba(227,83,54,.07) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] .cursor-glow {
+  background: radial-gradient(circle, rgba(227,83,54,.12) 0%, transparent 70%);
+}
+
+@media (pointer: coarse) {
+  .cursor-glow { display: none; }
+}
+
 /* ========== Dark Mode ========== */
 [data-theme="dark"] {
   --c-bg:         #000000;
@@ -120,7 +147,7 @@ body {
   --shadow-xl:  0 24px 48px rgba(0,0,0,.6);
 }
 
-/* Fond animé subtil — orbes flottants */
+/* ========== Orbes flottants (3 orbes) ========== */
 body::before,
 body::after {
   content: '';
@@ -150,6 +177,23 @@ body::after {
   animation: orbFloat2 22s ease-in-out infinite;
 }
 
+/* 3ème orbe — via #root::after */
+#root::after {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.10;
+  background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+  top: 40%;
+  right: 10%;
+  animation: orbFloat3 25s ease-in-out infinite;
+}
+
 @keyframes orbFloat1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(-100px, 150px) scale(1.15); }
@@ -162,6 +206,49 @@ body::after {
   25% { transform: translate(120px, -100px) scale(1.12); }
   50% { transform: translate(-80px, -200px) scale(0.88); }
   75% { transform: translate(100px, -80px) scale(1.08); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-80px, 80px) scale(1.1); }
+  50% { transform: translate(60px, -120px) scale(0.92); }
+  75% { transform: translate(-40px, -60px) scale(1.06); }
+}
+
+/* ========== Global Utility Keyframes ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { left: -60%; }
+  100% { left: 120%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(227,83,54,.4); }
+  50%      { box-shadow: 0 0 20px 4px rgba(227,83,54,.25); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(227,83,54,.2); }
+  50%      { border-color: rgba(227,83,54,.6); }
 }
 
 /* Headings */

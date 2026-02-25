@@ -23,7 +23,7 @@
 }
 
 .accent {
-  background: linear-gradient(137deg, rgba(227,83,54,1) 0%, rgba(227,77,32,1) 25%, rgba(237,221,83,1) 50%, rgba(227,83,54,1) 75%, rgba(227,77,32,1) 100%);
+  background: linear-gradient(137deg, rgba(227, 83, 54, 1) 0%, rgba(227, 77, 32, 1) 25%, rgba(237, 221, 83, 1) 50%, rgba(227, 83, 54, 1) 75%, rgba(227, 77, 32, 1) 100%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -32,9 +32,17 @@
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .subtitle {
@@ -79,11 +87,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: box-shadow var(--tr), transform var(--tr);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
 }
 
 /* Carte mise en avant */
@@ -92,7 +101,33 @@
   box-shadow: 0 0 0 1px var(--c-accent), var(--shadow-md);
 }
 
-/* Badge "Recommandé" */
+.cardHighlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c-accent), #eddd53, var(--c-accent));
+  background-size: 200% 100%;
+  animation: highlightBar 3s ease-in-out infinite;
+}
+
+@keyframes highlightBar {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Badge "Recommandé" — pulse */
 .cardBadge {
   position: absolute;
   top: var(--sp-sm);
@@ -104,6 +139,21 @@
   padding: 0.25rem 0.75rem;
   border-radius: var(--r-full);
   letter-spacing: 0.02em;
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 83, 54, .5);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 12px 3px rgba(227, 83, 54, .25);
+    transform: scale(1.04);
+  }
 }
 
 .period {
@@ -186,14 +236,18 @@
   border-radius: var(--r-md);
   border: 1.5px solid var(--c-border);
   color: var(--c-dark);
-  transition: all var(--tr-fast);
+  transition: all 0.3s ease;
   margin-top: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .cardBtn:hover {
   background: var(--c-accent);
   color: var(--c-white);
   border-color: var(--c-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(227, 83, 54, .25);
 }
 
 .cardHighlight .cardBtn {
@@ -211,19 +265,28 @@
   left: -60%;
   width: 40%;
   height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   transform: skewX(-20deg);
-  transition: left 0.5s ease;
+  animation: cardBtnShimmer 4s ease-in-out infinite;
 }
 
-.cardHighlight .cardBtn:hover::after {
-  left: 120%;
+@keyframes cardBtnShimmer {
+
+  0%,
+  70%,
+  100% {
+    left: -60%;
+  }
+
+  85% {
+    left: 120%;
+  }
 }
 
 .cardHighlight .cardBtn:hover {
   background: var(--c-accent-dk);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(227,83,54,.3);
+  box-shadow: 0 4px 16px rgba(227, 83, 54, .3);
 }
 
 /* ─── Bloc SEO / Bénéfices métiers ─── */
@@ -262,12 +325,13 @@
   border-radius: var(--r-lg);
   padding: var(--sp-lg);
   text-align: center;
-  transition: box-shadow var(--tr), transform var(--tr);
+  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
 }
 
 .seoItem:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 30px rgba(227, 83, 54, .1);
   transform: translateY(-4px);
+  border-color: rgba(227, 83, 54, .2);
 }
 
 .seoIcon {
@@ -300,9 +364,19 @@
     grid-template-columns: 1fr;
     max-width: 480px;
   }
-  .card { align-items: center; text-align: center; }
-  .features { align-items: center; }
-  .pricing { justify-content: center; }
+
+  .card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .features {
+    align-items: center;
+  }
+
+  .pricing {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {

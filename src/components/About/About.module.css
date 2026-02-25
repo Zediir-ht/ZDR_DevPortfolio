@@ -9,12 +9,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(227,83,54,.08) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(circle, rgba(227, 83, 54, .08) 1.2px, transparent 1.2px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 15%, rgba(0, 0, 0, 0.6) 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 15%, rgba(0, 0, 0, 0.6) 85%, transparent 100%);
 }
 
 /* En-tête */
@@ -40,7 +40,7 @@
 }
 
 .accent {
-  background: linear-gradient(137deg, rgba(227,83,54,1) 0%, rgba(227,77,32,1) 25%, rgba(237,221,83,1) 50%, rgba(227,83,54,1) 75%, rgba(227,77,32,1) 100%);
+  background: linear-gradient(137deg, rgba(227, 83, 54, 1) 0%, rgba(227, 77, 32, 1) 25%, rgba(237, 221, 83, 1) 50%, rgba(227, 83, 54, 1) 75%, rgba(227, 77, 32, 1) 100%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -49,9 +49,17 @@
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Grille 2 colonnes */
@@ -84,11 +92,12 @@
   object-fit: cover;
   aspect-ratio: 4 / 5;
   filter: grayscale(15%);
-  transition: filter var(--tr);
+  transition: filter var(--tr), transform 0.5s ease;
 }
 
 .portrait:hover {
   filter: grayscale(0%);
+  transform: scale(1.03);
 }
 
 .portraitAccent {
@@ -100,6 +109,29 @@
   z-index: -1;
   transform: translate(12px, 12px);
   pointer-events: none;
+  animation: portraitAccentRotate 20s linear infinite;
+}
+
+@keyframes portraitAccentRotate {
+  0% {
+    transform: translate(12px, 12px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(8px, 15px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(14px, 10px) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(10px, 13px) rotate(-1deg);
+  }
+
+  100% {
+    transform: translate(12px, 12px) rotate(0deg);
+  }
 }
 
 /* Texte */
@@ -141,6 +173,13 @@
   padding: 0.35rem 0.9rem;
   border-radius: var(--r-full);
   border: 1px solid var(--c-border);
+  transition: transform var(--tr-fast), box-shadow var(--tr-fast), border-color var(--tr-fast);
+}
+
+.valueBadge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(227, 83, 54, .12);
+  border-color: var(--c-accent);
 }
 
 /* Compétences → Bénéfices (pleine largeur sous l'intro) */
@@ -157,12 +196,43 @@
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
   padding: var(--sp-md);
-  transition: box-shadow var(--tr), transform var(--tr);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform;
+}
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 30%, var(--c-accent) 50%, transparent 70%);
+  background-size: 300% 300%;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skillCard:hover::before {
+  opacity: 1;
+  animation: borderSweep 2s linear infinite;
+}
+
+@keyframes borderSweep {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 300% 300%;
+  }
 }
 
 .skillCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(227, 83, 54, .12);
 }
 
 .benefitIcon {
@@ -190,15 +260,19 @@
     gap: var(--sp-xl);
     justify-items: center;
   }
+
   .portraitWrapper {
     width: 220px;
   }
+
   .text {
     text-align: center;
   }
+
   .values {
     justify-content: center;
   }
+
   .skills {
     grid-template-columns: 1fr 1fr;
   }
@@ -208,9 +282,11 @@
   .skills {
     grid-template-columns: 1fr;
   }
+
   .portraitWrapper {
     width: 180px;
   }
+
   .values {
     justify-content: center;
   }
@@ -221,10 +297,4 @@
 :global([data-theme="dark"]) .valueBadge {
   background: var(--c-bg-alt);
   border-color: var(--c-border);
-}
-
-@media (max-width: 480px) {
-  .skills {
-    grid-template-columns: 1fr;
-  }
 }

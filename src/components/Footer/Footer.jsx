@@ -2,17 +2,45 @@
  * Footer.jsx
  * ----------
  * Pied de page avec mentions légales, liens rapides et coordonnées.
+ * Animations : fade-in-up staggeré au scroll, liens avec underline animé.
  */
+import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
+/* Stagger container */
+const footerContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+};
+
+const colVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 100, damping: 14 },
+  },
+};
+
+const bottomVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5, delay: 0.5 } },
+};
+
 export default function Footer({ onOpenLegal }) {
   return (
-    <footer className={styles.footer}>
+    <motion.footer
+      className={styles.footer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={footerContainerVariants}
+    >
       <div className={`container ${styles.grid}`}>
         {/* Colonne 1 – Marque */}
-        <div className={styles.brand}>
+        <motion.div className={styles.brand} variants={colVariants}>
           <h4 className={styles.logo}>
             <span className={styles.accent}>Zdr</span>_DEV
           </h4>
@@ -22,10 +50,10 @@ export default function Footer({ onOpenLegal }) {
           <p className={styles.tagline}>
             Sites web pour artisans, commerçants<br />et restaurateurs du 12.
           </p>
-        </div>
+        </motion.div>
 
         {/* Colonne 2 – Liens rapides */}
-        <div className={styles.links}>
+        <motion.div className={styles.links} variants={colVariants}>
           <h5 className={styles.colTitle}>Navigation</h5>
           <ul>
             <li><a href="#accueil">Accueil</a></li>
@@ -33,10 +61,10 @@ export default function Footer({ onOpenLegal }) {
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Colonne 3 – Contact */}
-        <div className={styles.contact}>
+        <motion.div className={styles.contact} variants={colVariants}>
           <h5 className={styles.colTitle}>Contact</h5>
           <ul>
             <li>
@@ -46,11 +74,11 @@ export default function Footer({ onOpenLegal }) {
             </li>
             <li>Rodez, Aveyron (12)</li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bas de page */}
-      <div className={`container ${styles.bottom}`}>
+      <motion.div className={`container ${styles.bottom}`} variants={bottomVariants}>
         <p>© {CURRENT_YEAR} Zdr_DEV — Tous droits réservés.</p>
         <p className={styles.legal}>
           <button
@@ -69,7 +97,7 @@ export default function Footer({ onOpenLegal }) {
             Politique de confidentialité
           </button>
         </p>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 }
