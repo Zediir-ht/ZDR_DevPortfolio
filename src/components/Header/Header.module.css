@@ -1,6 +1,5 @@
-/* Header.module.css */
+/* Header.module.css — Navigation fixe, identité occitane */
 
-/* ---------- Barre fixe ---------- */
 .header {
   position: fixed;
   top: 0;
@@ -13,10 +12,10 @@
 }
 
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(28, 28, 28, 0.92);
   backdrop-filter: blur(18px) saturate(1.4);
   -webkit-backdrop-filter: blur(18px) saturate(1.4);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 8px 24px rgba(0, 0, 0, .04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1);
   padding: var(--sp-xs) 0;
 }
 
@@ -27,41 +26,33 @@
   gap: var(--sp-lg);
 }
 
-/* ---------- Logo ---------- */
+/* ── Logo ── */
 .logo {
   flex-shrink: 0;
-  font-family: 'Aquire', var(--ff);
-  font-size: var(--fs-xl);
-  font-weight: 400;
-  letter-spacing: -0.5px;
-  color: var(--c-dark);
+  font-family: 'Brandbe', var(--ff);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-blanc);
   transition: color var(--tr-fast);
 }
 
 .logoAccent {
-  background: linear-gradient(137deg, rgba(227, 83, 54, 1) 0%, rgba(227, 77, 32, 1) 25%, rgba(237, 221, 83, 1) 50%, rgba(227, 83, 54, 1) 75%, rgba(227, 77, 32, 1) 100%);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 4s ease-in-out infinite;
+  color: var(--c-blanc);
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+.logoSub {
+  font-family: 'Aquire', var(--ff);
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: var(--c-blanc);
+  opacity: 0.85;
 }
 
-/* ---------- Nav desktop ---------- */
+/* ── Nav desktop ── */
 .desktopNav {
   position: absolute;
   left: 50%;
@@ -76,7 +67,7 @@
 .desktopNav a {
   font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
   position: relative;
   padding: var(--sp-xs) 0;
   transition: color var(--tr-fast);
@@ -95,7 +86,7 @@
 }
 
 .desktopNav a:hover {
-  color: var(--c-dark);
+  color: var(--c-blanc);
 }
 
 .desktopNav a:hover::after {
@@ -103,7 +94,7 @@
   left: 0;
 }
 
-/* ---------- Right actions ---------- */
+/* ── Right actions ── */
 .rightActions {
   display: flex;
   align-items: center;
@@ -111,84 +102,24 @@
   flex-shrink: 0;
 }
 
-/* ---------- Theme toggle ---------- */
-.themeToggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1.5px solid var(--c-border);
-  background: transparent;
-  color: var(--c-gray);
-  cursor: pointer;
-  transition: color var(--tr-fast), border-color var(--tr-fast), background var(--tr-fast);
-}
-
-.themeToggle:hover {
-  color: var(--c-accent);
-  border-color: var(--c-accent);
-  background: rgba(227, 83, 54, .06);
-}
-
-/* ---------- CTA ---------- */
+/* ── CTA ── */
 .cta {
-  position: relative;
+  font-family: 'Aquire', var(--ff);
   font-size: var(--fs-sm);
   font-weight: 600;
   padding: 0.55rem 1.4rem;
-  border-radius: var(--r-full);
+  border-radius: var(--r-md);
   background: var(--c-accent);
-  color: var(--c-white);
-  overflow: hidden;
+  color: var(--c-blanc);
   transition: background var(--tr-fast), box-shadow var(--tr-fast);
-  animation: ctaPulse 3s ease-in-out infinite;
-}
-
-@keyframes ctaPulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(227, 83, 54, .35);
-  }
-
-  50% {
-    box-shadow: 0 0 18px 3px rgba(227, 83, 54, .2);
-  }
-}
-
-.cta::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transform: skewX(-20deg);
-  animation: ctaShimmer 4s ease-in-out infinite;
-}
-
-@keyframes ctaShimmer {
-
-  0%,
-  70%,
-  100% {
-    left: -60%;
-  }
-
-  85% {
-    left: 120%;
-  }
 }
 
 .cta:hover {
   background: var(--c-accent-dk);
-  box-shadow: 0 4px 20px rgba(227, 83, 54, .4);
+  box-shadow: 0 4px 16px rgba(158, 27, 31, 0.3);
 }
 
-/* ---------- Hamburger ---------- */
+/* ── Hamburger ── */
 .burger {
   display: none;
   flex-direction: column;
@@ -203,7 +134,7 @@
 .burger span {
   width: 24px;
   height: 2px;
-  background: var(--c-dark);
+  background: var(--c-blanc);
   border-radius: 2px;
   transition: transform var(--tr), opacity var(--tr);
 }
@@ -220,18 +151,18 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ---------- Mobile nav overlay ---------- */
+/* ── Mobile nav ── */
 .mobileNav {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background: var(--c-white);
-  box-shadow: var(--shadow-lg);
-  padding: var(--sp-lg) 0;
+  background: rgba(28, 28, 28, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-lg) 0;
 }
 
 .mobileNav ul {
@@ -244,29 +175,21 @@
 .mobileNav a {
   font-size: var(--fs-lg);
   font-weight: 500;
-  color: var(--c-dark);
+  color: var(--c-text-light-muted);
   padding: var(--sp-xs) var(--sp-lg);
-  transition: color var(--tr-fast), transform var(--tr-fast);
+  transition: color var(--tr-fast);
 }
 
 .mobileNav a:hover {
   color: var(--c-accent);
-  transform: translateX(4px);
 }
 
-/* ---------- Dark mode overrides ---------- */
-:global([data-theme="dark"]) .header.scrolled {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(18px) saturate(1.3);
-  -webkit-backdrop-filter: blur(18px) saturate(1.3);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .2);
+.mobileCta {
+  color: var(--c-accent) !important;
+  font-weight: 600 !important;
 }
 
-:global([data-theme="dark"]) .mobileNav {
-  background: rgba(0, 0, 0, 0.95);
-}
-
-/* ---------- Responsive ---------- */
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .desktopNav {
     display: none;

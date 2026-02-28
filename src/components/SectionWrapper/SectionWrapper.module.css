@@ -1,26 +1,79 @@
-/* SectionWrapper.module.css */
+/* SectionWrapper.module.css — orbes flottantes + parallaxe */
+
 .section {
   padding: var(--sp-3xl) 0;
   position: relative;
+  background: var(--c-bg);
+  overflow: hidden;
 }
 
-/* Grille de points subtile */
-.section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(227,83,54,.08) 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.6) 85%, transparent 100%);
-}
-
-.alt {
-  background: var(--c-bg-alt);
+.dark {
+  background: var(--c-bg-dark);
 }
 
 .inner {
   width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Orbes flottantes ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  z-index: 0;
+  will-change: transform;
+}
+
+.orb1 {
+  width: 420px;
+  height: 420px;
+  top: -8%;
+  right: -10%;
+  animation: driftOrb1 16s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  bottom: -8%;
+  left: -8%;
+  animation: driftOrb2 20s ease-in-out infinite;
+}
+
+/* Couleurs sections sombres */
+.orbDark.orb1 {
+  background: radial-gradient(circle, rgba(158, 27, 31, 0.14) 0%, transparent 70%);
+}
+
+.orbDark.orb2 {
+  background: radial-gradient(circle, rgba(212, 160, 23, 0.10) 0%, transparent 70%);
+}
+
+/* Couleurs sections claires */
+.orbLight.orb1 {
+  background: radial-gradient(circle, rgba(158, 27, 31, 0.07) 0%, transparent 70%);
+}
+
+.orbLight.orb2 {
+  background: radial-gradient(circle, rgba(212, 160, 23, 0.06) 0%, transparent 70%);
+}
+
+@keyframes driftOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-25px, 35px) scale(1.06); }
+  66%      { transform: translate(18px, -18px) scale(0.94); }
+}
+
+@keyframes driftOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -25px) scale(1.07); }
+  66%      { transform: translate(-15px, 20px) scale(0.95); }
+}
+
+@media (max-width: 768px) {
+  .orb1 { width: 260px; height: 260px; }
+  .orb2 { width: 200px; height: 200px; }
 }

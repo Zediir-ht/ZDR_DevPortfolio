@@ -13,7 +13,7 @@
 }
 
 .mapTitle {
-  font-family: 'Aquire', var(--ff);
+  font-family: 'Made Tommy', var(--ff);
   font-weight: 800;
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   color: var(--c-dark);
@@ -171,7 +171,7 @@
 
 /* Labels de villes */
 .cityLabelMain {
-  font-family: 'Aquire', var(--ff);
+  font-family: 'Made Tommy', var(--ff);
   font-size: 42px;
   font-weight: 700;
   fill: var(--c-dark);

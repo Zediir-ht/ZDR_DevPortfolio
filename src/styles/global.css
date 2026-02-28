@@ -1,6 +1,15 @@
 /* =========================================================
-   Global Styles & CSS Custom Properties
+   Global Styles — Identité Occitane Premium
+   Palette : Rouge #9E1B1F · Or #D4A017 · Noir #1C1C1C · Blanc cassé #F4F1E8
    ========================================================= */
+
+@font-face {
+  font-family: 'Brandbe';
+  src: url('../fonts/Brandbe Extra Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Mainlux';
@@ -34,34 +43,90 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Made Tommy';
+  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Light_PERSONAL USE.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Made Tommy';
+  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Regular_PERSONAL USE.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Made Tommy';
+  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Medium_PERSONAL USE.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Made Tommy';
+  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Bold_PERSONAL USE.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Made Tommy';
+  src: url('../fonts/Made-Tommy-Font/MADE TOMMY ExtraBold_PERSONAL USE.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* Couleurs */
-  --c-bg:         #ffffff;
-  --c-bg-alt:     #f8fafc;
-  --c-dark:       #0f172a;
-  --c-dark-soft:  #1e293b;
-  --c-gray:       #64748b;
-  --c-gray-light: #cbd5e1;
-  --c-border:     #e2e8f0;
-  --c-accent:     #e35336;
-  --c-accent-dk:  #c4422a;
-  --c-success:    #10b981;
-  --c-danger:     #ef4444;
-  --c-white:      #ffffff;
+  /* ── Palette Occitane ── */
+  --c-rouge:     #9E1B1F;
+  --c-rouge-dk:  #7A1518;
+  --c-or:        #D4A017;
+  --c-or-soft:   rgba(212, 160, 23, 0.15);
+  --c-noir:      #1C1C1C;
+  --c-noir-soft: #2A2A2A;
+  --c-blanc:     #F4F1E8;
+  --c-blanc-alt: #EBE7DA;
 
-  /* Typo */
-  --ff: 'Mainlux', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --fs-xs:  0.85rem;
-  --fs-sm:  1rem;
+  /* ── Semantic Tokens ── */
+  --c-bg:              #F4F1E8;
+  --c-bg-alt:          #EBE7DA;
+  --c-bg-dark:         #1C1C1C;
+  --c-bg-dark-alt:     #242424;
+  --c-text:            #1C1C1C;
+  --c-text-soft:       #3D3D3D;
+  --c-text-muted:      #7A7A6E;
+  --c-text-light:      #F4F1E8;
+  --c-text-light-muted:#B8B5AA;
+  --c-accent:          #9E1B1F;
+  --c-accent-dk:       #7A1518;
+  --c-gold:            #D4A017;
+  --c-border:          rgba(28, 28, 28, 0.10);
+  --c-border-dark:     rgba(244, 241, 232, 0.08);
+  --c-success:         #4A7C59;
+  --c-danger:          #9E1B1F;
+  --c-white:           #F4F1E8;
+
+  /* ── Typography ── */
+  --ff: 'Made Tommy', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ff-display: 'Made Tommy', 'Inter', sans-serif;
+  --fs-xs:   0.85rem;
+  --fs-sm:   1rem;
   --fs-base: 1.125rem;
-  --fs-lg:  1.25rem;
-  --fs-xl:  1.4rem;
-  --fs-2xl: 1.7rem;
-  --fs-3xl: 2.25rem;
-  --fs-4xl: 3rem;
-  --fs-5xl: 3.75rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.4rem;
+  --fs-2xl:  1.7rem;
+  --fs-3xl:  2.25rem;
+  --fs-4xl:  3rem;
+  --fs-5xl:  3.75rem;
 
-  /* Spacing */
+  /* ── Spacing ── */
   --sp-xs:  0.5rem;
   --sp-sm:  1rem;
   --sp-md:  1.5rem;
@@ -70,152 +135,45 @@
   --sp-2xl: 5rem;
   --sp-3xl: 7rem;
 
-  /* Radius */
-  --r-sm: 0.375rem;
-  --r-md: 0.625rem;
-  --r-lg: 1rem;
+  /* ── Radius ── */
+  --r-sm:   0.375rem;
+  --r-md:   0.625rem;
+  --r-lg:   1rem;
   --r-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:  0 1px 2px rgba(0,0,0,.05);
-  --shadow-md:  0 4px 12px rgba(0,0,0,.08);
-  --shadow-lg:  0 12px 32px rgba(0,0,0,.10);
-  --shadow-xl:  0 24px 48px rgba(0,0,0,.12);
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, .04);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, .06);
+  --shadow-lg:  0 12px 32px rgba(0, 0, 0, .08);
+  --shadow-xl:  0 24px 48px rgba(0, 0, 0, .10);
 
-  /* Transition */
+  /* ── Transitions ── */
   --tr-fast: 150ms ease;
-  --tr: 300ms ease;
+  --tr:      250ms ease;
   --tr-slow: 500ms ease;
 
   --max-w: 1120px;
 }
 
-/* ---- Reset ---- */
+/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--ff);
-  color: var(--c-dark);
+  color: var(--c-text);
   background: var(--c-bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ========== Cursor Glow ========== */
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 320px;
-  height: 320px;
-  margin-left: -160px;
-  margin-top: -160px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  background: radial-gradient(circle, rgba(227,83,54,.07) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  will-change: transform;
-  mix-blend-mode: screen;
+/* ── Selection ── */
+::selection {
+  background: var(--c-accent);
+  color: var(--c-blanc);
 }
 
-[data-theme="dark"] .cursor-glow {
-  background: radial-gradient(circle, rgba(227,83,54,.12) 0%, transparent 70%);
-}
-
-@media (pointer: coarse) {
-  .cursor-glow { display: none; }
-}
-
-/* ========== Dark Mode ========== */
-[data-theme="dark"] {
-  --c-bg:         #000000;
-  --c-bg-alt:     #0a0a0a;
-  --c-dark:       #f1f5f9;
-  --c-dark-soft:  #e2e8f0;
-  --c-gray:       #94a3b8;
-  --c-gray-light: #475569;
-  --c-border:     #1a1a1a;
-  --c-white:      #111111;
-
-  --shadow-sm:  0 1px 2px rgba(0,0,0,.3);
-  --shadow-md:  0 4px 12px rgba(0,0,0,.4);
-  --shadow-lg:  0 12px 32px rgba(0,0,0,.5);
-  --shadow-xl:  0 24px 48px rgba(0,0,0,.6);
-}
-
-/* ========== Orbes flottants (3 orbes) ========== */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(100px);
-  opacity: 0.15;
-}
-
-body::before {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #e35336 0%, transparent 70%);
-  top: -150px;
-  right: -200px;
-  animation: orbFloat1 18s ease-in-out infinite;
-}
-
-body::after {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, #B19EEF 0%, transparent 70%);
-  bottom: -100px;
-  left: -150px;
-  animation: orbFloat2 22s ease-in-out infinite;
-}
-
-/* 3ème orbe — via #root::after */
-#root::after {
-  content: '';
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(120px);
-  opacity: 0.10;
-  background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
-  top: 40%;
-  right: 10%;
-  animation: orbFloat3 25s ease-in-out infinite;
-}
-
-@keyframes orbFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-100px, 150px) scale(1.15); }
-  50% { transform: translate(80px, 300px) scale(0.9); }
-  75% { transform: translate(-60px, 100px) scale(1.1); }
-}
-
-@keyframes orbFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(120px, -100px) scale(1.12); }
-  50% { transform: translate(-80px, -200px) scale(0.88); }
-  75% { transform: translate(100px, -80px) scale(1.08); }
-}
-
-@keyframes orbFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-80px, 80px) scale(1.1); }
-  50% { transform: translate(60px, -120px) scale(0.92); }
-  75% { transform: translate(-40px, -60px) scale(1.06); }
-}
-
-/* ========== Global Utility Keyframes ========== */
+/* ── Utility Keyframes ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -226,65 +184,25 @@ body::after {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.85); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes shimmer {
-  0%   { left: -60%; }
-  100% { left: 120%; }
-}
-
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(227,83,54,.4); }
-  50%      { box-shadow: 0 0 20px 4px rgba(227,83,54,.25); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
-}
-
-@keyframes borderGlow {
-  0%, 100% { border-color: rgba(227,83,54,.2); }
-  50%      { border-color: rgba(227,83,54,.6); }
-}
-
-/* Headings */
-h1,h2,h3,h4 { font-weight: 700; line-height: 1.2; }
+/* ── Headings ── */
+h1, h2, h3, h4 { font-family: var(--ff-display); font-weight: 700; line-height: 1.2; }
 h1 { font-size: var(--fs-5xl); }
 h2 { font-size: var(--fs-3xl); }
 h3 { font-size: var(--fs-2xl); }
-p  { color: var(--c-gray); }
+p  { color: var(--c-text-muted); }
 a  { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { display: block; max-width: 100%; }
 button, input, textarea { font-family: inherit; }
 
-/* Image occ.png fixe en arrière-plan global */
-main {
-  position: relative;
-}
-
-main::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url('/occ.png') center center / 50% no-repeat;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Utilities */
+/* ── Utilities ── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sp-lg); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
-/* Focus accessible */
+/* ── Focus accessible ── */
 :focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 
-/* Responsive helpers */
+/* ── Responsive ── */
 @media (max-width: 768px) {
   :root {
     --fs-5xl: 2.25rem;
@@ -292,24 +210,6 @@ main::before {
     --fs-3xl: 1.5rem;
     --sp-3xl: 4rem;
     --sp-2xl: 3rem;
-  }
-
-  body::before {
-    width: 350px;
-    height: 350px;
-    top: -80px;
-    right: -100px;
-  }
-
-  body::after {
-    width: 300px;
-    height: 300px;
-    bottom: -50px;
-    left: -80px;
-  }
-
-  main::before {
-    background-size: 80%;
   }
 }
 
@@ -320,14 +220,4 @@ main::before {
     --sp-3xl: 3rem;
   }
   .container { padding: 0 var(--sp-sm); }
-
-  body::before {
-    width: 250px;
-    height: 250px;
-  }
-
-  body::after {
-    width: 200px;
-    height: 200px;
-  }
 }

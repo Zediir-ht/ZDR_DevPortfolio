@@ -1,13 +1,8 @@
 /**
  * Contact.jsx
  * -----------
- * Formulaire de contact sécurisé avec :
- *  – Validation front-end complète
- *  – Protection XSS (sanitize avant envoi)
- *  – Honeypot anti-bot
- *  – Rate limiting basique
- *  – Infos de contact et localisation Rodez
- *  – Animations staggered, shimmer bouton, info cards slide
+ * Section contact — fond clair (blanc cassé).
+ * Formulaire sécurisé avec validation, honeypot, rate limiting.
  */
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,59 +10,33 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { sanitizeInput, isValidEmail } from '../../utils/sanitize';
 import styles from './Contact.module.css';
 
-/* État initial du formulaire */
 const INITIAL_FORM = { name: '', email: '', message: '', honeypot: '' };
-
-/* Limite d'envois pour éviter les abus (par session) */
 const MAX_SUBMISSIONS = 5;
 
-/* Header stagger */
-const headerContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const headerItemVariants = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.5, ease: 'easeOut' } },
-};
-
-/* Form fields stagger */
-const formContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+const headerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const fieldVariants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 120, damping: 14 } },
-};
-
-/* Info cards stagger (from right) */
-const infoContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 const infoCardVariants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 14 } },
+  hidden: { opacity: 0, x: 30 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 export default function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [status, setStatus] = useState(null);
   const submitCount = useRef(0);
 
-  /**
-   * Met à jour un champ du formulaire.
-   * On sanitize en temps réel pour éviter les injections.
-   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // Efface l'erreur du champ dès que l'utilisateur le modifie
     if (errors[name]) {
       setErrors((prev) => {
         const copy = { ...prev };
@@ -77,9 +46,6 @@ export default function Contact() {
     }
   };
 
-  /**
-   * Valide les champs et retourne les erreurs éventuelles.
-   */
   const validate = () => {
     const errs = {};
     const cleanName = sanitizeInput(form.name, 100);
@@ -98,16 +64,9 @@ export default function Contact() {
     return errs;
   };
 
-  /**
-   * Gère la soumission du formulaire.
-   */
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Honeypot : si rempli, c'est un bot
     if (form.honeypot) return;
-
-    // Rate limiting
     if (submitCount.current >= MAX_SUBMISSIONS) {
       setStatus('error');
       return;
@@ -119,14 +78,12 @@ export default function Contact() {
       return;
     }
 
-    // Sanitize les données avant « envoi »
     const payload = {
       name: sanitizeInput(form.name, 100),
       email: sanitizeInput(form.email, 254),
       message: sanitizeInput(form.message, 2000),
     };
 
-    // Envoi via Formspree
     try {
       const res = await fetch('https://formspree.io/f/xnjbzypl', {
         method: 'POST',
@@ -149,35 +106,47 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact">
       {/* En-tête */}
-      <motion.div
-        className={styles.header}
-        variants={headerContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.span className={styles.label} variants={headerItemVariants}>Contact</motion.span>
-        <motion.h2 className={styles.title} variants={headerItemVariants}>
+      <div className={styles.header}>
+        <motion.span
+          className={styles.label}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Contact
+        </motion.span>
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
           Discutons de votre <span className={styles.accent}>projet</span>
         </motion.h2>
-        <motion.p className={styles.subtitle} variants={headerItemVariants}>
+        <motion.p
+          className={styles.subtitle}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
           Dites-moi simplement ce que vous faites et ce dont vous avez besoin.
-          Je vous recontacte sous 24 h, on en discute comme des voisins.
+          Je vous recontacte sous 24 h.
         </motion.p>
-      </motion.div>
+      </div>
 
       <div className={styles.grid}>
-        {/* Formulaire — stagger des champs */}
+        {/* Formulaire */}
         <motion.form
           className={styles.form}
           onSubmit={handleSubmit}
           noValidate
-          variants={formContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Honeypot invisible */}
           <input
             type="text"
             name="honeypot"
@@ -189,11 +158,8 @@ export default function Contact() {
             aria-hidden="true"
           />
 
-          {/* Nom */}
           <motion.div className={styles.field} variants={fieldVariants}>
-            <label htmlFor="contact-name" className={styles.labelField}>
-              Votre nom
-            </label>
+            <label htmlFor="contact-name" className={styles.labelField}>Votre nom</label>
             <input
               id="contact-name"
               type="text"
@@ -206,16 +172,11 @@ export default function Contact() {
               className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
               aria-describedby={errors.name ? 'err-name' : undefined}
             />
-            {errors.name && (
-              <span id="err-name" className={styles.error} role="alert">{errors.name}</span>
-            )}
+            {errors.name && <span id="err-name" className={styles.error} role="alert">{errors.name}</span>}
           </motion.div>
 
-          {/* Email */}
           <motion.div className={styles.field} variants={fieldVariants}>
-            <label htmlFor="contact-email" className={styles.labelField}>
-              Votre email (pour vous recontacter)
-            </label>
+            <label htmlFor="contact-email" className={styles.labelField}>Votre email</label>
             <input
               id="contact-email"
               type="email"
@@ -228,12 +189,9 @@ export default function Contact() {
               className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
               aria-describedby={errors.email ? 'err-email' : undefined}
             />
-            {errors.email && (
-              <span id="err-email" className={styles.error} role="alert">{errors.email}</span>
-            )}
+            {errors.email && <span id="err-email" className={styles.error} role="alert">{errors.email}</span>}
           </motion.div>
 
-          {/* Message */}
           <motion.div className={styles.field} variants={fieldVariants}>
             <label htmlFor="contact-message" className={styles.labelField}>
               Parlez-moi de votre activité et de vos besoins
@@ -244,18 +202,15 @@ export default function Contact() {
               autoComplete="off"
               value={form.message}
               onChange={handleChange}
-              placeholder="Ex : Je suis boulanger à Rodez et j'aimerais un site pour présenter mes produits et prendre des commandes…"
+              placeholder="Ex : Je suis boulanger à Rodez et j'aimerais un site pour présenter mes produits…"
               rows={5}
               maxLength={2000}
               className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
               aria-describedby={errors.message ? 'err-message' : undefined}
             />
-            {errors.message && (
-              <span id="err-message" className={styles.error} role="alert">{errors.message}</span>
-            )}
+            {errors.message && <span id="err-message" className={styles.error} role="alert">{errors.message}</span>}
           </motion.div>
 
-          {/* Bouton envoi — shimmer + scale */}
           <motion.div variants={fieldVariants}>
             <motion.button
               type="submit"
@@ -263,31 +218,28 @@ export default function Contact() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              <span>☕ Discuter de mon projet</span>
+              Discuter de mon projet
             </motion.button>
           </motion.div>
 
-          {/* Feedback */}
           <AnimatePresence>
             {status === 'success' && (
               <motion.p
                 className={styles.success}
-                initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ type: 'spring', stiffness: 150, damping: 12 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
                 role="alert"
               >
-                ✅ C'est envoyé ! Je vous recontacte sous 24 h pour en discuter.
+                ✅ C'est envoyé ! Je vous recontacte sous 24 h.
               </motion.p>
             )}
             {status === 'error' && (
               <motion.p
                 className={styles.errorMsg}
-                initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ type: 'spring', stiffness: 150, damping: 12 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
                 role="alert"
               >
                 ❌ Une erreur est survenue. Veuillez réessayer ou me contacter par email.
@@ -296,15 +248,13 @@ export default function Contact() {
           </AnimatePresence>
         </motion.form>
 
-        {/* Informations de contact — stagger from right */}
+        {/* Informations de contact */}
         <motion.aside
           className={styles.info}
-          variants={infoContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Email */}
           <motion.div className={styles.infoCard} variants={infoCardVariants}>
             <div className={styles.infoIcon} aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -320,7 +270,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Localisation */}
           <motion.div className={styles.infoCard} variants={infoCardVariants}>
             <div className={styles.infoIcon} aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -334,7 +283,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Disponibilité */}
           <motion.div className={styles.infoCard} variants={infoCardVariants}>
             <div className={styles.infoIcon} aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -344,11 +292,10 @@ export default function Contact() {
             </div>
             <div>
               <h4 className={styles.infoTitle}>Disponibilité</h4>
-              <p className={styles.infoText}>Lun – Ven · 9h – 18h<br />RDV possible à Rodez, Millau ou en visio</p>
+              <p className={styles.infoText}>Lun – Ven · 9h – 18h<br />RDV à Rodez, Millau ou en visio</p>
             </div>
           </motion.div>
 
-          {/* Carte Google Maps – Rodez */}
           <motion.div className={styles.mapCard} variants={infoCardVariants}>
             <iframe
               className={styles.mapIframe}
@@ -364,7 +311,6 @@ export default function Contact() {
             <p className={styles.mapText}>
               Basé à Rodez, j'interviens dans tout l'Aveyron : Millau,
               Villefranche-de-Rouergue, Decazeville, Espalion…
-              On peut se retrouver autour d'un café pour discuter de votre projet !
             </p>
           </motion.div>
         </motion.aside>

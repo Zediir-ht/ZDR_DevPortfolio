@@ -1,38 +1,29 @@
-/* Footer.module.css */
+/* Footer.module.css — fond sombre, identité occitane */
 
 .footer {
-  background: var(--c-dark);
-  color: var(--c-gray-light);
+  background: var(--c-noir);
+  color: var(--c-text-light-muted);
   padding: var(--sp-2xl) 0 0;
   position: relative;
   overflow: hidden;
 }
 
-/* Separator gradient animé en haut du footer */
+/* Ligne or mat en haut — animée */
 .footer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--c-accent), rgba(237, 221, 83, .6), var(--c-accent), transparent);
-  background-size: 200% 100%;
-  animation: footerLine 4s ease-in-out infinite;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-or), transparent);
+  opacity: 0.4;
+  animation: shimmerLine 4s ease-in-out infinite;
 }
 
-@keyframes footerLine {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes shimmerLine {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.6; }
 }
 
 /* Grille 3 colonnes */
@@ -41,34 +32,35 @@
   grid-template-columns: 2fr 1fr 1.5fr;
   gap: var(--sp-xl);
   padding-bottom: var(--sp-2xl);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: 1px solid rgba(244, 241, 232, 0.06);
 }
 
 /* Marque */
 .logo {
+  font-family: 'Made Tommy', var(--ff);
   font-size: var(--fs-xl);
-  font-weight: 800;
-  color: #f1f5f9;
+  font-weight: 400;
+  color: var(--c-blanc);
   margin-bottom: var(--sp-xs);
 }
 
-.accent {
+.logoAccent {
   color: var(--c-accent);
 }
 
 .tagline {
   font-size: var(--fs-sm);
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
   line-height: 1.6;
 }
 
 /* Colonnes */
 .colTitle {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--c-white);
+  color: var(--c-or);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.12em;
   margin-bottom: var(--sp-sm);
 }
 
@@ -82,13 +74,13 @@
 .links a,
 .contact a {
   font-size: var(--fs-sm);
-  color: var(--c-gray);
-  transition: color var(--tr-fast), transform var(--tr-fast);
+  color: var(--c-text-light-muted);
+  transition: color var(--tr-fast);
   display: inline-block;
   position: relative;
 }
 
-/* Underline animé sur les liens */
+/* Underline animé */
 .links a::after,
 .contact a::after {
   content: '';
@@ -96,16 +88,14 @@
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 1.5px;
+  height: 1px;
   background: var(--c-accent);
-  transition: width 0.3s ease;
-  border-radius: 1px;
+  transition: width var(--tr);
 }
 
 .links a:hover,
 .contact a:hover {
-  color: var(--c-accent);
-  transform: translateX(4px);
+  color: var(--c-blanc);
 }
 
 .links a:hover::after,
@@ -115,6 +105,7 @@
 
 .contact li {
   font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
 }
 
 /* Bas de page */
@@ -124,21 +115,16 @@
   align-items: center;
   padding: var(--sp-md) 0;
   font-size: var(--fs-xs);
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
+}
+
+.bottom p {
+  color: var(--c-text-light-muted);
 }
 
 .legal {
   display: flex;
   gap: var(--sp-xs);
-}
-
-.legal a {
-  color: var(--c-gray);
-  transition: color var(--tr-fast);
-}
-
-.legal a:hover {
-  color: var(--c-accent);
 }
 
 .legalBtn {
@@ -147,7 +133,7 @@
   padding: 0;
   font-family: inherit;
   font-size: inherit;
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
   cursor: pointer;
   transition: color var(--tr-fast);
 }
@@ -157,7 +143,7 @@
 }
 
 .sep {
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 /* Responsive */

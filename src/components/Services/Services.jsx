@@ -1,17 +1,72 @@
 /**
  * Services.jsx
  * ------------
- * Section tarifs : deux offres à prix fixe (création de site)
- * + trois formules d'abonnement mensuel (maintenance & suivi),
- * bloc subventions Pass Occitanie, et argumentaire SEO.
- * Animations : tilt 3D, compteur de prix, badge pulse, stagger.
+ * Section services & tarifs — fond sombre (noir charbon).
+ * 4 services max + offres à prix fixe + abonnements.
+ * INTÉGRITÉ COMMERCIALE : aucun tarif / service modifié.
  */
-import { useRef, useCallback, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './Services.module.css';
 
-/* ── Offres à prix fixe (création) ── */
+/* ── 4 services principaux ── */
+const SERVICES = [
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    ),
+    title: 'Site vitrine artisan',
+    problem: 'Vos clients ne vous trouvent pas en ligne et passent chez le concurrent.',
+    benefit: 'Un site professionnel qui reflète la qualité de votre travail et rassure vos prospects.',
+    impact: 'Vous apparaissez sur Google quand un client cherche votre métier dans votre ville.',
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+        <path d="M18 8h1a4 4 0 010 8h-1" />
+        <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+        <line x1="6" y1="1" x2="6" y2="4" />
+        <line x1="10" y1="1" x2="10" y2="4" />
+        <line x1="14" y1="1" x2="14" y2="4" />
+      </svg>
+    ),
+    title: 'Site restaurant',
+    problem: 'Vos clients veulent voir la carte et réserver, mais votre présence web est inexistante.',
+    benefit: 'Un site appétissant avec menu, photos et réservation qui donne envie de pousser la porte.',
+    impact: 'Plus de réservations, moins d\'appels inutiles, une image à la hauteur de votre cuisine.',
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
+      </svg>
+    ),
+    title: 'E-commerce local',
+    problem: 'Vous voulez vendre vos produits du terroir au-delà de votre comptoir.',
+    benefit: 'Une boutique en ligne simple pour vendre vos produits locaux partout en France.',
+    impact: 'Un canal de vente qui travaille 24h/24, même quand la boutique est fermée.',
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    title: 'Maintenance web',
+    problem: 'Votre site existe mais il est lent, pas à jour et vous ne savez pas le gérer.',
+    benefit: 'Un site toujours rapide, sécurisé et à jour sans que vous ayez à y penser.',
+    impact: 'Zéro stress technique : concentrez-vous sur votre métier, je m\'occupe du reste.',
+  },
+];
+
+/* ── Offres à prix fixe (création) — NE PAS MODIFIER ── */
 const OFFERS = [
   {
     id: 'essentiel',
@@ -55,7 +110,7 @@ const OFFERS = [
   },
 ];
 
-/* ── Abonnements mensuels (maintenance & suivi) ── */
+/* ── Abonnements mensuels — NE PAS MODIFIER ── */
 const SUBSCRIPTIONS = [
   {
     id: 'tranquillite',
@@ -108,37 +163,19 @@ const SUBSCRIPTIONS = [
   },
 ];
 
-/* Animation des cartes */
+/* ── Animations ── */
 const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { delay: i * 0.15, type: 'spring', stiffness: 100, damping: 14 },
+    transition: { delay: i * 0.12, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
   }),
 };
 
-/* Header stagger */
-const headerContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const headerItemVariants = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.5, ease: 'easeOut' } },
-};
-
-/* SEO items stagger */
-const seoContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
-};
-
-const seoItemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.9 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 120, damping: 14 } },
+const headerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 /* ── Compteur animé pour les prix ── */
@@ -149,14 +186,12 @@ function AnimatedPrice({ target, suffix = ' €' }) {
 
   useEffect(() => {
     if (!isInView) return;
-    let start = 0;
     const duration = 1200;
     const startTime = performance.now();
 
     const tick = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setValue(Math.round(eased * target));
       if (progress < 1) requestAnimationFrame(tick);
@@ -168,221 +203,217 @@ function AnimatedPrice({ target, suffix = ' €' }) {
   return <span ref={ref}>{value}{suffix}</span>;
 }
 
-/* ── Tilt 3D hook — tilt séparé du motion.div pour éviter les conflits ── */
-const isTouch = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
-
-function useTilt() {
-  const ref = useRef(null);
-  const onMouseMove = useCallback((e) => {
-    if (isTouch) return;
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
-  }, []);
-  const onMouseLeave = useCallback(() => {
-    if (isTouch) return;
-    const el = ref.current;
-    if (el) el.style.transform = '';
-  }, []);
-  return { ref, onMouseMove, onMouseLeave };
-}
-
-function OfferCard({ offer, index }) {
-  const { ref, onMouseMove, onMouseLeave } = useTilt();
-  return (
-    <motion.div
-      className={`${styles.card} ${offer.highlight ? styles.cardHighlight : ''}`}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={cardVariants}
-      custom={index}
-    >
-      <div ref={ref} className={styles.cardInner} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-        {offer.badge && (
-          <span className={styles.cardBadge}>{offer.badge}</span>
-        )}
-        <span className={styles.cardType}>{offer.type}</span>
-        <h3 className={styles.cardName}>{offer.name}</h3>
-
-        <div className={styles.pricing}>
-          <span className={styles.price}>
-            <AnimatedPrice target={offer.price} />
-          </span>
-        </div>
-
-        <p className={styles.desc}>{offer.description}</p>
-
-        <ul className={styles.features}>
-          {offer.features.map((f) => (
-            <li key={f}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              {f}
-            </li>
-          ))}
-        </ul>
-
-        <a href="#contact" className={styles.cardBtn}>
-          Demander un devis gratuit
-        </a>
-      </div>
-    </motion.div>
-  );
-}
-
-function SubCard({ sub, index }) {
-  const { ref, onMouseMove, onMouseLeave } = useTilt();
-  return (
-    <motion.div
-      className={`${styles.card} ${sub.highlight ? styles.cardHighlight : ''}`}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={cardVariants}
-      custom={index}
-    >
-      <div ref={ref} className={styles.cardInner} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-        {sub.badge && (
-          <span className={styles.cardBadge}>{sub.badge}</span>
-        )}
-        <h3 className={styles.cardName}>{sub.name}</h3>
-
-        <div className={styles.pricing}>
-          <span className={styles.price}>
-            <AnimatedPrice target={sub.price} suffix="" />
-          </span>
-          <span className={styles.period}>{sub.period}</span>
-        </div>
-
-        <p className={styles.engagement}>Sans engagement · annulable à tout moment</p>
-        <p className={styles.desc}>{sub.description}</p>
-
-        <ul className={styles.features}>
-          {sub.features.map((f) => (
-            <li key={f}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              {f}
-            </li>
-          ))}
-        </ul>
-
-        <a href="#contact" className={styles.cardBtn}>
-          Choisir cet abonnement
-        </a>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Services() {
   return (
-    <SectionWrapper id="services">
-      {/* ═══ En-tête — Offres création ═══ */}
-      <motion.div
-        className={styles.header}
-        variants={headerContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.span className={styles.label} variants={headerItemVariants}>Services & Tarifs</motion.span>
-        <motion.h2 className={styles.title} variants={headerItemVariants}>
-          Des offres <span className={styles.accent}>claires et sans surprise</span>
-        </motion.h2>
-        <motion.p className={styles.subtitle} variants={headerItemVariants}>
-          Pas de jargon, pas de frais cachés. Choisissez la formule adaptée à votre activité
-          dans le 12.
-        </motion.p>
-      </motion.div>
-
-      {/* Grille des 2 offres à prix fixe */}
-      <div className={styles.gridTwo}>
-        {OFFERS.map((offer, i) => (
-          <OfferCard key={offer.id} offer={offer} index={i} />
-        ))}
-      </div>
-
-      {/* ═══ En-tête — Abonnements ═══ */}
-      <motion.div
-        className={styles.headerSub}
-        variants={headerContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.span className={styles.label} variants={headerItemVariants}>Abonnements</motion.span>
-        <motion.h2 className={styles.title} variants={headerItemVariants}>
-          Votre site <span className={styles.accent}>toujours au top</span>
-        </motion.h2>
-        <motion.p className={styles.subtitle} variants={headerItemVariants}>
-          Un abonnement mensuel sans engagement pour que votre site reste rapide, sécurisé
-          et visible sur Google.
-        </motion.p>
-      </motion.div>
-
-      {/* Grille des 3 abonnements */}
-      <div className={styles.gridThree}>
-        {SUBSCRIPTIONS.map((sub, i) => (
-          <SubCard key={sub.id} sub={sub} index={i} />
-        ))}
-      </div>
-
-      {/* Bloc argumentaire SEO */}
-      <motion.div
-        className={styles.seoBlock}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.h3 className={styles.seoTitle} variants={headerItemVariants}>
-          Pourquoi un site web <span className={styles.accent}>change la donne</span> pour votre commerce ?
-        </motion.h3>
-        <motion.p className={styles.seoText} variants={headerItemVariants}>
-          93 % des expériences en ligne commencent sur Google. Vos futurs clients vous
-          cherchent déjà — soyez là quand ils ont besoin de vous.
-        </motion.p>
-        <motion.div
-          className={styles.seoGrid}
-          variants={seoContainerVariants}
+    <SectionWrapper id="services" dark>
+      {/* ═══ En-tête services ═══ */}
+      <div className={styles.header}>
+        <motion.span
+          className={styles.label}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          variants={headerVariants}
         >
-          <motion.div className={styles.seoItem} variants={seoItemVariants}>
-            <svg className={styles.seoIcon} width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <line x1="12" y1="18" x2="12" y2="18.01" />
-            </svg>
-            <h4>Vitesse mobile optimale</h4>
-            <p>Vos clients naviguent sur téléphone. Votre site se charge en moins de 2 secondes pour ne perdre aucun visiteur.</p>
+          Services
+        </motion.span>
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Ce que je fais <span className={styles.accent}>pour vous</span>
+        </motion.h2>
+        <motion.p
+          className={styles.subtitle}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Des solutions digitales pensées pour les réalités des professionnels
+          de l'Aveyron.
+        </motion.p>
+      </div>
+
+      {/* Grille 4 services */}
+      <div className={styles.servicesGrid}>
+        {SERVICES.map((service, i) => (
+          <motion.div
+            key={service.title}
+            className={styles.serviceCard}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
+            <div className={styles.serviceIcon}>{service.icon}</div>
+            <h3 className={styles.serviceTitle}>{service.title}</h3>
+            <div className={styles.serviceDetails}>
+              <div className={styles.serviceDetail}>
+                <span className={styles.detailLabel}>Le problème</span>
+                <p>{service.problem}</p>
+              </div>
+              <div className={styles.serviceDetail}>
+                <span className={styles.detailLabel}>Le bénéfice</span>
+                <p>{service.benefit}</p>
+              </div>
+              <div className={styles.serviceDetail}>
+                <span className={styles.detailLabel}>L'impact</span>
+                <p>{service.impact}</p>
+              </div>
+            </div>
           </motion.div>
-          <motion.div className={styles.seoItem} variants={seoItemVariants}>
-            <svg className={styles.seoIcon} width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-            <h4>Trouvé sur Google Maps</h4>
-            <p>Quand un client cherche « boulangerie Rodez » ou « plombier Millau », votre fiche apparaît en premier.</p>
+        ))}
+      </div>
+
+      {/* ═══ En-tête tarifs ═══ */}
+      <div className={styles.headerSub}>
+        <motion.span
+          className={styles.label}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Tarifs
+        </motion.span>
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Des offres <span className={styles.accent}>claires et sans surprise</span>
+        </motion.h2>
+        <motion.p
+          className={styles.subtitle}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Pas de jargon, pas de frais cachés. Choisissez la formule adaptée
+          à votre activité.
+        </motion.p>
+      </div>
+
+      {/* Offres création */}
+      <div className={styles.gridTwo}>
+        {OFFERS.map((offer, i) => (
+          <motion.div
+            key={offer.id}
+            className={`${styles.card} ${offer.highlight ? styles.cardHighlight : ''}`}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
+            {offer.badge && (
+              <span className={styles.cardBadge}>{offer.badge}</span>
+            )}
+            <span className={styles.cardType}>{offer.type}</span>
+            <h3 className={styles.cardName}>{offer.name}</h3>
+            <div className={styles.pricing}>
+              <span className={styles.price}>
+                <AnimatedPrice target={offer.price} />
+              </span>
+            </div>
+            <p className={styles.desc}>{offer.description}</p>
+            <ul className={styles.features}>
+              {offer.features.map((f) => (
+                <li key={f}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-or)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" className={styles.cardBtn}>
+              Demander un devis gratuit
+            </a>
           </motion.div>
-          <motion.div className={styles.seoItem} variants={seoItemVariants}>
-            <svg className={styles.seoIcon} width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            <h4>Des clients, pas du trafic</h4>
-            <p>Un formulaire de contact et un bouton d'appel direct pour convertir les visiteurs en vrais rendez-vous.</p>
+        ))}
+      </div>
+
+      {/* ═══ En-tête abonnements ═══ */}
+      <div className={styles.headerSub}>
+        <motion.span
+          className={styles.label}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Abonnements
+        </motion.span>
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Votre site <span className={styles.accent}>toujours au top</span>
+        </motion.h2>
+        <motion.p
+          className={styles.subtitle}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          Un abonnement mensuel sans engagement pour que votre site reste rapide,
+          sécurisé et visible sur Google.
+        </motion.p>
+      </div>
+
+      {/* Abonnements */}
+      <div className={styles.gridThree}>
+        {SUBSCRIPTIONS.map((sub, i) => (
+          <motion.div
+            key={sub.id}
+            className={`${styles.card} ${sub.highlight ? styles.cardHighlight : ''}`}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
+            {sub.badge && (
+              <span className={styles.cardBadge}>{sub.badge}</span>
+            )}
+            <h3 className={styles.cardName}>{sub.name}</h3>
+            <div className={styles.pricing}>
+              <span className={styles.price}>
+                <AnimatedPrice target={sub.price} suffix="" />
+              </span>
+              <span className={styles.period}>{sub.period}</span>
+            </div>
+            <p className={styles.engagement}>Sans engagement · annulable à tout moment</p>
+            <p className={styles.desc}>{sub.description}</p>
+            <ul className={styles.features}>
+              {sub.features.map((f) => (
+                <li key={f}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-or)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" className={styles.cardBtn}>
+              Choisir cet abonnement
+            </a>
           </motion.div>
-        </motion.div>
-      </motion.div>
+        ))}
+      </div>
     </SectionWrapper>
   );
 }

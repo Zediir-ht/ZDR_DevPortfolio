@@ -1,0 +1,115 @@
+/* CTAFinal.module.css — fond sombre, dynamique */
+
+.wrapper {
+  max-width: 700px;
+  padding: var(--sp-xl) 0;
+  position: relative;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-sm);
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--c-blanc);
+  line-height: 1.2;
+  margin-bottom: var(--sp-md);
+}
+
+.accent {
+  color: var(--c-accent);
+  background: linear-gradient(90deg, var(--c-accent), #c94245);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--c-text-light-muted);
+  max-width: 500px;
+  margin-bottom: var(--sp-xl);
+  line-height: 1.7;
+}
+
+.actions {
+  margin-bottom: var(--sp-md);
+  position: relative;
+}
+
+/* Glow animé derrière le bouton */
+.actions::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 60px;
+  background: var(--c-accent);
+  border-radius: var(--r-full);
+  filter: blur(40px);
+  opacity: 0.25;
+  animation: glowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.2; transform: translateY(-50%) scale(1); }
+  50%      { opacity: 0.4; transform: translateY(-50%) scale(1.2); }
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  padding: 1.1rem 2.5rem;
+  border-radius: var(--r-md);
+  background: var(--c-accent);
+  color: var(--c-blanc);
+  transition: all var(--tr);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.btnPrimary:hover {
+  background: var(--c-accent-dk);
+  box-shadow: 0 8px 30px rgba(158, 27, 31, 0.35);
+}
+
+.btnPrimary svg {
+  transition: transform var(--tr);
+}
+
+.btnPrimary:hover svg {
+  transform: translateX(4px);
+}
+
+.reassurance {
+  font-size: var(--fs-xs);
+  color: var(--c-text-light-muted);
+  letter-spacing: 0.03em;
+  margin: 0;
+}

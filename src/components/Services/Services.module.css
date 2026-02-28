@@ -1,115 +1,156 @@
-/* Services.module.css */
+/* Services.module.css — fond sombre (noir charbon) */
 
 /* En-tête */
 .header {
-  text-align: center;
   margin-bottom: var(--sp-2xl);
 }
 
 .label {
-  display: inline-block;
-  font-size: var(--fs-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--c-accent);
+  color: var(--c-or);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.15em;
   margin-bottom: var(--sp-xs);
 }
 
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
 .title {
-  font-family: 'Aquire', var(--ff);
-  font-weight: 800;
-  color: var(--c-dark);
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  color: var(--c-blanc);
 }
 
 .accent {
-  background: linear-gradient(137deg, rgba(227, 83, 54, 1) 0%, rgba(227, 77, 32, 1) 25%, rgba(237, 221, 83, 1) 50%, rgba(227, 83, 54, 1) 75%, rgba(227, 77, 32, 1) 100%);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 4s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  color: var(--c-or);
 }
 
 .subtitle {
   font-size: var(--fs-lg);
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
   max-width: 520px;
-  margin: var(--sp-sm) auto 0;
+  margin-top: var(--sp-sm);
 }
 
-/* Grille de cartes — 2 colonnes (offres création) */
+/* ── Grille 4 services ── */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+  margin-bottom: var(--sp-3xl);
+}
+
+.serviceCard:nth-child(even) {
+  margin-top: var(--sp-xl);
+}
+
+.serviceCard {
+  padding: var(--sp-lg);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(244, 241, 232, 0.06);
+  background: rgba(244, 241, 232, 0.03);
+  transition: border-color var(--tr), background var(--tr), transform var(--tr), box-shadow 0.4s ease;
+}
+
+.serviceCard:hover {
+  border-color: rgba(212, 160, 23, 0.2);
+  background: rgba(244, 241, 232, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 60px rgba(158, 27, 31, 0.06);
+}
+
+.serviceIcon {
+  color: var(--c-or);
+  margin-bottom: var(--sp-sm);
+}
+
+.serviceTitle {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-md);
+}
+
+.serviceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.serviceDetail {
+  padding-left: var(--sp-sm);
+  border-left: 2px solid rgba(212, 160, 23, 0.2);
+}
+
+.detailLabel {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.serviceDetail p {
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── En-tête secondaire ── */
+.headerSub {
+  margin: var(--sp-3xl) 0 var(--sp-2xl);
+}
+
+/* ── Grille 2 colonnes (offres création) ── */
 .gridTwo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-lg);
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-/* En-tête secondaire (abonnements) */
-.headerSub {
-  text-align: center;
-  margin: var(--sp-3xl) auto var(--sp-2xl);
-}
-
-/* Grille de cartes — 3 colonnes (abonnements) */
+/* ── Grille 3 colonnes (abonnements) ── */
 .gridThree {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-lg);
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
-/* Carte */
+/* ── Carte tarif ── */
 .card {
   position: relative;
   overflow: hidden;
-  background: var(--c-white);
-  border: 1px solid var(--c-border);
+  background: var(--c-bg-dark-alt);
+  border: 1px solid rgba(244, 241, 232, 0.06);
   border-radius: var(--r-lg);
   padding: var(--sp-xl) var(--sp-lg);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-  will-change: transform;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease, transform var(--tr);
 }
 
 .card:hover {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
-}
-
-/* Inner wrapper for tilt effect */
-.cardInner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  flex: 1;
-  position: relative;
-  transition: transform 0.2s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
 }
 
 /* Carte mise en avant */
 .cardHighlight {
   border-color: var(--c-accent);
-  box-shadow: 0 0 0 1px var(--c-accent), var(--shadow-md);
+  box-shadow: 0 0 0 1px var(--c-accent);
 }
 
 .cardHighlight::before {
@@ -118,72 +159,28 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--c-accent), #eddd53, var(--c-accent));
-  background-size: 200% 100%;
-  animation: highlightBar 3s ease-in-out infinite;
+  height: 2px;
+  background: var(--c-accent);
 }
 
-@keyframes highlightBar {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Badge "Recommandé" — pulse */
+/* Badge */
 .cardBadge {
   position: absolute;
   top: var(--sp-sm);
   right: var(--sp-sm);
   font-size: var(--fs-xs);
   font-weight: 700;
-  color: #fff;
+  color: var(--c-blanc);
   background: var(--c-accent);
   padding: 0.25rem 0.75rem;
   border-radius: var(--r-full);
   letter-spacing: 0.02em;
-  animation: badgePulse 2.5s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(227, 83, 54, .5);
-    transform: scale(1);
-  }
-
-  50% {
-    box-shadow: 0 0 12px 3px rgba(227, 83, 54, .25);
-    transform: scale(1.04);
-  }
-}
-
-.period {
-  font-size: var(--fs-lg);
-  font-weight: 500;
-  color: var(--c-gray);
-}
-
-.engagement {
-  font-size: var(--fs-xs);
-  color: var(--c-accent);
-  font-weight: 600;
-  margin-bottom: var(--sp-xs);
 }
 
 .cardType {
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--c-accent);
+  color: var(--c-or);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 0.25rem;
@@ -192,7 +189,7 @@
 .cardName {
   font-size: var(--fs-xl);
   font-weight: 700;
-  color: var(--c-dark);
+  color: var(--c-blanc);
   margin-bottom: var(--sp-xs);
 }
 
@@ -208,13 +205,26 @@
 .price {
   font-size: var(--fs-4xl);
   font-weight: 800;
-  color: var(--c-dark);
+  color: var(--c-blanc);
+}
+
+.period {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--c-text-light-muted);
+}
+
+.engagement {
+  font-size: var(--fs-xs);
+  color: var(--c-or);
+  font-weight: 600;
+  margin-bottom: var(--sp-xs);
 }
 
 .desc {
   font-size: var(--fs-sm);
   line-height: 1.7;
-  color: var(--c-gray);
+  color: var(--c-text-light-muted);
   margin-bottom: var(--sp-md);
 }
 
@@ -233,7 +243,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: var(--fs-sm);
-  color: var(--c-dark-soft);
+  color: var(--c-text-light-muted);
 }
 
 /* Bouton */
@@ -245,124 +255,32 @@
   font-size: var(--fs-sm);
   font-weight: 600;
   border-radius: var(--r-md);
-  border: 1.5px solid var(--c-border);
-  color: var(--c-dark);
-  transition: all 0.3s ease;
+  border: 1.5px solid rgba(244, 241, 232, 0.12);
+  color: var(--c-blanc);
+  transition: all var(--tr);
   margin-top: auto;
-  position: relative;
-  overflow: hidden;
 }
 
 .cardBtn:hover {
   background: var(--c-accent);
-  color: var(--c-white);
+  color: var(--c-blanc);
   border-color: var(--c-accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(227, 83, 54, .25);
+  box-shadow: 0 4px 16px rgba(158, 27, 31, 0.3);
 }
 
 .cardHighlight .cardBtn {
-  position: relative;
   background: var(--c-accent);
-  color: var(--c-white);
+  color: var(--c-blanc);
   border-color: var(--c-accent);
-  overflow: hidden;
-}
-
-.cardHighlight .cardBtn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  transform: skewX(-20deg);
-  animation: cardBtnShimmer 4s ease-in-out infinite;
-}
-
-@keyframes cardBtnShimmer {
-
-  0%,
-  70%,
-  100% {
-    left: -60%;
-  }
-
-  85% {
-    left: 120%;
-  }
 }
 
 .cardHighlight .cardBtn:hover {
   background: var(--c-accent-dk);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(227, 83, 54, .3);
+  box-shadow: 0 4px 16px rgba(158, 27, 31, 0.35);
 }
 
-/* ─── Bloc SEO / Bénéfices métiers ─── */
-.seoBlock {
-  max-width: 1100px;
-  margin: var(--sp-2xl) auto 0;
-  text-align: center;
-}
-
-.seoTitle {
-  font-size: var(--fs-2xl);
-  font-weight: 800;
-  color: var(--c-dark);
-  margin-bottom: var(--sp-sm);
-}
-
-.seoText {
-  font-size: var(--fs-base);
-  color: var(--c-gray);
-  max-width: 560px;
-  margin: 0 auto var(--sp-xl);
-  line-height: 1.7;
-}
-
-.seoGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-lg);
-}
-
-.seoItem {
-  position: relative;
-  overflow: hidden;
-  background: var(--c-white);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  padding: var(--sp-lg);
-  text-align: center;
-  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
-}
-
-.seoItem:hover {
-  box-shadow: 0 8px 30px rgba(227, 83, 54, .1);
-  transform: translateY(-4px);
-  border-color: rgba(227, 83, 54, .2);
-}
-
-.seoIcon {
-  margin-bottom: var(--sp-sm);
-}
-
-.seoItem h4 {
-  font-size: var(--fs-base);
-  font-weight: 700;
-  color: var(--c-dark);
-  margin-bottom: var(--sp-xs);
-}
-
-.seoItem p {
-  font-size: var(--fs-sm);
-  color: var(--c-gray);
-  line-height: 1.6;
-}
-
-/* ─── Responsive ─── */
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .gridThree {
     grid-template-columns: 1fr;
@@ -376,35 +294,18 @@
     max-width: 480px;
   }
 
-  .card {
-    align-items: center;
-    text-align: center;
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
   }
 
-  .cardInner {
-    align-items: center;
-    text-align: center;
-  }
-
-  .features {
-    align-items: center;
-  }
-
-  .pricing {
-    justify-content: center;
+  .serviceCard:nth-child(even) {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 768px) {
-  .seoGrid {
+  .servicesGrid {
     grid-template-columns: 1fr;
-    gap: var(--sp-md);
   }
-}
-
-/* Dark mode */
-:global([data-theme="dark"]) .card,
-:global([data-theme="dark"]) .seoItem {
-  background: var(--c-bg-alt);
-  border-color: var(--c-border);
 }

@@ -1,0 +1,114 @@
+/* Portfolio.module.css — fond clair (blanc cassé) */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--sp-2xl);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-xs);
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.accent {
+  color: var(--c-accent);
+}
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--c-text-muted);
+  max-width: 520px;
+  margin: var(--sp-sm) auto 0;
+}
+
+/* Grille 2×2 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Carte projet */
+.card {
+  position: relative;
+  background: var(--c-blanc);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-xl) var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  transition: border-color var(--tr), box-shadow var(--tr), transform var(--tr);
+}
+
+.card:hover {
+  border-color: rgba(212, 160, 23, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cardType {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cardTitle {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.cardDesc {
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--c-text-soft);
+  background: rgba(28, 28, 28, 0.04);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--r-full);
+  border: 1px solid var(--c-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}

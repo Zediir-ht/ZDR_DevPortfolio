@@ -1,15 +1,13 @@
 /**
  * Footer.jsx
  * ----------
- * Pied de page avec mentions légales, liens rapides et coordonnées.
- * Animations : fade-in-up staggeré au scroll, liens avec underline animé.
+ * Pied de page — fond sombre, cohérent avec l'identité occitane.
  */
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-/* Stagger container */
 const footerContainerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
@@ -20,7 +18,7 @@ const colVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 100, damping: 14 },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
@@ -42,23 +40,25 @@ export default function Footer({ onOpenLegal }) {
         {/* Colonne 1 – Marque */}
         <motion.div className={styles.brand} variants={colVariants}>
           <h4 className={styles.logo}>
-            <span className={styles.accent}>Zdr</span>_DEV
+            <span className={styles.logoAccent}>Zdr</span>_DEV
           </h4>
           <p className={styles.tagline}>
-            Votre voisin développeur<br />Rodez · Aveyron (12)
+            Créatif web indépendant<br />Rodez · Aveyron (12)
           </p>
           <p className={styles.tagline}>
-            Sites web pour artisans, commerçants<br />et restaurateurs du 12.
+            Création de sites internet pour artisans,<br />
+            commerçants et restaurateurs du territoire.
           </p>
         </motion.div>
 
-        {/* Colonne 2 – Liens rapides */}
+        {/* Colonne 2 – Navigation */}
         <motion.div className={styles.links} variants={colVariants}>
           <h5 className={styles.colTitle}>Navigation</h5>
           <ul>
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#a-propos">À propos</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#pourquoi">Pourquoi moi</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </motion.div>
@@ -73,6 +73,7 @@ export default function Footer({ onOpenLegal }) {
               </a>
             </li>
             <li>Rodez, Aveyron (12)</li>
+            <li>Lun – Ven · 9h – 18h</li>
           </ul>
         </motion.div>
       </div>

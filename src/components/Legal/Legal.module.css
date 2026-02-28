@@ -63,7 +63,7 @@
 
 /* Titre principal */
 .title {
-  font-family: 'Aquire', var(--ff);
+  font-family: 'Made Tommy', var(--ff);
   font-size: var(--fs-2xl);
   font-weight: 800;
   color: var(--c-dark);

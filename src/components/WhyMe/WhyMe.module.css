@@ -1,0 +1,134 @@
+/* WhyMe.module.css — fond sombre (noir charbon) */
+
+.header {
+  margin-bottom: var(--sp-2xl);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-xs);
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  color: var(--c-blanc);
+}
+
+.accent {
+  color: var(--c-or);
+}
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--c-text-light-muted);
+  max-width: 520px;
+  margin-top: var(--sp-sm);
+}
+
+/* Grille bento — irrégulière */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+
+/* Première carte en vedette */
+.card:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:first-child .icon {
+  margin-bottom: var(--sp-md);
+}
+
+.card:first-child .icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.card:first-child .cardTitle {
+  font-size: var(--fs-xl);
+}
+
+.card:first-child .cardDesc {
+  font-size: var(--fs-base);
+  max-width: 480px;
+}
+
+/* Carte */
+.card {
+  padding: var(--sp-lg);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(244, 241, 232, 0.06);
+  background: rgba(244, 241, 232, 0.03);
+  transition: border-color var(--tr), background var(--tr), transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(212, 160, 23, 0.2);
+  background: rgba(244, 241, 232, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(212, 160, 23, 0.05);
+}
+
+.icon {
+  color: var(--c-or);
+  margin-bottom: var(--sp-sm);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.cardTitle {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-xs);
+}
+
+.cardDesc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card:first-child {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 580px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
