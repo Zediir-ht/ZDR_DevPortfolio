@@ -308,4 +308,16 @@
   .servicesGrid {
     grid-template-columns: 1fr;
   }
+
+  .card {
+    padding: var(--sp-md);
+  }
+
+  .serviceCard {
+    padding: var(--sp-md);
+  }
+
+  .price {
+    font-size: var(--fs-3xl);
+  }
 }

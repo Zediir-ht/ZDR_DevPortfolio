@@ -4,49 +4,9 @@
    ========================================================= */
 
 @font-face {
-  font-family: 'Brandbe';
-  src: url('../fonts/Brandbe Extra Bold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Mainlux';
-  src: url('../fonts/Mainlux-Sans-Serif-Font/digitype-studio-mainlux-light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aquire';
-  src: url('../fonts/Aquire/Aquire/Aquire-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aquire';
-  src: url('../fonts/Aquire/Aquire/Aquire.otf') format('opentype');
+  font-family: 'De Valencia';
+  src: url('../fonts/de-valencia/De Valencia (beta).otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aquire';
-  src: url('../fonts/Aquire/Aquire/Aquire-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Made Tommy';
-  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Light_PERSONAL USE.otf') format('opentype');
-  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -55,14 +15,6 @@
   font-family: 'Made Tommy';
   src: url('../fonts/Made-Tommy-Font/MADE TOMMY Regular_PERSONAL USE.otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Made Tommy';
-  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Medium_PERSONAL USE.otf') format('opentype');
-  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -114,8 +66,8 @@
   --c-white:           #F4F1E8;
 
   /* ── Typography ── */
-  --ff: 'Made Tommy', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --ff-display: 'Made Tommy', 'Inter', sans-serif;
+  --ff: 'Poiret One', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ff-display: 'Poiret One', 'Inter', sans-serif;
   --fs-xs:   0.85rem;
   --fs-sm:   1rem;
   --fs-base: 1.125rem;
@@ -152,19 +104,35 @@
   --tr:      250ms ease;
   --tr-slow: 500ms ease;
 
-  --max-w: 1120px;
+  --max-w: 1600px;
 }
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
 body {
   font-family: var(--ff);
   color: var(--c-text);
   background: var(--c-bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
   overflow-x: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ── Selection ── */
@@ -196,7 +164,7 @@ img { display: block; max-width: 100%; }
 button, input, textarea { font-family: inherit; }
 
 /* ── Utilities ── */
-.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sp-lg); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sp-xl); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
 /* ── Focus accessible ── */
@@ -216,8 +184,20 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 480px) {
   :root {
     --fs-5xl: 1.875rem;
+    --fs-4xl: 1.5rem;
     --fs-3xl: 1.375rem;
+    --fs-2xl: 1.25rem;
     --sp-3xl: 3rem;
+    --sp-2xl: 2rem;
   }
   .container { padding: 0 var(--sp-sm); }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --fs-5xl: 1.625rem;
+    --fs-4xl: 1.375rem;
+    --fs-3xl: 1.25rem;
+  }
+  .container { padding: 0 0.75rem; }
 }

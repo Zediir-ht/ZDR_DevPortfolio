@@ -3,67 +3,56 @@
  * --------
  * Section hero dynamique — orbes flottantes, parallaxe au scroll.
  */
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.18, delayChildren: 0.3 } },
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 export default function Hero() {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const orb1Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-
   return (
-    <section id="accueil" className={styles.hero} ref={sectionRef}>
-      {/* Orbes lumineuses */}
-      <motion.div
-        className={styles.orb1}
-        aria-hidden="true"
-        style={{ y: orb1Y }}
-      />
-      <motion.div
-        className={styles.orb2}
-        aria-hidden="true"
-        style={{ y: orb2Y }}
-      />
-      <motion.div className={styles.orb3} aria-hidden="true" />
+    <section id="accueil" className={styles.hero}>
+      {/* Orbes décoratives (CSS-only) */}
+      <div className={styles.orb1} aria-hidden="true" />
+      <div className={styles.orb2} aria-hidden="true" />
+      <div className={styles.orb3} aria-hidden="true" />
 
       <div className={styles.texture} aria-hidden="true" />
       <div className={styles.goldLine} aria-hidden="true" />
 
       <motion.div
-        className={`container ${styles.content}`}
+        className={styles.content}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        style={{ y: contentY, opacity }}
       >
-        <motion.h1 className={styles.heroTitle} variants={itemVariants}>
-          ZDR_DEV
-        </motion.h1>
-        <motion.p className={styles.heroSub} variants={itemVariants}>
-          Développeur web
-        </motion.p>
+        <div className={styles.titleRow}>
+          <motion.span className={styles.heroLeft} variants={itemVariants}>
+            ZDR
+          </motion.span>
+          <motion.span className={styles.heroRight} variants={itemVariants}>
+            DEV
+          </motion.span>
+        </div>
+        <div className={styles.bottomRow}>
+          <motion.p className={styles.heroSub} variants={itemVariants}>
+            Développeur<br />Web
+          </motion.p>
+          <motion.p className={styles.heroTagline} variants={itemVariants}>
+            Aveyron mon país
+          </motion.p>
+        </div>
       </motion.div>
 
       {/* Flèche de scroll */}

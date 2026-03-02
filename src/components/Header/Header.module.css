@@ -7,15 +7,15 @@
   width: 100%;
   z-index: 100;
   padding: var(--sp-md) 0;
-  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease,
-    backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  contain: layout style;
 }
 
 .header.scrolled {
-  background: rgba(28, 28, 28, 0.92);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1);
+  background: rgba(28, 28, 28, 0.8);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.08);
   padding: var(--sp-xs) 0;
 }
 
@@ -29,11 +29,11 @@
 /* ── Logo ── */
 .logo {
   flex-shrink: 0;
-  font-family: 'Brandbe', var(--ff);
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-family: 'De Valencia', var(--ff);
+  font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 800;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--c-blanc);
   transition: color var(--tr-fast);
 }
@@ -42,81 +42,37 @@
   color: var(--c-blanc);
 }
 
-.logoSub {
-  font-family: 'Aquire', var(--ff);
-  font-size: clamp(0.7rem, 1.5vw, 1rem);
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: none;
-  color: var(--c-blanc);
-  opacity: 0.85;
-}
-
-/* ── Nav desktop ── */
-.desktopNav {
+/* ── A propos centré ── */
+.centerNav {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.desktopNav ul {
-  display: flex;
-  gap: var(--sp-lg);
-}
-
-.desktopNav a {
-  font-size: var(--fs-sm);
+.centerNav a {
+  font-size: var(--fs-lg);
   font-weight: 500;
-  color: var(--c-text-light-muted);
+  color: var(--c-blanc);
   position: relative;
   padding: var(--sp-xs) 0;
   transition: color var(--tr-fast);
 }
 
-.desktopNav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--c-accent);
-  transition: width var(--tr), left var(--tr);
-  border-radius: 1px;
-}
-
-.desktopNav a:hover {
+.centerNav a:hover {
   color: var(--c-blanc);
 }
 
-.desktopNav a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-/* ── Right actions ── */
-.rightActions {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-  flex-shrink: 0;
-}
-
-/* ── CTA ── */
-.cta {
-  font-family: 'Aquire', var(--ff);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  padding: 0.55rem 1.4rem;
-  border-radius: var(--r-md);
-  background: var(--c-accent);
+/* ── Contact à droite ── */
+.rightLink {
+  margin-left: auto;
+  font-size: var(--fs-lg);
+  font-weight: 500;
   color: var(--c-blanc);
-  transition: background var(--tr-fast), box-shadow var(--tr-fast);
+  transition: color var(--tr-fast);
 }
 
-.cta:hover {
-  background: var(--c-accent-dk);
-  box-shadow: 0 4px 16px rgba(158, 27, 31, 0.3);
+.rightLink:hover {
+  color: var(--c-blanc);
 }
 
 /* ── Hamburger ── */
@@ -158,9 +114,9 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(28, 28, 28, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-lg);
   padding: var(--sp-lg) 0;
 }
@@ -175,7 +131,7 @@
 .mobileNav a {
   font-size: var(--fs-lg);
   font-weight: 500;
-  color: var(--c-text-light-muted);
+  color: var(--c-blanc);
   padding: var(--sp-xs) var(--sp-lg);
   transition: color var(--tr-fast);
 }
@@ -191,11 +147,11 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .desktopNav {
+  .centerNav {
     display: none;
   }
 
-  .rightActions .cta {
+  .rightLink {
     display: none;
   }
 
@@ -205,5 +161,9 @@
 
   .mobileNav {
     display: block;
+  }
+
+  .logo {
+    font-size: clamp(0.9rem, 4vw, 1.3rem);
   }
 }

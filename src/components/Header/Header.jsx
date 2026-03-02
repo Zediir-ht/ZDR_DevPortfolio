@@ -5,16 +5,61 @@
  * Glassmorphism au scroll, hamburger mobile, CTA rouge occitan.
  * Pas de dark mode toggle (l'alternance section fait le rythme).
  */
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Header.module.css';
 
 const NAV_LINKS = [
-  { href: '#accueil', label: 'Accueil' },
-  { href: '#a-propos', label: 'À propos' },
-  { href: '#services', label: 'Services' },
+  { href: '#a-propos', label: 'A propos' },
   { href: '#contact', label: 'Contact' },
 ];
+
+const CYCLES_PER_LETTER = 2;
+const SHUFFLE_TIME = 50;
+const CHARS = '!@#$%^&*():{};|,.<>/?';
+
+function ScrambleLink({ href, children, className, variants, ...props }) {
+  const intervalRef = useRef(null);
+  const [text, setText] = useState(children);
+
+  const scramble = () => {
+    let pos = 0;
+    intervalRef.current = setInterval(() => {
+      const scrambled = children
+        .split('')
+        .map((char, index) => {
+          if (pos / CYCLES_PER_LETTER > index) return char;
+          if (char === ' ') return ' ';
+          return CHARS[Math.floor(Math.random() * CHARS.length)];
+        })
+        .join('');
+      setText(scrambled);
+      pos++;
+      if (pos >= children.length * CYCLES_PER_LETTER) {
+        clearInterval(intervalRef.current);
+        setText(children);
+      }
+    }, SHUFFLE_TIME);
+  };
+
+  const stopScramble = () => {
+    clearInterval(intervalRef.current);
+    setText(children);
+  };
+
+  return (
+    <motion.a
+      href={href}
+      className={className}
+      variants={variants}
+      onMouseEnter={scramble}
+      onMouseLeave={stopScramble}
+      {...props}
+    >
+      {text}
+    </motion.a>
+  );
+}
 
 const headerVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -41,15 +86,6 @@ const logoVariants = {
     scale: 1,
     opacity: 1,
     transition: { type: 'spring', stiffness: 200, damping: 15, delay: 0.2 },
-  },
-};
-
-const ctaVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { type: 'spring', stiffness: 180, damping: 14, delay: 0.6 },
   },
 };
 
@@ -85,37 +121,27 @@ export default function Header() {
           <span className={styles.logoAccent}>Zdr</span>_DEV
         </motion.a>
 
-        {/* Navigation desktop */}
+        {/* A propos — centré */}
         <motion.nav
-          className={styles.desktopNav}
+          className={styles.centerNav}
           aria-label="Navigation principale"
           variants={navContainerVariants}
           initial="hidden"
           animate="visible"
         >
-          <ul>
-            {NAV_LINKS.map(({ href, label }) => (
-              <motion.li key={href} variants={navItemVariants}>
-                <a href={href}>{label}</a>
-              </motion.li>
-            ))}
-          </ul>
+          <ScrambleLink href="#a-propos" variants={navItemVariants}>A propos</ScrambleLink>
         </motion.nav>
 
-        {/* CTA */}
-        <div className={styles.rightActions}>
-          <motion.a
-            href="#contact"
-            className={styles.cta}
-            variants={ctaVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            En savoir plus
-          </motion.a>
-        </div>
+        {/* Contact — à droite */}
+        <ScrambleLink
+          href="#contact"
+          className={styles.rightLink}
+          variants={navItemVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          Contact
+        </ScrambleLink>
 
         {/* Hamburger mobile */}
         <button

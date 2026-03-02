@@ -5,20 +5,9 @@
  * Portrait conservé, titre conservé, bio officielle occitane.
  * Hooks psychologiques discrets intégrés.
  */
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './About.module.css';
-
-import forgeImg from '../../assets/forge.png';
-import roquefortImg from '../../assets/roquefort.png';
-import soulagesImg from '../../assets/soulages.png';
-
-const skills = [
-  { title: "Forgeron du Code", desc: "Développement web sur mesure, robuste comme une lame de Laguiole. Un code frontend et backend taillé pour la performance.", img: forgeImg },
-  { title: "Maturation & Architecture", desc: "Des fondations solides et performantes, affinées avec le temps comme dans les caves de Roquefort.", img: roquefortImg },
-  { title: "Design Outrenoir", desc: "Une interface premium jouant sur la lumière et le contraste, inspirée par le minimalisme et la profondeur de Soulages.", img: soulagesImg }
-];
 
 const labelVariants = {
   hidden: { opacity: 0, x: -20 },
@@ -40,10 +29,10 @@ const valueBadgeVariants = {
 };
 
 export default function About() {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <SectionWrapper id="a-propos">
+    <SectionWrapper id="a-propos" className={styles.aboutSection}>
+      <div className={styles.glassPanel}>
       {/* En-tête de section */}
       <div className={styles.header}>
         <motion.span
@@ -75,14 +64,17 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <img
-            src="/portrait.png"
-            alt="Corentin Mayrand — Créatif web indépendant en Aveyron"
-            className={styles.portrait}
-            loading="lazy"
-            width="320"
-            height="400"
-          />
+          <picture>
+            <source srcSet="/portrait.webp" type="image/webp" />
+            <img
+              src="/portrait.png"
+              alt="Corentin Mayrand — Créatif web indépendant en Aveyron"
+              className={styles.portrait}
+              loading="lazy"
+              width="320"
+              height="400"
+            />
+          </picture>
           <div className={styles.portraitAccent} aria-hidden="true" />
         </motion.div>
 
@@ -130,51 +122,6 @@ export default function About() {
           </div>
         </motion.div>
       </div>
-
-      {/* Spécialités avec Hover-Reveal */}
-      <div className={styles.skillsContainer}>
-        <motion.h3
-          className={styles.skillsTitle}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          L'art de concevoir
-        </motion.h3>
-
-        <div className={styles.skillsList}>
-          {skills.map((skill, i) => (
-            <motion.div
-              key={i}
-              className={styles.skillItem}
-              onMouseEnter={() => setHoveredSkill(i)}
-              onMouseLeave={() => setHoveredSkill(null)}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * i, duration: 0.5 }}
-            >
-              <div className={styles.skillContent}>
-                <h4>{skill.title}</h4>
-                <p>{skill.desc}</p>
-              </div>
-
-              {/* Image Reveal */}
-              <motion.img
-                src={skill.img}
-                alt={skill.title}
-                className={styles.skillImg}
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                animate={{
-                  opacity: hoveredSkill === i ? 1 : 0,
-                  scale: hoveredSkill === i ? 1 : 0.8,
-                  rotate: hoveredSkill === i ? 0 : -5
-                }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              />
-            </motion.div>
-          ))}
-        </div>
       </div>
     </SectionWrapper>
   );

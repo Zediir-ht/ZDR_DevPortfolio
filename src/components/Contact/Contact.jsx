@@ -104,7 +104,8 @@ export default function Contact() {
   };
 
   return (
-    <SectionWrapper id="contact">
+    <SectionWrapper id="contact" className={styles.contactSection}>
+      <div className={styles.glassPanel}>
       {/* En-tête */}
       <div className={styles.header}>
         <motion.span
@@ -280,6 +281,9 @@ export default function Contact() {
             <div>
               <h4 className={styles.infoTitle}>Localisation</h4>
               <p className={styles.infoText}>Rodez, Aveyron (12)</p>
+              <p className={styles.infoText} style={{ marginTop: '0.5rem' }}>
+                Basé à Rodez, j'interviens dans tout l'Aveyron : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
+              </p>
             </div>
           </motion.div>
 
@@ -296,24 +300,9 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.div className={styles.mapCard} variants={infoCardVariants}>
-            <iframe
-              className={styles.mapIframe}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45678.12345678!2d2.5734!3d44.3497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc8fddf3c5cd%3A0x406f69c2f3e86a0!2sRodez!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localisation Rodez, Aveyron"
-            />
-            <p className={styles.mapText}>
-              Basé à Rodez, j'interviens dans tout l'Aveyron : Millau,
-              Villefranche-de-Rouergue, Decazeville, Espalion…
-            </p>
-          </motion.div>
+
         </motion.aside>
+      </div>
       </div>
     </SectionWrapper>
   );

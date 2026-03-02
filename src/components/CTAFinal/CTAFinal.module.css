@@ -113,3 +113,38 @@
   letter-spacing: 0.03em;
   margin: 0;
 }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100%;
+    padding: var(--sp-lg) 0;
+  }
+
+  .title {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+
+  .subtitle {
+    font-size: var(--fs-base);
+  }
+
+  .btnPrimary {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: var(--fs-sm);
+  }
+
+  .actions::before {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .btnPrimary {
+    padding: 0.85rem 1.2rem;
+    font-size: var(--fs-sm);
+  }
+}

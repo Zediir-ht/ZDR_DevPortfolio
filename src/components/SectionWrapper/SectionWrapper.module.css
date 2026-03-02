@@ -1,10 +1,12 @@
-/* SectionWrapper.module.css — orbes flottantes + parallaxe */
+/* SectionWrapper.module.css — animations au scroll + parallaxe */
 
 .section {
   padding: var(--sp-3xl) 0;
   position: relative;
   background: var(--c-bg);
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .dark {
@@ -17,14 +19,14 @@
   z-index: 2;
 }
 
-/* ── Orbes flottantes ── */
+/* ── Orbes décoratives (CSS-only, no JS) ── */
 .orb {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(90px);
+  filter: blur(60px);
   z-index: 0;
-  will-change: transform;
+  contain: strict;
 }
 
 .orb1 {

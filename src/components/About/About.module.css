@@ -1,6 +1,37 @@
 /* About.module.css — fond clair (blanc cassé) */
 
+/* Background terre occitane */
+.aboutSection {
+  position: relative;
+  background: var(--c-bg);
+}
+
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/terre-marcillac.webp') no-repeat center / cover;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* En-tête */
+.glassPanel {
+  position: relative;
+  z-index: 1;
+  background: rgba(28, 28, 28, 0.15);
+  backdrop-filter: blur(10px) saturate(1.3);
+  -webkit-backdrop-filter: blur(10px) saturate(1.3);
+  border-radius: var(--r-lg);
+  border: none;
+  padding: var(--sp-2xl);
+  box-shadow: none;
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* En-tête titre */
 .header {
   margin-bottom: var(--sp-2xl);
 }
@@ -9,10 +40,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: var(--fs-xs);
+  font-size: var(--fs-lg);
   font-weight: 600;
-  color: var(--c-accent);
-  text-transform: uppercase;
+  color: var(--c-noir);
   letter-spacing: 0.15em;
   margin-bottom: var(--sp-xs);
 }
@@ -28,11 +58,12 @@
 .title {
   font-family: 'Made Tommy', var(--ff);
   font-weight: 700;
-  color: var(--c-text);
+  font-size: var(--fs-4xl);
+  color: var(--c-noir);
 }
 
 .accent {
-  color: var(--c-accent);
+  color: var(--c-noir);
 }
 
 /* Layout intro : portrait + texte */
@@ -80,32 +111,26 @@
 }
 
 @keyframes floatAccent {
-
-  0%,
-  100% {
-    transform: translate(8px, 8px);
-  }
-
-  50% {
-    transform: translate(12px, 4px);
-  }
+  0%, 100% { transform: translate(8px, 8px); }
+  50%      { transform: translate(12px, 4px); }
 }
 
 /* Texte bio */
 .text p {
-  font-size: var(--fs-base);
+  font-size: var(--fs-xl);
   line-height: 1.8;
-  color: var(--c-text-muted);
+  color: var(--c-noir);
   margin-bottom: var(--sp-sm);
 }
 
 .text strong {
-  color: var(--c-text);
-  font-weight: 600;
+  color: var(--c-noir);
+  font-weight: 700;
+  font-size: var(--fs-xl);
 }
 
 .signature {
-  color: var(--c-text-soft) !important;
+  color: var(--c-noir) !important;
   font-style: italic;
   border-left: 2px solid var(--c-or);
   padding-left: var(--sp-sm);
@@ -125,11 +150,11 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-noir);
   padding: 0.35rem 0.9rem;
   border-radius: var(--r-full);
-  border: 1px solid rgba(158, 27, 31, 0.2);
-  background: rgba(158, 27, 31, 0.04);
+  border: 1px solid rgba(28, 28, 28, 0.25);
+  background: rgba(28, 28, 28, 0.06);
   transition: all var(--tr);
 }
 
@@ -137,75 +162,6 @@
   background: rgba(158, 27, 31, 0.08);
   border-color: var(--c-accent);
   transform: translateY(-2px);
-}
-
-/* Spécialités / Compétences avec Hover-Reveal */
-.skillsContainer {
-  margin-top: var(--sp-2xl);
-  border-top: 1px solid var(--c-border);
-  padding-top: var(--sp-xl);
-}
-
-.skillsTitle {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-2xl);
-  color: var(--c-accent);
-  margin-bottom: var(--sp-lg);
-}
-
-.skillsList {
-  display: flex;
-  flex-direction: column;
-}
-
-.skillItem {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--sp-md) 0;
-  border-bottom: 1px solid var(--c-border);
-  cursor: pointer;
-  transition: all var(--tr);
-}
-
-.skillItem:hover {
-  padding-left: var(--sp-sm);
-}
-
-.skillItem:hover h4 {
-  color: var(--c-accent);
-}
-
-.skillContent h4 {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-xl);
-  color: var(--c-text);
-  margin-bottom: 0.25rem;
-  transition: color var(--tr);
-}
-
-.skillContent p {
-  color: var(--c-text-soft);
-  font-size: var(--fs-sm);
-  max-width: 480px;
-  margin: 0;
-}
-
-.skillImg {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  margin-top: -80px;
-  /* half of height */
-  width: 280px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: var(--r-md);
-  pointer-events: none;
-  z-index: 10;
-  box-shadow: var(--shadow-xl);
-  border: 1px solid var(--c-border);
 }
 
 /* Responsive */
@@ -220,18 +176,26 @@
     margin: 0 auto;
   }
 
-  .skillsList {
-    gap: var(--sp-md);
+  .glassPanel {
+    padding: var(--sp-xl);
   }
 
-  .skillImg {
-    display: none;
-    /* Hide on mobile to save space */
+  .title {
+    font-size: var(--fs-3xl);
   }
 }
 
 @media (max-width: 480px) {
   .portraitWrapper {
     width: 180px;
+  }
+
+  .glassPanel {
+    padding: var(--sp-md);
+  }
+
+  .text p,
+  .text strong {
+    font-size: var(--fs-base);
   }
 }
