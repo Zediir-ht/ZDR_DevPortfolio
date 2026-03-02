@@ -186,42 +186,71 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 0 var(--sp-xl);
+    padding: 5rem 0 2.5rem;
     min-height: 100svh;
   }
 
+  /* Flex colonne : titre en haut, sous-texte en bas */
   .content {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0 var(--sp-sm);
-  }
-
-  .titleRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .heroLeft,
-  .heroRight {
-    font-size: clamp(3.5rem, 18vw, 7rem);
-  }
-
-  .bottomRow {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-sm);
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    min-height: calc(100svh - 8rem);
+  }
+
+  /* Bloc titre : ZDR gauche, DEV droite (chacun sur sa ligne) */
+  .titleRow {
+    display: block;
+  }
+
+  .heroLeft {
+    display: block;
+    font-size: clamp(5.5rem, 36vw, 14rem);
+    line-height: 0.88;
+    text-align: left;
+    padding-left: 2vw;
+    letter-spacing: -0.01em;
+    transform: scaleY(10);
+    transform-origin: left top;
+  }
+
+  .heroRight {
+    display: block;
+    font-size: clamp(5.5rem, 36vw, 14rem);
+    line-height: 0.88;
+    text-align: left;
+    padding-left: 42vw;
+    margin-top: 66vw;
+    letter-spacing: -0.01em;
+    transform: scaleY(10);
+    transform-origin: left top;
+  }
+
+  /* Sous-texte : Développeur Web à gauche, Aveyron à droite */
+  .bottomRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 2vw;
   }
 
   .heroSub {
-    margin-top: var(--sp-xl);
-    font-size: clamp(1.5rem, 7vw, 3rem);
+    font-size: clamp(1.7rem, 8vw, 3.4rem);
+    margin-top: 0;
+    align-self: auto;
+    justify-self: auto;
+    line-height: 1.05;
   }
 
   .heroTagline {
+    font-size: clamp(1.3rem, 5.5vw, 2.4rem);
     margin-top: 0;
-    font-size: clamp(0.9rem, 3.5vw, 1.4rem);
-    align-self: flex-start;
+    text-align: right;
+    align-self: auto;
+    justify-self: auto;
+    line-height: 1.1;
   }
 
   .scrollHint {
@@ -232,14 +261,19 @@
 @media (max-width: 480px) {
   .heroLeft,
   .heroRight {
-    font-size: clamp(2.8rem, 16vw, 5rem);
+    font-size: clamp(4.5rem, 34vw, 11rem);
+  }
+
+  .heroRight {
+    padding-left: 41vw;
+    margin-top: 64vw;
   }
 
   .heroSub {
-    font-size: clamp(1.2rem, 6vw, 2rem);
+    font-size: clamp(1.5rem, 7.5vw, 2.8rem);
   }
 
   .heroTagline {
-    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    font-size: clamp(1.1rem, 5vw, 2rem);
   }
 }

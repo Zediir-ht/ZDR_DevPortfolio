@@ -4,7 +4,7 @@
 .contactSection {
   position: relative;
   background: var(--c-bg);
-  color: #995039;
+  color: var(--c-noir);
 }
 
 .contactSection::before {
@@ -42,7 +42,7 @@
   gap: 0.75rem;
   font-size: var(--fs-lg);
   font-weight: 600;
-  color: #995039;
+  color: var(--c-noir);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--sp-xs);
@@ -60,16 +60,16 @@
   font-family: 'Made Tommy', var(--ff);
   font-weight: 700;
   font-size: var(--fs-4xl);
-  color: #995039;
+  color: var(--c-noir);
 }
 
 .accent {
-  color: #995039;
+  color: var(--c-noir);
 }
 
 .subtitle {
   font-size: var(--fs-xl);
-  color: #995039;
+  color: var(--c-noir);
   max-width: 600px;
   margin-top: var(--sp-sm);
 }
@@ -107,7 +107,7 @@
 .labelField {
   font-size: var(--fs-lg);
   font-weight: 600;
-  color: #995039;
+  color: var(--c-noir);
 }
 
 .input,
@@ -115,7 +115,7 @@
   width: 100%;
   padding: 0.85rem 1.1rem;
   font-size: var(--fs-lg);
-  color: #995039;
+  color: var(--c-noir);
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--r-md);
@@ -125,7 +125,7 @@
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(153, 80, 57, 0.6); /* #995039 @60% */
+  color: rgba(28, 28, 28, 0.45);
 }
 
 .input:focus,
@@ -222,8 +222,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(153, 80, 57, 0.1);
-  color: #995039;
+  background: rgba(28, 28, 28, 0.08);
+  color: var(--c-noir);
   border-radius: var(--r-md);
   transition: transform var(--tr);
 }
@@ -235,7 +235,7 @@
 .infoTitle {
   font-size: var(--fs-lg);
   font-weight: 700;
-  color: #995039;
+  color: var(--c-noir);
   margin-bottom: 0.15rem;
 }
 
