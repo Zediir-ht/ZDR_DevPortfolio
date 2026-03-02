@@ -183,6 +183,10 @@
   .title {
     font-size: var(--fs-3xl);
   }
+
+  .aboutSection::before {
+    background-image: url('/terre-marcillac-mobile.webp');
+  }
 }
 
 @media (max-width: 480px) {

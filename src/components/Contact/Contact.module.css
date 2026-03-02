@@ -42,7 +42,7 @@
   gap: 0.75rem;
   font-size: var(--fs-lg);
   font-weight: 600;
-  color: var(--c-blanc);
+  color: #995039;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--sp-xs);
@@ -203,16 +203,16 @@
   align-items: flex-start;
   gap: var(--sp-sm);
   padding: var(--sp-md);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(153, 80, 57, 0.12);
   border-radius: var(--r-lg);
   transition: box-shadow 0.4s ease, transform 0.4s ease, border-color var(--tr);
 }
 
 .infoCard:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(153, 80, 57, 0.25);
 }
 
 .infoIcon {
@@ -222,8 +222,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--c-blanc);
+  background: rgba(153, 80, 57, 0.1);
+  color: #995039;
   border-radius: var(--r-md);
   transition: transform var(--tr);
 }
@@ -268,6 +268,13 @@
 
   .glassPanel {
     padding: var(--sp-xl);
+    /* mask trop agressif sur mobile — on l'élargit */
+    -webkit-mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
+  }
+
+  .contactSection::before {
+    background-image: url('/aveyron-couleur-mobile.webp');
   }
 
   .title {
@@ -277,11 +284,22 @@
   .subtitle {
     font-size: var(--fs-base);
   }
+
+  .infoLink {
+    word-break: break-all;
+  }
 }
 
 @media (max-width: 480px) {
   .glassPanel {
     padding: var(--sp-md);
+    /* sur très petit écran on désactive le mask pour ne rien rogner */
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .title {
+    font-size: var(--fs-2xl);
   }
 
   .labelField,
@@ -289,12 +307,16 @@
   .textarea,
   .infoTitle,
   .infoLink,
-  .infoText,
-  .mapText {
+  .infoText {
     font-size: var(--fs-base);
   }
 
   .submitBtn {
     font-size: var(--fs-base);
+  }
+
+  .infoIcon {
+    width: 36px;
+    height: 36px;
   }
 }
