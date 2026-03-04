@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './styles/global.css';
 
-// Toujours revenir en haut au rechargement de la page
+// Revenir en haut sauf si un ancre est présent dans l'URL
 if ('scrollRestoration' in window.history) {
   window.history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
+if (!window.location.hash) {
+  window.scrollTo(0, 0);
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

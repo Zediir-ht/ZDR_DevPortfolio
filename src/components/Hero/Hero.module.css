@@ -1,4 +1,4 @@
-/* Hero.module.css — fond noir charbon, dynamique */
+﻿/* Hero.module.css â€” fond noir charbon, dynamique */
 
 .hero {
   position: relative;
@@ -23,7 +23,7 @@
   z-index: 0;
 }
 
-/* ── Orbes lumineuses (CSS-only, perf-optimized) ── */
+/* â”€â”€ Orbes lumineuses (CSS-only, perf-optimized) â”€â”€ */
 .orb1,
 .orb2,
 .orb3 {
@@ -60,7 +60,7 @@
   background: radial-gradient(circle, rgba(158, 27, 31, 0.04) 0%, transparent 70%);
 }
 
-/* Subtle noise texture — lightweight */
+/* Subtle noise texture â€” lightweight */
 .texture {
   position: absolute;
   inset: 0;
@@ -72,7 +72,7 @@
   contain: strict;
 }
 
-/* Gold line accent at bottom — animée */
+/* Gold line accent at bottom â€” animÃ©e */
 .goldLine {
   position: absolute;
   bottom: 0;
@@ -100,7 +100,7 @@
   padding: 0 var(--sp-lg);
 }
 
-/* Title row — ZDR left, DEV right */
+/* Title row â€” ZDR left, DEV right */
 .titleRow {
   display: contents;
 }
@@ -112,7 +112,10 @@
   line-height: 0.9;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--c-blanc);
+  background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   align-self: center;
 }
 
@@ -123,12 +126,15 @@
   line-height: 0.9;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--c-blanc);
+  background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   align-self: center;
   justify-self: start;
 }
 
-/* Hero Subtitle — Développeur Web, bottom-left */
+/* Hero Subtitle â€” DÃ©veloppeur Web, bottom-left */
 .bottomRow {
   display: contents;
 }
@@ -140,7 +146,10 @@
   line-height: 1;
   letter-spacing: 0.05em;
   text-transform: none;
-  color: var(--c-blanc);
+  background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: left;
   margin-top: 18rem;
   align-self: end;
@@ -148,10 +157,13 @@
 
 .heroTagline {
   font-family: 'De Valencia', var(--ff);
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: var(--c-blanc);
+  background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: left;
   justify-self: start;
   margin-top: 18rem;
@@ -173,7 +185,7 @@
   opacity: 1;
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 1024px) {
   .heroSub {
     margin-top: 10rem;
@@ -228,7 +240,7 @@
     transform-origin: left top;
   }
 
-  /* Sous-texte : Développeur Web à gauche, Aveyron à droite */
+  /* Sous-texte : DÃ©veloppeur Web Ã  gauche, Aveyron Ã  droite */
   .bottomRow {
     display: flex;
     justify-content: space-between;
@@ -277,3 +289,6 @@
     font-size: clamp(1.1rem, 5vw, 2rem);
   }
 }
+
+
+

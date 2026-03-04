@@ -88,20 +88,20 @@ export default function About() {
         >
           <p>
             Je suis <strong>créatif web indépendant</strong> et j'allie mes deux passions :
-            la création digitale et le terroir.
+            la <span className={styles.keyword}>création digitale</span> et le <span className={styles.keyword}>terroir</span>.
           </p>
           <p>
-            Installé en Aveyron, je conçois des <strong>sites internet pour les artisans,
+            Installé en <span className={styles.keyword}>Aveyron</span>, je conçois des <strong>sites internet pour les artisans,
               commerçants et restaurateurs locaux</strong> qui font vivre notre territoire.
           </p>
           <p>
-            Mon approche est simple : mettre en lumière votre savoir-faire avec authenticité.
-            Je m'inspire de la richesse de notre terroir aveyronnais pour créer des identités
-            digitales fortes, modernes et ancrées dans le local.
+            Mon approche est simple : mettre en lumière votre <span className={styles.keyword}>savoir-faire</span> avec authenticité.
+            Je m'inspire de la richesse de notre terroir aveyronnais pour créer des <span className={styles.keyword}>identités
+            digitales fortes</span>, modernes et ancrées dans le local.
           </p>
           <p className={styles.signature}>
-            Chaque projet est pensé comme un produit du terroir : travaillé avec soin,
-            sincérité et exigence.
+            Chaque projet est pensé comme un produit du terroir : travaillé avec <span className={styles.keyword}>soin</span>,
+            <span className={styles.keyword}> sincérité</span> et <span className={styles.keyword}>exigence</span>.
           </p>
 
           {/* Valeurs */}

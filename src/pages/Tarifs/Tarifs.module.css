@@ -1,0 +1,531 @@
+/* Tarifs.module.css — page /tarifs complète, design sombre occitan */
+
+/* ── Page wrapper ── */
+.page {
+  min-height: 100vh;
+  background: var(--c-bg-dark);
+  color: var(--c-text-light);
+}
+
+/* ── Header minimal ── */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  border-bottom: 1px solid var(--c-border-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(28, 28, 28, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-text-light-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--c-blanc);
+}
+
+.headerLogo {
+  font-family: 'De Valencia', var(--ff);
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  letter-spacing: 2px;
+  color: var(--c-blanc);
+  text-decoration: none;
+}
+
+.logoAccent {
+  color: var(--c-blanc);
+}
+
+/* ── Main ── */
+.main {
+  padding-bottom: var(--sp-3xl);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--c-border-dark);
+}
+
+.heroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-sm);
+}
+
+.heroLabel::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 800;
+  font-size: clamp(var(--fs-4xl), 5vw, 4.5rem);
+  color: var(--c-blanc);
+  line-height: 1.1;
+  margin-bottom: var(--sp-md);
+}
+
+.accent {
+  color: var(--c-rouge);
+}
+
+.heroSub {
+  font-size: var(--fs-lg);
+  color: var(--c-text-light-muted);
+  max-width: 560px;
+  line-height: 1.65;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--c-border-dark);
+}
+
+.sectionLight {
+  background: rgba(244, 241, 232, 0.02);
+}
+
+.sectionCta {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  margin-bottom: var(--sp-2xl);
+}
+
+.sectionTitle {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-xs);
+}
+
+.sectionSub {
+  font-size: var(--fs-base);
+  color: var(--c-text-light-muted);
+}
+
+/* ── Packs création ── */
+.packsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+
+.packCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-xl) var(--sp-lg);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(244, 241, 232, 0.08);
+  background: rgba(244, 241, 232, 0.03);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.packCard:hover {
+  border-color: rgba(212, 160, 23, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.packFeatured {
+  border-color: rgba(212, 160, 23, 0.3);
+  background: rgba(212, 160, 23, 0.04);
+}
+
+.packFeatured:hover {
+  border-color: rgba(212, 160, 23, 0.5);
+}
+
+.packBadge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--c-or);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--sp-sm);
+}
+
+.packTop {
+  margin-bottom: var(--sp-lg);
+}
+
+.packType {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  color: var(--c-text-light-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-xs);
+}
+
+.packName {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-xs);
+}
+
+.packPrice {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--c-or);
+  margin-bottom: var(--sp-sm);
+  font-family: 'Made Tommy', var(--ff);
+}
+
+.packDesc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.6;
+}
+
+.packFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--sp-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.packFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.4;
+}
+
+.checkIcon {
+  color: var(--c-or);
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.packCta {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--r-full);
+  border: 1px solid rgba(244, 241, 232, 0.2);
+  color: var(--c-text-light-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  margin-top: auto;
+}
+
+.packCta:hover {
+  border-color: rgba(244, 241, 232, 0.5);
+  color: var(--c-blanc);
+}
+
+.packCtaFeatured {
+  background: var(--c-rouge);
+  border-color: var(--c-rouge);
+  color: var(--c-blanc);
+}
+
+.packCtaFeatured:hover {
+  background: var(--c-rouge-dk);
+  border-color: var(--c-rouge-dk);
+  color: var(--c-blanc);
+}
+
+/* ── Abonnements ── */
+.abosGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+  max-width: 860px;
+  margin-bottom: var(--sp-xl);
+}
+
+.aboCard {
+  padding: var(--sp-xl) var(--sp-lg);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(244, 241, 232, 0.08);
+  background: rgba(244, 241, 232, 0.03);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.aboCard:hover {
+  border-color: rgba(212, 160, 23, 0.2);
+  transform: translateY(-3px);
+}
+
+.aboFeatured {
+  border-color: rgba(212, 160, 23, 0.3);
+  background: rgba(212, 160, 23, 0.04);
+}
+
+.aboName {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-xs);
+}
+
+.aboPrice {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c-or);
+  font-family: 'Made Tommy', var(--ff);
+  margin-bottom: var(--sp-sm);
+}
+
+.aboPeriod {
+  font-size: var(--fs-base);
+  font-weight: 400;
+  color: var(--c-text-light-muted);
+}
+
+.aboDesc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.6;
+  margin-bottom: var(--sp-lg);
+}
+
+.aboFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.aboFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.4;
+}
+
+/* ── Bandeau sans engagement ── */
+.sansBandeau {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--r-md);
+  background: rgba(28, 28, 28, 0.8);
+  border: 1px solid rgba(244, 241, 232, 0.06);
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+}
+
+.sansBandeau svg {
+  color: var(--c-or);
+  flex-shrink: 0;
+}
+
+/* ── Pourquoi maintenance ── */
+.raisonsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+}
+
+.raisonCard {
+  padding: var(--sp-lg);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(244, 241, 232, 0.06);
+  background: rgba(244, 241, 232, 0.025);
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.raisonCard:hover {
+  border-color: rgba(212, 160, 23, 0.15);
+  background: rgba(244, 241, 232, 0.04);
+}
+
+.raisonIcon {
+  display: inline-block;
+  color: var(--c-or);
+  margin-bottom: var(--sp-sm);
+}
+
+.raisonTitle {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  color: var(--c-blanc);
+  margin-bottom: var(--sp-xs);
+}
+
+.raisonDesc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+  line-height: 1.65;
+}
+
+/* ── Section CTA final ── */
+.reassuranceWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-md);
+}
+
+.reassLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-base);
+  color: var(--c-text-light-muted);
+}
+
+.reassLine svg {
+  color: var(--c-or);
+  flex-shrink: 0;
+}
+
+.reassLegal {
+  font-size: var(--fs-xs);
+  opacity: 0.55;
+}
+
+.finalCta {
+  margin-top: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.finalCtaTitle {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
+  color: var(--c-blanc);
+}
+
+.finalCtaSub {
+  font-size: var(--fs-base);
+  color: var(--c-text-light-muted);
+}
+
+.finalCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.5rem;
+  border-radius: var(--r-full);
+  background: var(--c-rouge);
+  color: var(--c-blanc);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+
+.finalCtaBtn:hover {
+  background: var(--c-rouge-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(158, 27, 31, 0.35);
+}
+
+/* ── Footer minimal ── */
+.pageFooter {
+  padding: 2rem 0;
+  border-top: 1px solid var(--c-border-dark);
+  background: rgba(28, 28, 28, 0.9);
+}
+
+.pageFooter .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerText {
+  font-size: var(--fs-xs);
+  color: var(--c-text-light-muted);
+}
+
+.footerBack {
+  font-size: var(--fs-xs);
+  color: var(--c-text-light-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerBack:hover {
+  color: var(--c-blanc);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .packsGrid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .abosGrid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .raisonsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageHeader {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .pageFooter .container {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}

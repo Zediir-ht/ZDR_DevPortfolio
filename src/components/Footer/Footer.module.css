@@ -37,15 +37,17 @@
 
 /* Marque */
 .logo {
-  font-family: 'Made Tommy', var(--ff);
-  font-size: var(--fs-xl);
-  font-weight: 400;
+  font-family: 'De Valencia', var(--ff);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: none;
   color: var(--c-blanc);
   margin-bottom: var(--sp-xs);
 }
 
 .logoAccent {
-  color: var(--c-accent);
+  color: var(--c-blanc);
 }
 
 .tagline {
@@ -114,7 +116,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--sp-md) 0;
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
   color: var(--c-text-light-muted);
 }
 
