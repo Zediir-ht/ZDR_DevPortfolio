@@ -30,7 +30,7 @@ const PACKS = [
   {
     id: 'atelier',
     name: "L'Atelier",
-    price: '890 €',
+    price: '990 €',
     type: 'Multi-pages',
     desc: 'Un site complet qui travaille pour vous 24h/24. Plusieurs pages, galerie photo, référencement avancé et autonomie de gestion.',
     features: [
@@ -46,7 +46,7 @@ const PACKS = [
   {
     id: 'terroir',
     name: 'Le Terroir',
-    price: '1 490 €',
+    price: '1 990 €',
     type: 'Premium',
     desc: 'L\'offre complète pour les restaurants, épiceries fines et producteurs locaux souhaitant vendre et réserver en ligne.',
     features: [

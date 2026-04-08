@@ -36,9 +36,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--c-noir);
+  color: var(--c-accent);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--sp-xs);
@@ -205,15 +205,15 @@
   gap: var(--sp-sm);
   padding: var(--sp-md);
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(153, 80, 57, 0.2);
+  border: 1px solid rgba(28, 28, 28, 0.10);
   border-radius: var(--r-lg);
-  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color var(--tr);
+  transition: border-color var(--tr), box-shadow var(--tr), transform var(--tr);
 }
 
 .infoCard:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
-  border-color: rgba(153, 80, 57, 0.25);
+  border-color: rgba(212, 160, 23, 0.3);
 }
 
 .infoIcon {

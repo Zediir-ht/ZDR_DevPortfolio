@@ -17,12 +17,12 @@ const PACKS = [
   },
   {
     name: "L'Atelier",
-    price: 'À partir de 890 €',
+    price: 'À partir de 990 €',
     desc: '5 pages · SEO local avancé · Galerie · Gestion autonome',
   },
   {
     name: 'Le Terroir',
-    price: 'À partir de 1 490 €',
+    price: 'À partir de 1 990 €',
     desc: 'Menu/Catalogue · Réservation · Click & Collect · Design premium',
   },
 ];
@@ -47,7 +47,7 @@ export default function PrixResume() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <span className={styles.label}>Nos solutions</span>
+        <span className={styles.label}>Mes solutions</span>
         <h2 className={styles.title}>
           Des solutions adaptées<br />à votre activité
         </h2>
@@ -72,6 +72,7 @@ export default function PrixResume() {
             <h3 className={styles.packName}>{pack.name}</h3>
             <p className={styles.packPrice}>{pack.price}</p>
             <p className={styles.packDesc}>{pack.desc}</p>
+            <p className={styles.packMaintenance}>+ abonnement maintenance dès 40&nbsp;€/mois</p>
           </motion.div>
         ))}
       </motion.div>
