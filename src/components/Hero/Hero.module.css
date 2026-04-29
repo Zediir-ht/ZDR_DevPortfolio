@@ -173,14 +173,20 @@
 
 
 /* Google badge 5 étoiles */
-.googleBadge {
+/* Wrapper centrage (évite conflit avec Framer Motion transform) */
+.googleBadgeWrapper {
   position: absolute;
   bottom: var(--sp-xl);
-  left: 50%;
-  transform: translateX(-50%);
-  right: auto;
-  top: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
   z-index: 3;
+}
+
+.googleBadge {
+  pointer-events: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -255,11 +261,8 @@
   }
 
   /* Badge Google : centré en bas du hero */
-  .googleBadge {
+  .googleBadgeWrapper {
     bottom: 3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    right: auto;
   }
 
   /* Flex colonne : titre en haut, sous-texte en bas */
