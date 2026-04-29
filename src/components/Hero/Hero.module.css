@@ -175,8 +175,11 @@
 /* Google badge 5 étoiles */
 .googleBadge {
   position: absolute;
-  top: var(--sp-2xl);
-  right: var(--sp-lg);
+  bottom: var(--sp-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  top: auto;
   z-index: 3;
   display: inline-flex;
   align-items: center;
@@ -251,11 +254,12 @@
     min-height: 100svh;
   }
 
-  /* Badge Google : descend sous le header, côté gauche pour éviter le menu */
+  /* Badge Google : centré en bas du hero */
   .googleBadge {
-    top: auto;
     bottom: 3.5rem;
-    right: var(--sp-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
   }
 
   /* Flex colonne : titre en haut, sous-texte en bas */
