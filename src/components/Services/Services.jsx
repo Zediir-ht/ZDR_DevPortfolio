@@ -106,8 +106,8 @@ export default function Services() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Des solutions digitales pensées pour les réalités des professionnels
-          de l'Aveyron.
+          Des solutions de création de sites web pensées pour les artisans, commerçants
+          et restaurateurs de Rodez et de l'Aveyron.
         </motion.p>
       </div>
 

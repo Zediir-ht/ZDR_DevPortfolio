@@ -68,7 +68,7 @@ export default function About() {
             <source srcSet="/portrait.webp" type="image/webp" />
             <img
               src="/portrait.png"
-              alt="Corentin Mayrand — Créatif web indépendant en Aveyron"
+              alt="Corentin Mayrand — Développeur web freelance à Rodez, Aveyron"
               className={styles.portrait}
               loading="lazy"
               width="320"
@@ -87,16 +87,16 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p>
-            Je suis <strong>créatif web indépendant</strong> et j'allie mes deux passions :
-            la <span className={styles.keyword}>création digitale</span> et le <span className={styles.keyword}>terroir</span>.
+            Je suis <strong>développeur web freelance à Rodez</strong> et j'allie mes deux passions :
+            la <span className={styles.keyword}>création de sites internet</span> et le <span className={styles.keyword}>terroir aveyronnais</span>.
           </p>
           <p>
-            Installé en <span className={styles.keyword}>Aveyron</span>, je conçois des <strong>sites internet pour les artisans,
-              commerçants et restaurateurs locaux</strong> qui font vivre notre territoire.
+            Installé en <span className={styles.keyword}>Aveyron (12)</span>, je conçois des <strong>sites web sur mesure pour les artisans,
+              commerçants et restaurateurs</strong> de Rodez, Millau, Villefranche-de-Rouergue et de tout le département.
           </p>
           <p>
             Mon approche est simple : mettre en lumière votre <span className={styles.keyword}>savoir-faire</span> avec authenticité.
-            Je m'inspire de la richesse de notre terroir aveyronnais pour créer des <span className={styles.keyword}>identités
+            En tant que <strong>créateur de sites internet en Aveyron</strong>, je m'inspire de la richesse de notre terroir pour créer des <span className={styles.keyword}>identités
             digitales fortes</span>, modernes et ancrées dans le local.
           </p>
           <p className={styles.signature}>

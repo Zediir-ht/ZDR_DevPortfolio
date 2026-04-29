@@ -17,7 +17,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Ancré dans le territoire',
-    desc: 'Basé à Rodez, je connais les réalités des artisans, commerçants et restaurateurs du 12. Je parle votre langage et je comprends votre clientèle.',
+    desc: 'Développeur web basé à Rodez, je connais les réalités des artisans, commerçants et restaurateurs de l\'Aveyron. Je parle votre langage et je comprends votre clientèle.',
   },
   {
     icon: (
@@ -56,8 +56,8 @@ const REASONS = [
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    title: 'Prix fixe, sans surprise',
-    desc: 'Devis clair dès le départ. Pas de coûts cachés, pas de mauvaise surprise. Paiement en 3× possible.',
+    title: 'Tarif clair, sans surprise',
+    desc: 'Devis personnalisé dès le départ. Pas de coûts cachés, pas de mauvaise surprise.',
   },
   {
     icon: (
@@ -67,7 +67,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Visible sur Google',
-    desc: 'Chaque site est optimisé pour le référencement local. Vos futurs clients vous trouvent quand ils cherchent votre métier.',
+    desc: 'Chaque site internet que je crée à Rodez et en Aveyron est optimisé pour le référencement local (SEO). Vos futurs clients vous trouvent quand ils cherchent votre métier.',
   },
 ];
 

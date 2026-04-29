@@ -44,11 +44,11 @@ export default function Footer({ onOpenLegal }) {
             <span className={styles.logoAccent}>Zdr</span>_DEV
           </h4>
           <p className={styles.tagline}>
-            Créatif web indépendant<br />Rodez · Aveyron (12)
+            Développeur web freelance<br />Rodez · Aveyron (12)
           </p>
           <p className={styles.tagline}>
-            Création de sites internet pour artisans,<br />
-            commerçants et restaurateurs du territoire.
+            Création de sites internet sur mesure pour artisans,<br />
+            commerçants et restaurateurs de l'Aveyron.
           </p>
         </motion.div>
 

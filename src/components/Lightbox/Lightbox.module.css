@@ -1,0 +1,168 @@
+/* ── Overlay plein écran ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 8, 6, 0.94);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+/* ── Bouton fermer ── */
+.closeBtn {
+  position: absolute;
+  top: var(--sp-md);
+  right: var(--sp-md);
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-full);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Compteur ── */
+.counter {
+  position: absolute;
+  top: var(--sp-md);
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Made Tommy', sans-serif;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.12em;
+  pointer-events: none;
+}
+
+/* ── Wrapper image ── */
+.imageWrapper {
+  position: relative;
+  max-width: 88vw;
+  max-height: 78vh;
+  overflow: hidden;
+  cursor: default;
+  border-radius: 4px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Image ── */
+.image {
+  display: block;
+  max-width: 88vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* ── Boutons navigation ── */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-full);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-50%) scale(1.08);
+}
+.navPrev { left: var(--sp-lg); }
+.navNext { right: var(--sp-lg); }
+
+/* ── Dots / miniatures ── */
+.dots {
+  position: absolute;
+  bottom: var(--sp-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--sp-sm);
+  align-items: center;
+}
+
+.dot {
+  position: relative;
+  width: 64px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  transition: border-color 0.25s, transform 0.25s;
+  flex-shrink: 0;
+}
+.dot:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.08);
+}
+.dotActive {
+  border-color: var(--c-or);
+  transform: scale(1.12);
+}
+
+.dotThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Barre de progression autoplay */
+.dotProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--c-or);
+  transform-origin: left;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .navPrev { left: var(--sp-sm); }
+  .navNext { right: var(--sp-sm); }
+
+  .navBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .imageWrapper,
+  .image {
+    max-width: 96vw;
+    max-height: 72vh;
+  }
+
+  .dot {
+    width: 48px;
+    height: 32px;
+  }
+}

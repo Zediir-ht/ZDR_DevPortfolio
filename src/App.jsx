@@ -10,6 +10,8 @@ import Hero from './components/Hero/Hero';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
 const About      = lazy(() => import('./components/About/About'));
+const Avis       = lazy(() => import('./components/Avis/Avis'));
+const Portfolio  = lazy(() => import('./components/Portfolio/Portfolio'));
 const Services   = lazy(() => import('./components/Services/Services'));
 const PrixResume = lazy(() => import('./components/PrixResume/PrixResume'));
 const WhyMe      = lazy(() => import('./components/WhyMe/WhyMe'));
@@ -39,6 +41,8 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
       <main>
         <Hero />
         <Suspense fallback={null}>
+          {/* <Avis /> — désactivé temporairement, réactiver quand les vrais avis Google seront prêts */}
+          <Portfolio />
           <About />
           <Services />
           <PrixResume />

@@ -12,17 +12,17 @@ import styles from './PrixResume.module.css';
 const PACKS = [
   {
     name: "L'Essentiel",
-    price: 'À partir de 490 €',
+    price: 'Sur devis',
     desc: 'Site one-page · Mobile First · SEO Maps · Contact',
   },
   {
     name: "L'Atelier",
-    price: 'À partir de 990 €',
+    price: 'Sur devis',
     desc: '5 pages · SEO local avancé · Galerie · Gestion autonome',
   },
   {
     name: 'Le Terroir',
-    price: 'À partir de 1 990 €',
+    price: 'Sur devis',
     desc: 'Menu/Catalogue · Réservation · Click & Collect · Design premium',
   },
 ];
@@ -72,7 +72,7 @@ export default function PrixResume() {
             <h3 className={styles.packName}>{pack.name}</h3>
             <p className={styles.packPrice}>{pack.price}</p>
             <p className={styles.packDesc}>{pack.desc}</p>
-            <p className={styles.packMaintenance}>+ abonnement maintenance dès 40&nbsp;€/mois</p>
+            <p className={styles.packMaintenance}>+ abonnement maintenance disponible</p>
           </motion.div>
         ))}
       </motion.div>
@@ -90,7 +90,7 @@ export default function PrixResume() {
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </Link>
-        <p className={styles.note}>Paiement en 3× sans frais · Devis gratuit sous 24h</p>
+        <p className={styles.note}>Devis gratuit sous 24h · Sans engagement</p>
       </motion.div>
     </SectionWrapper>
   );

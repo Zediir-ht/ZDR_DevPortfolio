@@ -37,7 +37,7 @@ export default function CTAFinal() {
         </motion.h2>
 
         <motion.p className={styles.subtitle} variants={itemVariants}>
-          Discutons de votre projet autour d'un café à Rodez, ou en visio.
+          Discutons de votre projet de création de site web à Rodez, ou en visio.
           Premier échange gratuit et sans engagement.
         </motion.p>
 
@@ -56,7 +56,7 @@ export default function CTAFinal() {
         </motion.div>
 
         <motion.p className={styles.reassurance} variants={itemVariants}>
-          Devis gratuit en 24h · Paiement en 3× · À partir de 600 €
+          Devis gratuit en 24h · Sans engagement
         </motion.p>
       </motion.div>
     </SectionWrapper>

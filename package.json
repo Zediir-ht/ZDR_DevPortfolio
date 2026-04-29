@@ -1,7 +1,7 @@
 {
   "name": "zdr-dev-portfolio",
   "version": "1.0.0",
-  "description": "Création de sites web pour artisans et commerçants en Aveyron (Rodez) — dès 600 € + maintenance dès 29 €/mois",
+  "description": "Développeur web freelance à Rodez, Aveyron — Création de sites internet sur mesure pour artisans, commerçants et restaurateurs — dès 490 €",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.59.1",
     "vite": "^6.0.0"
   }
 }

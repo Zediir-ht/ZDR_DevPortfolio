@@ -14,7 +14,7 @@ const PACKS = [
   {
     id: 'essentiel',
     name: "L'Essentiel",
-    price: '490 €',
+    price: 'Sur devis',
     type: 'One-Page',
     desc: 'Vous êtes artisan ou commerçant et avez besoin d\'être trouvé rapidement sur Google ? Cette offre est faite pour vous.',
     features: [
@@ -30,7 +30,7 @@ const PACKS = [
   {
     id: 'atelier',
     name: "L'Atelier",
-    price: '990 €',
+    price: 'Sur devis',
     type: 'Multi-pages',
     desc: 'Un site complet qui travaille pour vous 24h/24. Plusieurs pages, galerie photo, référencement avancé et autonomie de gestion.',
     features: [
@@ -46,7 +46,7 @@ const PACKS = [
   {
     id: 'terroir',
     name: 'Le Terroir',
-    price: '1 990 €',
+    price: 'Sur devis',
     type: 'Premium',
     desc: 'L\'offre complète pour les restaurants, épiceries fines et producteurs locaux souhaitant vendre et réserver en ligne.',
     features: [
@@ -66,8 +66,8 @@ const ABOS = [
   {
     id: 'tranquillite',
     name: 'Formule Tranquillité',
-    price: '19 €',
-    period: '/mois',
+    price: 'Sur devis',
+    period: '',
     desc: 'Le minimum pour garder votre site en ligne, à jour et sécurisé, sans y penser.',
     features: [
       'Hébergement & nom de domaine',
@@ -80,8 +80,8 @@ const ABOS = [
   {
     id: 'serenite',
     name: 'Formule Sérénité',
-    price: '39 €',
-    period: '/mois',
+    price: 'Sur devis',
+    period: '',
     desc: 'Votre site reste performant et évolue avec votre activité.',
     features: [
       'Tout Tranquillité inclus',
@@ -163,7 +163,26 @@ const CheckIcon = () => (
 export default function Tarifs() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Tarifs — ZDR Dev · Création de sites web Aveyron';
+    document.title = 'Tarifs Création Site Web Rodez & Aveyron | Zdr_DEV — Développeur Web';
+
+    // Meta description dynamique pour la page tarifs
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const originalDesc = metaDesc?.getAttribute('content');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit sous 24h.');
+    }
+
+    // Canonical pour /tarifs
+    let canonical = document.querySelector('link[rel="canonical"]');
+    const originalCanonical = canonical?.getAttribute('href');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://zdrdev.fr/tarifs');
+    }
+
+    return () => {
+      if (metaDesc && originalDesc) metaDesc.setAttribute('content', originalDesc);
+      if (canonical && originalCanonical) canonical.setAttribute('href', originalCanonical);
+    };
   }, []);
 
   return (
@@ -200,8 +219,8 @@ export default function Tarifs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Des offres claires,<br />
-              <span className={styles.accent}>sans surprise</span>
+              Tarifs création de site web<br />
+              <span className={styles.accent}>à Rodez et en Aveyron</span>
             </motion.h1>
             <motion.p
               className={styles.heroSub}
@@ -209,7 +228,7 @@ export default function Tarifs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Artisans, commerçants et restaurateurs de l'Aveyron —
+              Développeur web freelance à Rodez — artisans, commerçants et restaurateurs de l'Aveyron,
               voici exactement ce que vous obtenez pour chaque offre.
             </motion.p>
           </div>

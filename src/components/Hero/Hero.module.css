@@ -172,6 +172,42 @@
 
 
 
+/* Google badge 5 étoiles */
+.googleBadge {
+  position: absolute;
+  top: var(--sp-2xl);
+  right: var(--sp-lg);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--r-full);
+  background: rgba(244, 241, 232, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.googleIcon {
+  flex-shrink: 0;
+}
+
+.googleStars {
+  font-size: 0.8rem;
+  color: #F5A623;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.googleLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--c-text-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 /* Scroll hint */
 .scrollHint {
   position: absolute;
@@ -179,6 +215,19 @@
   color: var(--c-noir);
   opacity: 0.4;
   transition: opacity var(--tr);
+}
+
+/* SR-only H1 for SEO — visually hidden but crawlable */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .scrollHint:hover {
@@ -200,6 +249,13 @@
   .hero {
     padding: 5rem 0 2.5rem;
     min-height: 100svh;
+  }
+
+  /* Badge Google : descend sous le header, côté gauche pour éviter le menu */
+  .googleBadge {
+    top: auto;
+    bottom: 3.5rem;
+    right: var(--sp-lg);
   }
 
   /* Flex colonne : titre en haut, sous-texte en bas */
@@ -271,6 +327,11 @@
 }
 
 @media (max-width: 480px) {
+  .googleBadge {
+    padding: 0.3rem 0.65rem;
+    gap: 0.35rem;
+  }
+
   .heroLeft,
   .heroRight {
     font-size: clamp(4.5rem, 34vw, 11rem);

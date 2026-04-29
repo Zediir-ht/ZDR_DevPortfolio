@@ -1,0 +1,192 @@
+/* Avis.module.css — section temoignages, fond clair */
+
+.header {
+  margin-bottom: var(--sp-2xl);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-xs);
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  font-size: clamp(var(--fs-3xl), 4vw, var(--fs-5xl));
+  color: var(--c-noir);
+  line-height: 1.15;
+}
+
+.accent {
+  color: var(--c-accent);
+}
+
+/* Badge Google note globale */
+.googleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--sp-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+}
+
+.googleBadge strong {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--c-noir);
+}
+
+.totalLabel {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+}
+
+/* Grille 3 cartes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+
+/* Carte */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  padding: var(--sp-xl) var(--sp-lg);
+  border-radius: var(--r-lg);
+  background: var(--c-blanc-alt);
+  border: 1px solid var(--c-border);
+  transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr);
+}
+
+.card:hover {
+  border-color: rgba(158, 27, 31, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 40px rgba(158, 27, 31, 0.04);
+}
+
+/* Guillemets decoratifs */
+.quoteIcon {
+  color: var(--c-or);
+  opacity: 0.6;
+  margin-bottom: var(--sp-xs);
+}
+
+/* Etoiles */
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: var(--sp-xs);
+}
+
+.star {
+  color: var(--c-or);
+}
+
+.starEmpty {
+  color: var(--c-or);
+  opacity: 0.25;
+}
+
+/* Texte */
+.texte {
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  color: var(--c-text-soft);
+  flex: 1;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Footer auteur */
+.footer {
+  margin-top: auto;
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Avatar Google */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.nom {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-noir);
+  margin-bottom: 2px;
+}
+
+.role {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-accent);
+  margin-bottom: 2px;
+}
+
+.lieu {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+}
+
+.date {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+}
+
+/* Skeleton chargement */
+.skeleton {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+
+.skeletonCard {
+  height: 260px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(90deg, var(--c-blanc-alt) 25%, var(--c-bg-alt) 50%, var(--c-blanc-alt) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .skeleton {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
