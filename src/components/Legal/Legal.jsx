@@ -29,7 +29,7 @@ function MentionsLegales() {
       <section className={styles.block}>
         <h3>1. Éditeur du site</h3>
         <p>
-          Le site <strong>zdr-dev-portfolio.vercel.app</strong> est édité par :
+          Le site <strong>zdrdev.fr</strong> est édité par :
         </p>
         <ul>
           <li><strong>Nom :</strong> Corentin Mayrand (micro-entreprise « Zdr_DEV »)</li>
