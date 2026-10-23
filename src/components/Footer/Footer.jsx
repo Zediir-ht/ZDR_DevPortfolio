@@ -61,6 +61,7 @@ export default function Footer({ onOpenLegal }) {
             <li><a href="#services">Services</a></li>
             <li><Link to="/tarifs">Tarifs</Link></li>
             <li><a href="#pourquoi">Pourquoi moi</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </motion.div>

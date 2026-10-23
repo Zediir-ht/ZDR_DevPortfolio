@@ -1,0 +1,125 @@
+/* FAQ.module.css — fond clair (crème alternatif) */
+
+.faqSection {
+  background: var(--c-bg-alt);
+}
+
+.header {
+  margin-bottom: var(--sp-xl);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-rouge);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-xs);
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-weight: 700;
+  color: var(--c-text);
+  max-width: 820px;
+}
+
+.accent {
+  color: var(--c-rouge);
+}
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--c-text-muted);
+  max-width: 620px;
+  margin-top: var(--sp-sm);
+}
+
+/* Liste d'accordéons */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  max-width: 920px;
+}
+
+.item {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background: var(--c-bg);
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+
+.item:hover,
+.item[open] {
+  border-color: rgba(158, 27, 31, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.question::-webkit-details-marker {
+  display: none;
+}
+
+.question:focus-visible {
+  outline: 2px solid var(--c-rouge);
+  outline-offset: 2px;
+  border-radius: var(--r-lg);
+}
+
+.questionText {
+  font-family: 'Made Tommy', var(--ff);
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--c-rouge);
+  transition: transform var(--tr);
+}
+
+.item[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 0 var(--sp-lg) var(--sp-md);
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--c-text-soft);
+}
+
+@media (max-width: 580px) {
+  .question {
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .answer {
+    padding: 0 var(--sp-md) var(--sp-sm);
+  }
+}

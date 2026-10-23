@@ -15,6 +15,7 @@ const Portfolio  = lazy(() => import('./components/Portfolio/Portfolio'));
 const Services   = lazy(() => import('./components/Services/Services'));
 const PrixResume = lazy(() => import('./components/PrixResume/PrixResume'));
 const WhyMe      = lazy(() => import('./components/WhyMe/WhyMe'));
+const FAQ        = lazy(() => import('./components/FAQ/FAQ'));
 const Contact    = lazy(() => import('./components/Contact/Contact'));
 const CTAFinal   = lazy(() => import('./components/CTAFinal/CTAFinal'));
 const Footer     = lazy(() => import('./components/Footer/Footer'));
@@ -47,6 +48,7 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
           <Services />
           <PrixResume />
           <WhyMe />
+          <FAQ />
           <Contact />
           <CTAFinal />
         </Suspense>

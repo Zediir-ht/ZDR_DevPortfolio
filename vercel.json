@@ -1,5 +1,7 @@
 {
+  "trailingSlash": false,
   "rewrites": [
+    { "source": "/tarifs", "destination": "/tarifs.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

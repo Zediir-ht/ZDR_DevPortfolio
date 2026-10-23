@@ -12,10 +12,18 @@ if (!window.location.hash) {
   window.scrollTo(0, 0);
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// En production le HTML est pré-rendu (scripts/prerender.js) : on l'hydrate.
+if (container.hasChildNodes()) {
+  ReactDOM.hydrateRoot(container, app);
+} else {
+  ReactDOM.createRoot(container).render(app);
+}
