@@ -26,10 +26,10 @@
   50%      { opacity: 0.6; }
 }
 
-/* Grille 3 colonnes */
+/* Grille 4 colonnes */
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1.3fr 1.5fr;
   gap: var(--sp-xl);
   padding-bottom: var(--sp-2xl);
   border-bottom: 1px solid rgba(244, 241, 232, 0.06);
@@ -149,6 +149,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;

@@ -1,0 +1,174 @@
+/* LocalPage.module.css — compléments au style de la page Tarifs (fond sombre) */
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  color: var(--c-text-light-muted);
+  margin-bottom: var(--sp-md);
+}
+
+.breadcrumb a {
+  color: var(--c-or);
+}
+
+.intro {
+  max-width: 720px;
+  margin-top: var(--sp-md);
+}
+
+.intro p {
+  font-size: var(--fs-lg);
+  color: var(--c-text-light-muted);
+  line-height: 1.65;
+  margin-bottom: var(--sp-sm);
+}
+
+.heroCta {
+  margin-top: var(--sp-md);
+}
+
+/* Publics : 3 cartes sur une ligne (div. pour primer sur .raisonsGrid de Tarifs, quel que soit l'ordre des CSS) */
+div.publicsGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Approche + communes */
+.split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--sp-2xl);
+}
+
+.prose {
+  font-size: var(--fs-base);
+  color: var(--c-text-light-muted);
+  line-height: 1.7;
+  margin-top: var(--sp-sm);
+}
+
+.inlineLink {
+  color: var(--c-or);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.communes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-xs);
+  margin-top: var(--sp-sm);
+  padding: 0;
+  list-style: none;
+}
+
+.communes li {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(212, 160, 23, 0.25);
+  border-radius: var(--r-full);
+  font-size: var(--fs-sm);
+  color: var(--c-text-light);
+}
+
+/* FAQ locale */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  max-width: 920px;
+}
+
+.faqItem {
+  border: 1px solid rgba(244, 241, 232, 0.08);
+  border-radius: var(--r-lg);
+  background: rgba(244, 241, 232, 0.025);
+  transition: border-color var(--tr);
+}
+
+.faqItem:hover,
+.faqItem[open] {
+  border-color: rgba(212, 160, 23, 0.3);
+}
+
+.faqQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion h3 {
+  font-family: 'Made Tommy', var(--ff);
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--c-blanc);
+  margin: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--c-or);
+  transition: transform var(--tr);
+}
+
+.faqItem[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 0 var(--sp-lg) var(--sp-md);
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--c-text-light-muted);
+}
+
+/* Autres villes */
+.autres {
+  margin-top: var(--sp-2xl);
+  text-align: center;
+  color: var(--c-text-light-muted);
+}
+
+.autres ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-sm) var(--sp-lg);
+  margin-top: var(--sp-xs);
+  padding: 0;
+  list-style: none;
+}
+
+.autres a {
+  color: var(--c-or);
+}
+
+@media (max-width: 900px) {
+  div.publicsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+}
+
+@media (max-width: 580px) {
+  .faqQuestion {
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .faqAnswer {
+    padding: 0 var(--sp-md) var(--sp-sm);
+  }
+}

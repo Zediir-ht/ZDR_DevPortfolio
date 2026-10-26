@@ -1,12 +1,13 @@
 /**
  * App.jsx
  * -------
- * Composant racine — routing homepage + page /tarifs.
+ * Composant racine — routing homepage, page /tarifs et pages locales.
  */
 import { lazy, Suspense, useState, useCallback, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import { VILLES } from './data/villes';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
 const About      = lazy(() => import('./components/About/About'));
@@ -21,6 +22,7 @@ const CTAFinal   = lazy(() => import('./components/CTAFinal/CTAFinal'));
 const Footer     = lazy(() => import('./components/Footer/Footer'));
 const Legal      = lazy(() => import('./components/Legal/Legal'));
 const Tarifs     = lazy(() => import('./pages/Tarifs/Tarifs'));
+const LocalPage  = lazy(() => import('./pages/Local/LocalPage'));
 
 function HomePage({ onOpenLegal, legalPage, closeLegal }) {
   const { hash } = useLocation();
@@ -79,6 +81,9 @@ export default function App() {
           }
         />
         <Route path="/tarifs" element={<Tarifs />} />
+        {VILLES.map((ville) => (
+          <Route key={ville.slug} path={`/${ville.slug}`} element={<LocalPage ville={ville} />} />
+        ))}
       </Routes>
     </Suspense>
   );

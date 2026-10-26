@@ -5,6 +5,7 @@
  */
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { VILLES } from '../../data/villes';
 import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -66,7 +67,17 @@ export default function Footer({ onOpenLegal }) {
           </ul>
         </motion.div>
 
-        {/* Colonne 3 – Contact */}
+        {/* Colonne 3 – Zones d'intervention (pages locales) */}
+        <motion.div className={styles.links} variants={colVariants}>
+          <h5 className={styles.colTitle}>Zones d'intervention</h5>
+          <ul>
+            {VILLES.map((v) => (
+              <li key={v.slug}><Link to={`/${v.slug}`}>Site internet {v.ville}</Link></li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Colonne 4 – Contact */}
         <motion.div className={styles.contact} variants={colVariants}>
           <h5 className={styles.colTitle}>Contact</h5>
           <ul>

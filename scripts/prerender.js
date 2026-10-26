@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { VILLES } from '../src/data/villes.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -21,6 +22,13 @@ const ROUTES = [
     description: 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit sous 24h.',
     canonical: 'https://zdrdev.fr/tarifs',
   },
+  ...VILLES.map((v) => ({
+    url: `/${v.slug}`,
+    out: `${v.slug}.html`,
+    title: v.title,
+    description: v.description,
+    canonical: `https://zdrdev.fr/${v.slug}`,
+  })),
 ];
 
 const escapeAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');

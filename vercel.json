@@ -2,6 +2,10 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/tarifs", "destination": "/tarifs.html" },
+    { "source": "/creation-site-internet-rodez", "destination": "/creation-site-internet-rodez.html" },
+    { "source": "/creation-site-internet-millau", "destination": "/creation-site-internet-millau.html" },
+    { "source": "/creation-site-internet-villefranche-de-rouergue", "destination": "/creation-site-internet-villefranche-de-rouergue.html" },
+    { "source": "/creation-site-internet-decazeville", "destination": "/creation-site-internet-decazeville.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
