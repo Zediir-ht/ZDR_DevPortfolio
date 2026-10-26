@@ -106,11 +106,11 @@
 }
 
 .heroLeft {
-  font-family: 'De Valencia', var(--ff);
+  font-family: var(--ff-logo);
   font-size: clamp(6rem, 16vw, 16rem);
-  font-weight: 800;
+  font-weight: 300;
   line-height: 0.9;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.215em;
   text-transform: uppercase;
   background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
   -webkit-background-clip: text;
@@ -120,11 +120,11 @@
 }
 
 .heroRight {
-  font-family: 'De Valencia', var(--ff);
+  font-family: var(--ff-logo);
   font-size: clamp(6rem, 16vw, 16rem);
-  font-weight: 800;
+  font-weight: 300;
   line-height: 0.9;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.215em;
   text-transform: uppercase;
   background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
   -webkit-background-clip: text;
@@ -140,12 +140,12 @@
 }
 
 .heroSub {
-  font-family: 'De Valencia', var(--ff);
+  font-family: var(--ff-logo);
   font-size: clamp(2rem, 5vw, 5rem);
-  font-weight: 800;
+  font-weight: 300;
   line-height: 1;
-  letter-spacing: 0.05em;
-  text-transform: none;
+  letter-spacing: 0.225em;
+  text-transform: uppercase;
   background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -156,10 +156,11 @@
 }
 
 .heroTagline {
-  font-family: 'De Valencia', var(--ff);
+  font-family: var(--ff-logo);
   font-size: clamp(1.8rem, 3.5vw, 3rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.255em;
   background: linear-gradient(to top, #1C1C1C 0%, #F4F1E8 30%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -236,7 +237,7 @@
     line-height: 0.88;
     text-align: left;
     padding-left: 2vw;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.165em;
     transform: scaleY(10);
     transform-origin: left top;
   }
@@ -248,7 +249,7 @@
     text-align: left;
     padding-left: 42vw;
     margin-top: 66vw;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.165em;
     transform: scaleY(10);
     transform-origin: left top;
   }

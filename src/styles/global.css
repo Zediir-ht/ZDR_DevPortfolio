@@ -3,10 +3,11 @@
    Palette : Rouge #9E1B1F · Or #D4A017 · Noir #1C1C1C · Blanc cassé #F4F1E8
    ========================================================= */
 
+/* Antonio (licence OFL, voir public/fonts/antonio-OFL.txt) : logo et hero, préchargée dans index.html */
 @font-face {
-  font-family: 'De Valencia';
-  src: url('../fonts/de-valencia/De Valencia (beta).woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Antonio';
+  src: url('/fonts/antonio-latin.woff2') format('woff2');
+  font-weight: 100 700;
   font-style: normal;
   font-display: swap;
 }
@@ -50,6 +51,8 @@
   --ff-display: 'Poiret One', 'Inter', sans-serif;
   /* Titres : Outfit (licence OFL), remplace Made Tommy (licence usage personnel) */
   --ff-titre: 'Outfit', 'Figtree', sans-serif;
+  /* Logo et hero : Antonio (licence OFL) */
+  --ff-logo: 'Antonio', 'Figtree', sans-serif;
   --fs-xs:   0.85rem;
   --fs-sm:   1rem;
   --fs-base: 1.125rem;

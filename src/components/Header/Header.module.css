@@ -29,11 +29,11 @@
 /* ── Logo ── */
 .logo {
   flex-shrink: 0;
-  font-family: 'De Valencia', var(--ff);
+  font-family: var(--ff-logo);
   font-size: clamp(1rem, 2vw, 1.3rem);
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: none;
+  font-weight: 300;
+  letter-spacing: calc(2px + 0.175em);
+  text-transform: uppercase;
   color: var(--c-blanc);
   transition: color var(--tr-fast);
 }
