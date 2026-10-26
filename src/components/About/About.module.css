@@ -122,11 +122,6 @@
   text-shadow: 0 0 1px rgba(28,28,28,0.5);
 }
 
-.keyword {
-  color: var(--c-rouge);
-  font-weight: 700;
-}
-
 .signature {
   color: var(--c-noir) !important;
   font-style: italic;

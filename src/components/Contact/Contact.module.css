@@ -56,11 +56,6 @@
   color: var(--c-rouge);
 }
 
-.keyword {
-  color: var(--c-rouge);
-  font-weight: 700;
-}
-
 .subtitle {
   font-size: var(--fs-xl);
   color: var(--c-noir);

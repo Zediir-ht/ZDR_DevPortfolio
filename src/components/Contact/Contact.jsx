@@ -134,7 +134,7 @@ export default function Contact() {
           variants={headerVariants}
         >
           Dites-moi ce que vous faites et ce dont vous avez besoin.
-          Je vous recontacte sous <span className={styles.keyword}>24 h</span>.
+          Je vous recontacte sous 24 h.
         </motion.p>
       </div>
 
@@ -280,9 +280,9 @@ export default function Contact() {
             </div>
             <div>
               <h4 className={styles.infoTitle}>Localisation</h4>
-              <p className={styles.infoText}>Rodez, <span className={styles.keyword}>Aveyron</span> (12)</p>
+              <p className={styles.infoText}>Rodez, Aveyron (12)</p>
               <p className={styles.infoText} style={{ marginTop: '0.5rem' }}>
-                Basé à <span className={styles.keyword}>Rodez</span>, j'interviens dans tout l'<span className={styles.keyword}>Aveyron</span> : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
+                Basé à Rodez, j'interviens dans tout l'Aveyron : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
               </p>
             </div>
           </motion.div>
@@ -296,7 +296,7 @@ export default function Contact() {
             </div>
             <div>
               <h4 className={styles.infoTitle}>Disponibilité</h4>
-              <p className={styles.infoText}>Du <span className={styles.keyword}>lundi au vendredi</span>, de <span className={styles.keyword}>9h à 18h</span><br />RDV à <span className={styles.keyword}>Rodez</span>, Millau ou en visio</p>
+              <p className={styles.infoText}>Du lundi au vendredi, de 9h à 18h<br />RDV à Rodez, Millau ou en visio</p>
             </div>
           </motion.div>
 
