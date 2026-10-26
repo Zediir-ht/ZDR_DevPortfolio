@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: clamp(var(--fs-3xl), 4vw, var(--fs-5xl));
   color: var(--c-blanc);
@@ -87,7 +87,7 @@
 /* Numero decoratif en arriere-plan */
 .num {
   display: block;
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 800;
   font-size: clamp(5rem, 10vw, 8rem);
   color: rgba(212, 160, 23, 0.10);
@@ -127,7 +127,7 @@
 }
 
 .nom {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: clamp(var(--fs-xl), 2.5vw, var(--fs-3xl));
   color: var(--c-blanc);

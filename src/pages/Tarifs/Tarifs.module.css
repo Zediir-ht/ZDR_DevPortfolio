@@ -83,7 +83,7 @@
 }
 
 .heroTitle {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 800;
   font-size: clamp(var(--fs-4xl), 5vw, 4.5rem);
   color: var(--c-blanc);
@@ -121,7 +121,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
   color: var(--c-blanc);
@@ -190,7 +190,7 @@
 }
 
 .packName {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: var(--fs-2xl);
   color: var(--c-blanc);
@@ -202,7 +202,7 @@
   font-weight: 800;
   color: var(--c-or);
   margin-bottom: var(--sp-sm);
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
 }
 
 .packDesc {
@@ -295,7 +295,7 @@
 }
 
 .aboName {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: var(--fs-xl);
   color: var(--c-blanc);
@@ -306,7 +306,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--c-or);
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   margin-bottom: var(--sp-sm);
 }
 
@@ -386,7 +386,7 @@
 }
 
 .raisonTitle {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: var(--fs-xl);
   color: var(--c-blanc);
@@ -435,7 +435,7 @@
 }
 
 .finalCtaTitle {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
   color: var(--c-blanc);

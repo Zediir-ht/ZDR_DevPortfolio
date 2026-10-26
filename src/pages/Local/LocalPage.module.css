@@ -105,7 +105,7 @@ div.publicsGrid {
 }
 
 .faqQuestion h3 {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-size: var(--fs-base);
   font-weight: 700;
   color: var(--c-blanc);

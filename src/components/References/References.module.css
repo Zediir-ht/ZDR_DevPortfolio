@@ -48,7 +48,7 @@
 }
 
 .title {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-size: var(--fs-2xl);
   font-weight: 700;
   color: var(--c-text);
@@ -87,7 +87,7 @@
 }
 
 .nom {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--c-text);

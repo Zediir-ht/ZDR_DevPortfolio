@@ -46,7 +46,7 @@
 }
 
 .title {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-weight: 700;
   font-size: var(--fs-4xl);
   color: var(--c-noir);

@@ -40,7 +40,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Made Tommy', sans-serif;
+  font-family: var(--ff-titre);
   font-size: var(--fs-sm);
   letter-spacing: 0.12em;
   pointer-events: none;

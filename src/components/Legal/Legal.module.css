@@ -63,7 +63,7 @@
 
 /* Titre principal */
 .title {
-  font-family: 'Made Tommy', var(--ff);
+  font-family: var(--ff-titre);
   font-size: var(--fs-2xl);
   font-weight: 800;
   color: var(--c-dark);

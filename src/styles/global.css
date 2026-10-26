@@ -11,30 +11,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Made Tommy';
-  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Regular_PERSONAL USE.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Made Tommy';
-  src: url('../fonts/Made-Tommy-Font/MADE TOMMY Bold_PERSONAL USE.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Made Tommy';
-  src: url('../fonts/Made-Tommy-Font/MADE TOMMY ExtraBold_PERSONAL USE.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* ── Palette Occitane ── */
   /* Croix occitane (masque SVG) : remplace les traits devant les étiquettes de section */
@@ -72,6 +48,8 @@
   /* Texte courant : Figtree (lisible, licence OFL) ; Poiret One reste la police décorative */
   --ff: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ff-display: 'Poiret One', 'Inter', sans-serif;
+  /* Titres : Outfit (licence OFL), remplace Made Tommy (licence usage personnel) */
+  --ff-titre: 'Outfit', 'Figtree', sans-serif;
   --fs-xs:   0.85rem;
   --fs-sm:   1rem;
   --fs-base: 1.125rem;
