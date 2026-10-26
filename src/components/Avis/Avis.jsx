@@ -3,33 +3,6 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { useGoogleReviews } from '../../utils/useGoogleReviews';
 import styles from './Avis.module.css';
 
-const AVIS = [
-  {
-    nom: 'Léa B.',
-    role: 'Chambres d\'hôtes · Les Logis de Léa',
-    lieu: 'Saint-Beauzély, Aveyron',
-    note: 5,
-    texte:
-      'Résultat bluffant pour notre gîte. Le site reflète exactement l\'ambiance que je voulais transmettre : chaleur, authenticité, Aveyron. Les demandes de réservation ont augmenté dès la première semaine.',
-  },
-  {
-    nom: 'Nathalie & Florian',
-    role: 'Hôtel-Restaurant · Les Carillons',
-    lieu: 'Cransac-les-Thermes, Aveyron',
-    note: 5,
-    texte:
-      'Très professionnel, à l\'écoute et réactif. Notre site multi-pages est moderne, rapide et bien référencé sur Google. Le résultat dépasse vraiment nos attentes — on recommande sans hésiter.',
-  },
-  {
-    nom: 'Maxime D.',
-    role: 'Blog spécialisé · Chat Serein',
-    lieu: 'En ligne',
-    note: 5,
-    texte:
-      'Livraison rapide, code propre et SEO bien travaillé. Mon site de conseils félin génère du trafic organique dès le départ. Un développeur sérieux qui sait exactement ce qu\'il fait.',
-  },
-];
-
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -64,9 +37,10 @@ const cardVariants = {
 export default function Avis() {
   const { reviews: googleReviews, rating, total, loading } = useGoogleReviews();
 
-  // Utilise les vrais avis Google si disponibles, sinon les avis statiques
-  const avisData = (googleReviews && googleReviews.length > 0) ? googleReviews : AVIS;
+  // Uniquement de vrais avis Google : rien n'est affiché tant qu'il n'y en a pas
   const isGoogle = !!(googleReviews && googleReviews.length > 0);
+  if (!loading && !isGoogle) return null;
+  const avisData = googleReviews ?? [];
 
   return (
     <SectionWrapper id="avis">
@@ -79,8 +53,7 @@ export default function Avis() {
       >
         <span className={styles.label}>Témoignages</span>
         <h2 className={styles.title}>
-          Ce que disent<br />
-          <span className={styles.accent}>mes clients</span>
+          Ce que disent mes clients
         </h2>
         {isGoogle && rating && (
           <p className={styles.googleBadge}>

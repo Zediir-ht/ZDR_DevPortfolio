@@ -219,7 +219,7 @@ export default function Tarifs() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Tarifs création de site web<br />
-              <span className={styles.accent}>à Rodez et en Aveyron</span>
+              à Rodez et en Aveyron
             </motion.h1>
             <motion.p
               className={styles.heroSub}

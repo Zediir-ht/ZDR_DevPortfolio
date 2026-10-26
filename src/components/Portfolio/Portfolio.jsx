@@ -98,12 +98,13 @@ export default function Portfolio() {
                   aria-label={`Voir ${projet.nom}, image ${i + 1} en grand`}
                 >
                   <img
-                    src={src}
+                    src={src.replace(/\.webp$/, '-thumb.webp')}
                     alt={`Aperçu ${projet.nom}, vue ${i + 1}`}
                     className={styles.shot}
                     loading="lazy"
                     width="185"
                     height="347"
+                    decoding="async"
                     draggable={false}
                   />
                   <span className={styles.shotOverlay} aria-hidden="true">

@@ -119,7 +119,7 @@ export default function LocalPage({ ville: v }) {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               {v.h1}<br />
-              <span className={styles.accent}>{v.h1Accent}</span>
+              {v.h1Accent}
             </motion.h1>
             <div className={local.intro}>
               {v.intro.map((p) => <p key={p}>{p}</p>)}
@@ -135,7 +135,6 @@ export default function LocalPage({ ville: v }) {
           <div className="container">
             <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>{v.publicTitle}</h2>
-              <p className={styles.sectionSub}>Un site pensé pour votre activité et votre clientèle.</p>
             </div>
             <motion.div
               className={`${styles.raisonsGrid} ${local.publicsGrid}`}
@@ -161,8 +160,8 @@ export default function LocalPage({ ville: v }) {
               <h2 className={styles.sectionTitle}>{v.approcheTitle}</h2>
               <p className={local.prose}>{v.approche}</p>
               <p className={local.prose}>
-                Chaque offre comprend un design sur mesure, l'optimisation pour Google et le mobile,
-                la mise en ligne et une formation à la prise en main.{' '}
+                Chaque offre comprend la conception du site, son référencement sur Google,
+                la mise en ligne et une formation pour le prendre en main.{' '}
                 <Link to="/tarifs" className={local.inlineLink}>Voir les offres et tarifs</Link>.
               </p>
             </div>

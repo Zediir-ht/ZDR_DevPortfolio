@@ -10,8 +10,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Header.module.css';
 
 const NAV_LINKS = [
-  { href: '#a-propos', label: 'A propos' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#portfolio', label: 'Réalisations' },
+  { href: '#services', label: 'Services' },
+  { href: '/tarifs', label: 'Tarifs' },
+  { href: '#a-propos', label: 'À propos' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 const CYCLES_PER_LETTER = 2;
@@ -121,7 +124,7 @@ export default function Header() {
           <span className={styles.logoAccent}>Zdr</span>_DEV
         </motion.a>
 
-        {/* A propos — centré */}
+        {/* Navigation — centrée */}
         <motion.nav
           className={styles.centerNav}
           aria-label="Navigation principale"
@@ -129,10 +132,12 @@ export default function Header() {
           initial="hidden"
           animate="visible"
         >
-          <ScrambleLink href="#a-propos" variants={navItemVariants}>A propos</ScrambleLink>
+          {NAV_LINKS.map(({ href, label }) => (
+            <ScrambleLink key={href} href={href} variants={navItemVariants}>{label}</ScrambleLink>
+          ))}
         </motion.nav>
 
-        {/* Contact — à droite */}
+        {/* Contact — bouton à droite */}
         <ScrambleLink
           href="#contact"
           className={styles.rightLink}
@@ -173,7 +178,7 @@ export default function Header() {
               ))}
               <li>
                 <a href="#contact" onClick={handleLinkClick} className={styles.mobileCta}>
-                  En savoir plus
+                  Contact
                 </a>
               </li>
             </ul>

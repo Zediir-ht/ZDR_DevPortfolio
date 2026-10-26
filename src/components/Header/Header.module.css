@@ -47,10 +47,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: var(--sp-lg);
 }
 
 .centerNav a {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
+  white-space: nowrap;
   font-weight: 500;
   color: var(--c-blanc);
   position: relative;
@@ -65,13 +68,18 @@
 /* ── Contact à droite ── */
 .rightLink {
   margin-left: auto;
-  font-size: var(--fs-lg);
+  padding: 0.45rem 1.2rem;
+  border: 1px solid var(--c-blanc);
+  border-radius: var(--r-full);
+  font-size: var(--fs-base);
   font-weight: 500;
   color: var(--c-blanc);
-  transition: color var(--tr-fast);
+  transition: background var(--tr-fast), border-color var(--tr-fast);
 }
 
 .rightLink:hover {
+  background: var(--c-rouge);
+  border-color: var(--c-rouge);
   color: var(--c-blanc);
 }
 
@@ -146,7 +154,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .centerNav {
     display: none;
   }
@@ -162,7 +170,9 @@
   .mobileNav {
     display: block;
   }
+}
 
+@media (max-width: 768px) {
   .logo {
     font-size: clamp(0.9rem, 4vw, 1.3rem);
   }

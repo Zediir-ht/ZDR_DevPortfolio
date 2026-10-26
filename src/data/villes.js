@@ -16,18 +16,18 @@ export const VILLES = [
     h1: 'Création de site internet',
     h1Accent: 'à Rodez',
     intro: [
-      'Je suis développeur web freelance installé à Rodez. Je crée des sites internet sur mesure pour les artisans, commerçants, restaurateurs et indépendants du Grand Rodez : un site rapide, pensé pour le mobile et optimisé pour qu\'on vous trouve sur Google quand on cherche votre métier « à Rodez ».',
+      'Je suis développeur web freelance installé à Rodez. Je crée des sites internet pour les artisans, commerçants, restaurateurs et indépendants du Grand Rodez, avec un objectif simple : qu\'on vous trouve sur Google quand on cherche votre métier « à Rodez ».',
       'Travailler avec un développeur ruthénois, c\'est pouvoir se rencontrer autour d\'un café en centre-ville ou directement dans votre boutique ou votre atelier, et avoir le même interlocuteur du premier rendez-vous jusqu\'à la maintenance.',
     ],
     publicTitle: 'Pour les professionnels du Grand Rodez',
     publics: [
       {
         title: 'Commerces du centre-ville',
-        desc: 'Boutiques du Bourg et du piétonnier : un site qui donne vos horaires, vos nouveautés et l\'itinéraire, pour transformer une recherche Google en visite en magasin.',
+        desc: 'Boutiques du Bourg et du piétonnier : un site qui donne vos horaires, vos nouveautés et l\'itinéraire, pour que ceux qui vous cherchent sur Google sachent quand et comment passer.',
       },
       {
         title: 'Artisans et entreprises du bâtiment',
-        desc: 'Plombiers, électriciens, menuisiers d\'Onet-le-Château, Olemps ou Luc-la-Primaube : vos réalisations en photos et un formulaire de devis qui vous apporte des demandes qualifiées.',
+        desc: 'Plombiers, électriciens, menuisiers d\'Onet-le-Château, Olemps ou Luc-la-Primaube : vos réalisations en photos et un formulaire pour recevoir des demandes de devis.',
       },
       {
         title: 'Restaurants et métiers de bouche',
@@ -35,7 +35,7 @@ export const VILLES = [
       },
     ],
     approcheTitle: 'Un développeur web sur place',
-    approche: 'Basé à Rodez, je me déplace chez vous dans toute l\'agglomération pour le premier rendez-vous, la présentation des maquettes et la formation à la prise en main de votre site. Pas de visioconférence imposée, pas d\'agence lointaine : on avance ensemble, à votre rythme.',
+    approche: 'Basé à Rodez, je me déplace chez vous dans toute l\'agglomération pour le premier rendez-vous, la présentation des maquettes et la formation à la prise en main de votre site.',
     communes: ['Onet-le-Château', 'Olemps', 'Le Monastère', 'Luc-la-Primaube', 'Druelle Balsac', 'Sainte-Radegonde', 'Sébazac-Concourès'],
     faq: [
       {
@@ -60,7 +60,7 @@ export const VILLES = [
     h1: 'Création de site internet',
     h1Accent: 'à Millau',
     intro: [
-      'Vous êtes artisan, commerçant, restaurateur ou prestataire d\'activités à Millau ou dans le Sud-Aveyron ? Je crée votre site internet sur mesure : clair, rapide sur mobile et pensé pour être trouvé sur Google, aussi bien par les Millavois que par les visiteurs de passage.',
+      'Vous êtes artisan, commerçant, restaurateur ou prestataire d\'activités à Millau ou dans le Sud-Aveyron ? Je crée votre site internet pour qu\'on vous trouve sur Google, que l\'on soit Millavois ou de passage.',
       'À Millau, une bonne partie de la clientèle arrive avec la saison : randonneurs, grimpeurs, amateurs de parapente ou de canoë dans les gorges du Tarn. Votre site doit répondre à leurs questions avant même qu\'ils arrivent : où, quand, combien, comment réserver.',
     ],
     publicTitle: 'Pour les professionnels du Sud-Aveyron',
@@ -71,11 +71,11 @@ export const VILLES = [
       },
       {
         title: 'Savoir-faire et artisanat',
-        desc: 'Ganterie, travail du cuir, producteurs du Larzac ou du Rayon de Roquefort : un site qui raconte votre savoir-faire et peut vendre en ligne avec le click & collect.',
+        desc: 'Ganterie, travail du cuir, producteurs du Larzac ou du Rayon de Roquefort : un site qui montre votre travail et peut vendre en ligne, avec retrait sur place.',
       },
       {
         title: 'Commerces et restaurants',
-        desc: 'Du centre-ville aux bords du Tarn : menu, horaires de saison et itinéraire à jour pour capter les visiteurs qui cherchent « où manger à Millau ».',
+        desc: 'Du centre-ville aux bords du Tarn : menu, horaires de saison et itinéraire à jour pour ceux qui cherchent « où manger à Millau ».',
       },
     ],
     approcheTitle: 'Comment on travaille ensemble',
@@ -104,7 +104,7 @@ export const VILLES = [
     h1: 'Création de site internet',
     h1Accent: 'à Villefranche-de-Rouergue',
     intro: [
-      'Je crée des sites internet sur mesure pour les professionnels de Villefranche-de-Rouergue et de l\'Ouest-Aveyron : artisans, commerçants de la bastide, producteurs, restaurateurs et hébergeurs.',
+      'Je crée des sites internet pour les professionnels de Villefranche-de-Rouergue et de l\'Ouest-Aveyron : artisans, commerçants de la bastide, producteurs, restaurateurs et hébergeurs.',
       'Le marché du jeudi sur la place Notre-Dame, les visiteurs de la bastide et de la vallée de l\'Aveyron jusqu\'à Najac : votre clientèle vous cherche sur son téléphone avant de se déplacer. Votre site doit lui donner envie de venir, et lui dire comment.',
     ],
     publicTitle: 'Pour les professionnels de l\'Ouest-Aveyron',
@@ -148,7 +148,7 @@ export const VILLES = [
     h1: 'Création de site internet',
     h1Accent: 'à Decazeville',
     intro: [
-      'Je crée des sites internet sur mesure pour les artisans, commerçants, restaurateurs et indépendants de Decazeville et du Bassin : Aubin, Cransac, Firmi, Viviez et les communes alentour.',
+      'Je crée des sites internet pour les artisans, commerçants, restaurateurs et indépendants de Decazeville et du Bassin : Aubin, Cransac, Firmi, Viviez et les communes alentour.',
       'Dans le Bassin, beaucoup d\'entreprises vivent du bouche-à-oreille. Un site internet prend le relais : il rassure ceux qui ont entendu parler de vous et vous rend visible pour ceux qui cherchent votre métier sur Google, notamment les nouveaux habitants et les curistes de Cransac.',
     ],
     publicTitle: 'Pour les professionnels du Bassin',
@@ -159,7 +159,7 @@ export const VILLES = [
       },
       {
         title: 'Commerces de proximité',
-        desc: 'Commerces de Decazeville et d\'Aubin : horaires, services et actualités à jour pour rester le premier réflexe des habitants du Bassin.',
+        desc: 'Commerces de Decazeville et d\'Aubin : horaires, services et actualités à jour pour que les habitants du Bassin vous trouvent facilement.',
       },
       {
         title: 'Santé, bien-être et accueil',
