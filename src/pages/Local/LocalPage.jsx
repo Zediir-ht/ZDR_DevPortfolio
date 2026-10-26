@@ -206,7 +206,7 @@ export default function LocalPage({ ville: v }) {
             <div className={styles.finalCta}>
               <h2 className={styles.finalCtaTitle}>Votre site internet à {v.ville}</h2>
               <p className={styles.finalCtaSub}>
-                Premier échange gratuit, devis sous 24h, aucun engagement.
+                Premier échange et devis gratuits, sans engagement.
               </p>
               <a href="/#contact" className={styles.finalCtaBtn}>
                 Me contacter

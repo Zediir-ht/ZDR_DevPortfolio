@@ -56,7 +56,7 @@ export default function CTAFinal() {
         </motion.div>
 
         <motion.p className={styles.reassurance} variants={itemVariants}>
-          Devis gratuit en 24h · Sans engagement
+          Devis gratuit · Sans engagement
         </motion.p>
       </motion.div>
     </SectionWrapper>

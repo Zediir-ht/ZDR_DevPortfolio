@@ -12,11 +12,7 @@ import styles from './FAQ.module.css';
 export const FAQ_ITEMS = [
   {
     q: 'Combien coûte la création d\'un site internet à Rodez ?',
-    a: 'Chaque projet est chiffré sur devis, selon vos besoins : site one-page (L\'Essentiel), site multi-pages (L\'Atelier) ou site premium avec réservation et vente en ligne (Le Terroir). Le devis est gratuit, envoyé sous 24h et sans engagement. Le paiement en 3× sans frais est possible pour tous les projets.',
-  },
-  {
-    q: 'En combien de temps mon site sera-t-il en ligne ?',
-    a: 'Votre site est livré clé en main en 2 semaines maximum après validation du devis et réception de vos contenus (textes, photos, logo).',
+    a: 'Chaque projet est chiffré sur devis, selon vos besoins : site one-page (L\'Essentiel), site multi-pages (L\'Atelier) ou site premium avec réservation et vente en ligne (Le Terroir). Le devis est gratuit et sans engagement. Le paiement en 3× sans frais est possible pour tous les projets.',
   },
   {
     q: 'Pourquoi choisir un développeur web local en Aveyron plutôt qu\'une agence ?',
@@ -32,7 +28,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'L\'hébergement et le nom de domaine sont-ils inclus ?',
-    a: 'La mise en ligne et l\'hébergement font partie de chaque offre. Ensuite, les formules de maintenance prennent en charge l\'hébergement, le nom de domaine, le certificat SSL (HTTPS), les mises à jour de sécurité et les sauvegardes, pour que vous n\'ayez rien à gérer.',
+    a: 'Non : l\'hébergement (chez OVH) et le nom de domaine sont à la charge du client. Je vous accompagne pour les choisir et je m\'occupe de la configuration et de la mise en ligne du site. Les formules de maintenance couvrent ensuite le certificat SSL (HTTPS), les mises à jour de sécurité et les sauvegardes.',
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
@@ -102,7 +98,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Tarifs, délais, hébergement, référencement : tout ce qu'il faut savoir avant de lancer votre site à Rodez et en Aveyron.
+          Tarifs, hébergement, référencement, maintenance : tout ce qu'il faut savoir avant de lancer votre site à Rodez et en Aveyron.
         </motion.p>
       </div>
 

@@ -37,8 +37,8 @@ const REASONS = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: 'Livraison rapide',
-    desc: 'Votre site est en ligne en 2 semaines maximum. Pas de délai à rallonge — votre temps est précieux.',
+    title: 'À votre rythme',
+    desc: 'On fixe ensemble la date de mise en ligne, selon votre activité et votre calendrier — pour une ouverture, un lancement ou le début de la saison.',
   },
   {
     icon: (

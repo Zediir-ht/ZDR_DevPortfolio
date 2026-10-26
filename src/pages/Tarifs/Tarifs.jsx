@@ -23,7 +23,7 @@ const PACKS = [
       'Fiche Google Maps intégrée',
       'Formulaire de contact sécurisé',
       'Vitesse de chargement optimale',
-      'Hébergement & mise en ligne',
+      'Mise en ligne sur votre hébergement OVH',
       'Formation prise en main (1h)',
     ],
   },
@@ -70,7 +70,6 @@ const ABOS = [
     period: '',
     desc: 'Le minimum pour garder votre site en ligne, à jour et sécurisé, sans y penser.',
     features: [
-      'Hébergement & nom de domaine',
       'Certificat SSL (HTTPS)',
       'Mises à jour de sécurité',
       'Sauvegardes automatiques',
@@ -169,7 +168,7 @@ export default function Tarifs() {
     const metaDesc = document.querySelector('meta[name="description"]');
     const originalDesc = metaDesc?.getAttribute('content');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit sous 24h.');
+      metaDesc.setAttribute('content', 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit.');
     }
 
     // Canonical pour /tarifs
@@ -245,7 +244,7 @@ export default function Tarifs() {
               transition={{ duration: 0.55 }}
             >
               <h2 className={styles.sectionTitle}>Packs de création</h2>
-              <p className={styles.sectionSub}>Votre site livré en 2 semaines, clé en main.</p>
+              <p className={styles.sectionSub}>Votre site clé en main, mis en ligne quand vous êtes prêt.</p>
             </motion.div>
 
             <motion.div
@@ -405,7 +404,7 @@ export default function Tarifs() {
                   Discutons de votre projet
                 </h2>
                 <p className={styles.finalCtaSub}>
-                  Premier échange gratuit, devis sous 24h, aucun engagement.
+                  Premier échange et devis gratuits, sans engagement.
                 </p>
                 <a href="/#contact" className={styles.finalCtaBtn}>
                   Me contacter

@@ -90,7 +90,7 @@ export default function PrixResume() {
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </Link>
-        <p className={styles.note}>Devis gratuit sous 24h · Sans engagement</p>
+        <p className={styles.note}>Devis gratuit · Sans engagement</p>
       </motion.div>
     </SectionWrapper>
   );

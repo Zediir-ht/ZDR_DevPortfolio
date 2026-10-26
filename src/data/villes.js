@@ -12,7 +12,7 @@ export const VILLES = [
     slug: 'creation-site-internet-rodez',
     ville: 'Rodez',
     title: 'Création Site Internet Rodez · Développeur Web Freelance | Zdr_DEV',
-    description: 'Développeur web basé à Rodez : création de sites internet sur mesure pour artisans, commerçants et restaurateurs du Grand Rodez. Rendez-vous en personne, devis gratuit sous 24h.',
+    description: 'Développeur web basé à Rodez : création de sites internet sur mesure pour artisans, commerçants et restaurateurs du Grand Rodez. Rendez-vous en personne, devis gratuit.',
     h1: 'Création de site internet',
     h1Accent: 'à Rodez',
     intro: [
@@ -56,7 +56,7 @@ export const VILLES = [
     slug: 'creation-site-internet-millau',
     ville: 'Millau',
     title: 'Création Site Internet Millau · Développeur Web Aveyron | Zdr_DEV',
-    description: 'Création de sites internet à Millau et dans le Sud-Aveyron pour artisans, commerçants, restaurateurs et activités touristiques. Développeur web aveyronnais, devis gratuit sous 24h.',
+    description: 'Création de sites internet à Millau et dans le Sud-Aveyron pour artisans, commerçants, restaurateurs et activités touristiques. Développeur web aveyronnais, devis gratuit.',
     h1: 'Création de site internet',
     h1Accent: 'à Millau',
     intro: [
@@ -79,7 +79,7 @@ export const VILLES = [
       },
     ],
     approcheTitle: 'Comment on travaille ensemble',
-    approche: 'Je viens à Millau pour le premier rendez-vous et la remise du site, chez vous ou sur votre lieu d\'activité. Entre les deux, on avance par téléphone et par email, avec des maquettes que vous validez étape par étape. Votre site est en ligne en 2 semaines maximum, idéalement avant le début de la saison.',
+    approche: 'Je viens à Millau pour le premier rendez-vous et la remise du site, chez vous ou sur votre lieu d\'activité. Entre les deux, on avance par téléphone et par email, avec des maquettes que vous validez étape par étape. On fixe ensemble la date de mise en ligne, idéalement avant le début de la saison.',
     communes: ['Creissels', 'Aguessac', 'Saint-Georges-de-Luzençon', 'Roquefort-sur-Soulzon', 'Saint-Affrique', 'Nant'],
     faq: [
       {
@@ -88,7 +88,7 @@ export const VILLES = [
       },
       {
         q: 'Mon activité est saisonnière : quand lancer mon site ?',
-        a: 'Idéalement quelques semaines avant la saison, pour laisser à Google le temps d\'indexer le site. Comptez 2 semaines de création, puis la mise à jour de vos offres et tarifs de l\'année.',
+        a: 'Idéalement quelques semaines avant la saison, pour laisser à Google le temps d\'indexer le site. On cale ensemble le calendrier pour que vos offres et tarifs de l\'année soient en ligne à temps.',
       },
       {
         q: 'Puis-je proposer la réservation en ligne ?',
@@ -144,7 +144,7 @@ export const VILLES = [
     slug: 'creation-site-internet-decazeville',
     ville: 'Decazeville',
     title: 'Création Site Internet Decazeville · Développeur Web | Zdr_DEV',
-    description: 'Création de sites internet à Decazeville, Aubin, Cransac et dans le Bassin pour artisans, commerçants et restaurateurs. Développeur web aveyronnais, devis gratuit sous 24h.',
+    description: 'Création de sites internet à Decazeville, Aubin, Cransac et dans le Bassin pour artisans, commerçants et restaurateurs. Développeur web aveyronnais, devis gratuit.',
     h1: 'Création de site internet',
     h1Accent: 'à Decazeville',
     intro: [
@@ -167,7 +167,7 @@ export const VILLES = [
       },
     ],
     approcheTitle: 'Comment on travaille ensemble',
-    approche: 'Je me déplace à Decazeville et dans le Bassin pour le premier rendez-vous et la remise du site. Le suivi se fait ensuite par téléphone et par email, avec des maquettes validées par vous à chaque étape et un site en ligne en 2 semaines maximum.',
+    approche: 'Je me déplace à Decazeville et dans le Bassin pour le premier rendez-vous et la remise du site. Le suivi se fait ensuite par téléphone et par email, avec des maquettes validées par vous à chaque étape.',
     communes: ['Aubin', 'Cransac', 'Firmi', 'Viviez', 'Livinhac-le-Haut', 'Capdenac-Gare'],
     faq: [
       {
