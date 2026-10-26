@@ -1,20 +1,11 @@
 /* About.module.css — fond clair (blanc cassé) */
 
-/* Background terre occitane */
+/* Fond uni */
 .aboutSection {
   position: relative;
   background: var(--c-bg);
 }
 
-.aboutSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('/terre-marcillac.webp') no-repeat center / cover;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* En-tête */
 .glassPanel {
@@ -189,10 +180,6 @@
 
   .title {
     font-size: var(--fs-3xl);
-  }
-
-  .aboutSection::before {
-    background-image: url('/terre-marcillac-mobile.webp');
   }
 }
 

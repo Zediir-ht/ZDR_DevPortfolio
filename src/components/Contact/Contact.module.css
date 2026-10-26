@@ -1,21 +1,12 @@
 /* Contact.module.css — fond clair (blanc cassé) */
 
-/* Background Aveyron */
+/* Fond uni */
 .contactSection {
   position: relative;
   background: var(--c-bg);
   color: var(--c-noir);
 }
 
-.contactSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('/aveyron-couleur.webp') no-repeat center / cover;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: 0;
-}
 
 .glassPanel {
   position: relative;
@@ -274,10 +265,6 @@
     /* mask trop agressif sur mobile — on l'élargit */
     -webkit-mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
     mask-image: radial-gradient(ellipse 95% 90% at 50% 50%, black 50%, transparent 100%);
-  }
-
-  .contactSection::before {
-    background-image: url('/aveyron-couleur-mobile.webp');
   }
 
   .title {
