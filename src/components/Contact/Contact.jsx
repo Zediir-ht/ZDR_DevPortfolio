@@ -124,7 +124,7 @@ export default function Contact() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Discutons de votre <span className={styles.accent}>projet</span>
+          Parlez-moi de votre projet
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -133,7 +133,7 @@ export default function Contact() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Dites-moi simplement ce que vous faites et ce dont vous avez besoin.
+          Dites-moi ce que vous faites et ce dont vous avez besoin.
           Je vous recontacte sous <span className={styles.keyword}>24 h</span>.
         </motion.p>
       </div>
@@ -219,7 +219,7 @@ export default function Contact() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              Discuter de mon projet
+              Envoyer
             </motion.button>
           </motion.div>
 
@@ -232,7 +232,7 @@ export default function Contact() {
                 exit={{ opacity: 0 }}
                 role="alert"
               >
-                ✅ C'est envoyé ! Je vous recontacte sous 24 h.
+                Message envoyé, merci. Je vous recontacte sous 24 h.
               </motion.p>
             )}
             {status === 'error' && (
@@ -243,7 +243,7 @@ export default function Contact() {
                 exit={{ opacity: 0 }}
                 role="alert"
               >
-                ❌ Une erreur est survenue. Veuillez réessayer ou me contacter par email.
+                L'envoi n'a pas fonctionné. Réessayez, ou écrivez-moi directement par email.
               </motion.p>
             )}
           </AnimatePresence>

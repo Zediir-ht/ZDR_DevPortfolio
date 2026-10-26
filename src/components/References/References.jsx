@@ -33,7 +33,7 @@ export default function References() {
         <motion.div className={styles.intro} variants={fade}>
           <span className={styles.label}>Références</span>
           <h2 id="references-title" className={styles.title}>
-            Ils m'ont fait <span className={styles.accent}>confiance</span>
+            Ils m'ont fait confiance
           </h2>
         </motion.div>
 

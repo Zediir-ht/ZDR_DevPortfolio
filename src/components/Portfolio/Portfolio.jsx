@@ -44,12 +44,11 @@ export default function Portfolio() {
       >
         <span className={styles.label}>Réalisations</span>
         <h2 className={styles.title}>
-          Des projets concrets,<br />
-          <span className={styles.accent}>livrés et en ligne</span>
+          Quelques sites que j'ai réalisés
         </h2>
         <p className={styles.subtitle}>
-          Artisans, hôteliers, restaurateurs : chaque site est
-          conçu sur mesure pour votre activité.
+          Un hôtel-restaurant à Cransac et une créatrice textile aveyronnaise.
+          Cliquez sur les captures pour les voir en grand.
         </p>
       </motion.div>
 

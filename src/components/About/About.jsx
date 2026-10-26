@@ -51,7 +51,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          On se connaît <span className={styles.accent}>pas encore ?</span>
+          On se connaît pas encore ?
         </motion.h2>
       </div>
 
@@ -87,26 +87,21 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p>
-            Je suis <strong>développeur web freelance à Rodez</strong> et j'allie mes deux passions :
-            la <span className={styles.keyword}>création de sites internet</span> et le <span className={styles.keyword}>terroir aveyronnais</span>.
+            Je m'appelle Corentin et je suis <strong>développeur web à Rodez</strong>. Je crée des sites
+            internet pour les artisans, les commerçants et les restaurateurs de l'Aveyron.
           </p>
           <p>
-            Installé en <span className={styles.keyword}>Aveyron (12)</span>, je conçois des <strong>sites web sur mesure pour les artisans,
-              commerçants et restaurateurs</strong> de Rodez, Millau, Villefranche-de-Rouergue et de tout le département.
+            Je travaille seul : c'est moi que vous rencontrez au premier rendez-vous, moi qui construis
+            votre site, et moi que vous appelez s'il faut y changer quelque chose.
           </p>
           <p>
-            Mon approche est simple : mettre en lumière votre <span className={styles.keyword}>savoir-faire</span> avec authenticité.
-            En tant que <strong>créateur de sites internet en Aveyron</strong>, je m'inspire de la richesse de notre terroir pour créer des <span className={styles.keyword}>identités
-            digitales fortes</span>, modernes et ancrées dans le local.
-          </p>
-          <p className={styles.signature}>
-            Chaque projet est pensé comme un produit du terroir : travaillé avec <span className={styles.keyword}>soin</span>,
-            <span className={styles.keyword}> sincérité</span> et <span className={styles.keyword}>exigence</span>.
+            Avant de dessiner quoi que ce soit, je cherche à comprendre votre métier : ce que vous vendez,
+            à qui, et ce que vos clients tapent sur Google quand ils vous cherchent. Le site part de là.
           </p>
 
           {/* Valeurs */}
           <div className={styles.values}>
-            {['Authenticité', 'Sur mesure', 'Proximité', 'Exigence'].map((v, i) => (
+            {['Basé à Rodez', 'Un seul interlocuteur', 'Pas de modèle tout fait', 'Devis gratuit'].map((v, i) => (
               <motion.span
                 key={v}
                 className={styles.valueBadge}

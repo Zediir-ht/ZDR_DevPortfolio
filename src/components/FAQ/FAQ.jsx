@@ -89,7 +89,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Questions fréquentes sur la <span className={styles.accent}>création de site internet</span>
+          Questions fréquentes sur la création de site internet
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -98,7 +98,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Tarifs, hébergement, référencement, maintenance : tout ce qu'il faut savoir avant de lancer votre site à Rodez et en Aveyron.
+          Ce qu'on me demande le plus souvent avant de lancer un site.
         </motion.p>
       </div>
 

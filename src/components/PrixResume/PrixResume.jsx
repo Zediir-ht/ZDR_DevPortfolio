@@ -13,17 +13,17 @@ const PACKS = [
   {
     name: "L'Essentiel",
     price: 'Sur devis',
-    desc: 'Site one-page · Mobile First · SEO Maps · Contact',
+    desc: 'Un site d\'une page, lisible sur mobile, avec votre fiche Google Maps et un formulaire de contact.',
   },
   {
     name: "L'Atelier",
     price: 'Sur devis',
-    desc: '5 pages · SEO local avancé · Galerie · Gestion autonome',
+    desc: 'Jusqu\'à 5 pages, une galerie photo et un espace pour modifier vos contenus vous-même.',
   },
   {
     name: 'Le Terroir',
     price: 'Sur devis',
-    desc: 'Menu/Catalogue · Réservation · Click & Collect · Design premium',
+    desc: 'Carte ou catalogue, réservation en ligne et click & collect, pour les restaurants et les producteurs.',
   },
 ];
 
@@ -47,12 +47,12 @@ export default function PrixResume() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <span className={styles.label}>Mes solutions</span>
+        <span className={styles.label}>Offres</span>
         <h2 className={styles.title}>
-          Des solutions adaptées<br />à votre activité
+          Trois formules de départ
         </h2>
         <p className={styles.subtitle}>
-          Artisans, commerçants, restaurateurs de l'Aveyron.
+          Chaque projet est chiffré sur devis, après un premier échange.
         </p>
       </motion.div>
 
@@ -72,7 +72,7 @@ export default function PrixResume() {
             <h3 className={styles.packName}>{pack.name}</h3>
             <p className={styles.packPrice}>{pack.price}</p>
             <p className={styles.packDesc}>{pack.desc}</p>
-            <p className={styles.packMaintenance}>+ abonnement maintenance disponible</p>
+            <p className={styles.packMaintenance}>Maintenance possible en option</p>
           </motion.div>
         ))}
       </motion.div>
@@ -85,12 +85,12 @@ export default function PrixResume() {
         transition={{ duration: 0.5, delay: 0.35 }}
       >
         <Link to="/tarifs" className={styles.cta}>
-          Découvrir le détail des offres
+          Voir le détail des offres
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </Link>
-        <p className={styles.note}>Devis gratuit · Sans engagement</p>
+        <p className={styles.note}>Devis gratuit, sans engagement</p>
       </motion.div>
     </SectionWrapper>
   );

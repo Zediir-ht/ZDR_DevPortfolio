@@ -28,17 +28,16 @@ export default function CTAFinal() {
         viewport={{ once: true }}
       >
         <motion.span className={styles.label} variants={itemVariants}>
-          Prêt à vous lancer ?
+          Pour finir
         </motion.span>
 
         <motion.h2 className={styles.title} variants={itemVariants}>
-          Donnez à votre activité<br />
-          la <span className={styles.accent}>présence digitale</span> qu'elle mérite
+          Un projet de site ? Parlons-en.
         </motion.h2>
 
         <motion.p className={styles.subtitle} variants={itemVariants}>
-          Discutons de votre projet de création de site web à Rodez, ou en visio.
-          Premier échange gratuit et sans engagement.
+          Le premier échange est gratuit et ne vous engage à rien.
+          On peut se voir à Rodez, chez vous, ou en visio.
         </motion.p>
 
         <motion.div className={styles.actions} variants={itemVariants}>
@@ -48,16 +47,12 @@ export default function CTAFinal() {
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
           >
-            En savoir plus
+            Me contacter
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </motion.a>
         </motion.div>
-
-        <motion.p className={styles.reassurance} variants={itemVariants}>
-          Devis gratuit · Sans engagement
-        </motion.p>
       </motion.div>
     </SectionWrapper>
   );

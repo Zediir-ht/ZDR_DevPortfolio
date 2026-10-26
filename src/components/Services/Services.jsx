@@ -18,9 +18,7 @@ const SERVICES = [
       </svg>
     ),
     title: 'Site vitrine artisan',
-    problem: 'Vos clients ne vous trouvent pas en ligne et passent chez le concurrent.',
-    benefit: 'Un site professionnel qui reflète la qualité de votre travail et rassure vos prospects.',
-    impact: "Vous apparaissez sur Google quand un client cherche votre métier dans votre ville.",
+    desc: 'Une ou quelques pages pour présenter votre travail, vos réalisations et votre zone d\'intervention, avec un bouton pour vous appeler. Le site est construit pour ressortir quand quelqu\'un cherche votre métier dans votre ville.',
   },
   {
     icon: (
@@ -33,9 +31,7 @@ const SERVICES = [
       </svg>
     ),
     title: 'Site restaurant',
-    problem: 'Vos clients veulent voir la carte et réserver, mais votre présence web est inexistante.',
-    benefit: "Un site appétissant avec menu, photos et réservation qui donne envie de pousser la porte.",
-    impact: "Plus de réservations, moins d'appels inutiles, une image à la hauteur de votre cuisine.",
+    desc: 'La carte, des photos, les horaires, l\'accès et, si vous le souhaitez, la réservation en ligne. Les informations que vos clients cherchent avant de venir, faciles à lire sur un téléphone.',
   },
   {
     icon: (
@@ -46,9 +42,7 @@ const SERVICES = [
       </svg>
     ),
     title: 'E-commerce local',
-    problem: "Vous voulez vendre vos produits du terroir au-delà de votre comptoir.",
-    benefit: 'Une boutique en ligne simple pour vendre vos produits locaux partout en France.',
-    impact: "Un canal de vente qui travaille 24h/24, même quand la boutique est fermée.",
+    desc: 'Pour vendre vos produits en ligne, en livraison ou en retrait sur place. Une boutique simple, que vous gérez vous-même au quotidien.',
   },
   {
     icon: (
@@ -57,9 +51,7 @@ const SERVICES = [
       </svg>
     ),
     title: 'Maintenance web',
-    problem: 'Votre site existe mais il est lent, pas à jour et vous ne savez pas le gérer.',
-    benefit: "Un site toujours rapide, sécurisé et à jour sans que vous ayez à y penser.",
-    impact: "Zéro stress technique : concentrez-vous sur votre métier, je m'occupe du reste.",
+    desc: 'Mises à jour, sauvegardes, sécurité et petites modifications. Je m\'occupe de la partie technique, vous me prévenez quand vous voulez changer quelque chose.',
   },
 ];
 
@@ -97,7 +89,7 @@ export default function Services() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Ce que je fais <span className={styles.accent}>pour vous</span>
+          Ce que je fais
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -106,8 +98,8 @@ export default function Services() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Des solutions de création de sites web pensées pour les artisans, commerçants
-          et restaurateurs de Rodez et de l'Aveyron.
+          Du site d'une page pour un artisan à la boutique en ligne d'un producteur,
+          voici les projets sur lesquels je travaille en Aveyron.
         </motion.p>
       </div>
 
@@ -126,16 +118,7 @@ export default function Services() {
             <h3 className={styles.serviceTitle}>{service.title}</h3>
             <div className={styles.serviceDetails}>
               <div className={styles.serviceDetail}>
-                <span className={styles.detailLabel}>Le problème</span>
-                <p>{service.problem}</p>
-              </div>
-              <div className={styles.serviceDetail}>
-                <span className={styles.detailLabel}>Le bénéfice</span>
-                <p>{service.benefit}</p>
-              </div>
-              <div className={styles.serviceDetail}>
-                <span className={styles.detailLabel}>L'impact</span>
-                <p>{service.impact}</p>
+                <p>{service.desc}</p>
               </div>
             </div>
           </motion.div>

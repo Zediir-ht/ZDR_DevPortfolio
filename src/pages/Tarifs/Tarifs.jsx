@@ -16,7 +16,7 @@ const PACKS = [
     name: "L'Essentiel",
     price: 'Sur devis',
     type: 'One-Page',
-    desc: 'Vous êtes artisan ou commerçant et avez besoin d\'être trouvé rapidement sur Google ? Cette offre est faite pour vous.',
+    desc: 'Pour un artisan ou un commerçant qui veut être trouvé sur Google, avec une présentation claire et sans multiplier les pages.',
     features: [
       'Site one-page professionnel',
       'Design mobile first sur mesure',
@@ -32,7 +32,7 @@ const PACKS = [
     name: "L'Atelier",
     price: 'Sur devis',
     type: 'Multi-pages',
-    desc: 'Un site complet qui travaille pour vous 24h/24. Plusieurs pages, galerie photo, référencement avancé et autonomie de gestion.',
+    desc: 'Plusieurs pages pour présenter votre activité en détail, une galerie photo, et un espace pour modifier vos contenus vous-même.',
     features: [
       'Jusqu\'à 5 pages sur mesure',
       'SEO local avancé',
@@ -48,7 +48,7 @@ const PACKS = [
     name: 'Le Terroir',
     price: 'Sur devis',
     type: 'Premium',
-    desc: 'L\'offre complète pour les restaurants, épiceries fines et producteurs locaux souhaitant vendre et réserver en ligne.',
+    desc: 'Pour les restaurants, épiceries fines et producteurs qui veulent prendre des réservations ou vendre en ligne.',
     features: [
       'Menu ou catalogue produits',
       'Système de réservation en ligne',
@@ -81,7 +81,7 @@ const ABOS = [
     name: 'Formule Sérénité',
     price: 'Sur devis',
     period: '',
-    desc: 'Votre site reste performant et évolue avec votre activité.',
+    desc: 'Pour que le site suive votre activité, avec une heure de modifications par mois.',
     features: [
       'Tout Tranquillité inclus',
       '1h de modifications de contenu/mois',
@@ -102,7 +102,7 @@ const RAISONS = [
       </svg>
     ),
     title: 'Votre outil de travail',
-    desc: 'Votre site est l\'outil de travail de votre activité. Comme tout outil, il doit être entretenu pour rester efficace.',
+    desc: 'Un site qu\'on ne met jamais à jour finit par afficher de vieux horaires, de vieux prix, et par moins bien ressortir sur Google.',
   },
   {
     icon: (
@@ -120,7 +120,7 @@ const RAISONS = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: 'Réactivité garantie',
+    title: 'Réactivité',
     desc: 'Un problème sur votre site ? Je réponds sous 24h et je m\'en occupe. Votre activité n\'attend pas.',
   },
   {

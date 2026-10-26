@@ -16,8 +16,8 @@ const REASONS = [
         <circle cx="12" cy="10" r="3" />
       </svg>
     ),
-    title: 'Ancré dans le territoire',
-    desc: 'Développeur web basé à Rodez, je connais les réalités des artisans, commerçants et restaurateurs de l\'Aveyron. Je parle votre langage et je comprends votre clientèle.',
+    title: 'Sur place',
+    desc: 'J\'habite et je travaille à Rodez. On peut se voir dans votre commerce ou votre atelier, et je connais la clientèle d\'ici.',
   },
   {
     icon: (
@@ -27,8 +27,8 @@ const REASONS = [
         <line x1="17.5" y1="15" x2="9" y2="15" />
       </svg>
     ),
-    title: 'Création sur mesure',
-    desc: 'Pas de template générique. Chaque site est conçu spécifiquement pour votre activité, votre identité et votre clientèle locale.',
+    title: 'Pas de modèle tout fait',
+    desc: 'Je ne pars pas d\'un thème acheté en ligne. La mise en page, les textes et les photos sont choisis pour votre activité.',
   },
   {
     icon: (
@@ -46,8 +46,8 @@ const REASONS = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
-    title: 'Accompagnement durable',
-    desc: 'Je ne disparais pas après la livraison. Maintenance, mises à jour, conseils : je reste votre interlocuteur.',
+    title: 'Après la mise en ligne',
+    desc: 'Une fois le site livré, je reste joignable. Si quelque chose change dans votre activité, on met le site à jour.',
   },
   {
     icon: (
@@ -56,8 +56,8 @@ const REASONS = [
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    title: 'Tarif clair, sans surprise',
-    desc: 'Devis personnalisé dès le départ. Pas de coûts cachés, pas de mauvaise surprise.',
+    title: 'Un devis détaillé',
+    desc: 'Vous savez ce qui est compris avant de vous engager, et le prix ne bouge pas en cours de route.',
   },
   {
     icon: (
@@ -67,7 +67,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Visible sur Google',
-    desc: 'Chaque site internet que je crée à Rodez et en Aveyron est optimisé pour le référencement local (SEO). Vos futurs clients vous trouvent quand ils cherchent votre métier.',
+    desc: 'Chaque site est construit pour la recherche locale : votre métier, votre ville, votre fiche Google. C\'est souvent là que se fait le premier contact.',
   },
 ];
 
@@ -106,7 +106,7 @@ export default function WhyMe() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Un partenaire digital <span className={styles.accent}>à votre échelle</span>
+          Travailler avec un indépendant d'ici
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -115,7 +115,7 @@ export default function WhyMe() {
           viewport={{ once: true }}
           variants={headerVariants}
         >
-          Pas une agence parisienne. Un créatif du territoire, engagé pour votre réussite.
+          Concrètement, voici ce que ça change pour vous.
         </motion.p>
       </div>
 
