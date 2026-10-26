@@ -2,32 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import Lightbox from '../Lightbox/Lightbox';
+import { PROJETS } from '../../data/projets';
 import styles from './Portfolio.module.css';
-
-const PROJETS = [
-  {
-    id: 'hotel-les-carillons',
-    num: '01',
-    nom: 'Hôtel Les Carillons',
-    categorie: 'Hôtel-Restaurant ★★',
-    lieu: 'Cransac-les-Thermes · Aveyron',
-    desc: 'Site multi-pages pour un hôtel-restaurant familial labellisé Logis Hôtels. Chambres, restaurant gastronomique, meublés de caractère, séminaire et guide touristique de la région.',
-    tags: ['Next.js', 'React', 'Multi-pages', 'SEO local', 'Google Maps'],
-    url: 'https://hotel-les-carillons.vercel.app',
-    shots: ['/carillons-1.jpg', '/carillons-2.jpg', '/carillons-3.jpg'],
-  },
-  {
-    id: 'madouce',
-    num: '02',
-    nom: 'Madouce & Cie',
-    categorie: 'Artisanat · Création textile',
-    lieu: 'Aveyron',
-    desc: 'Site vitrine pour une créatrice de pochettes de lecture artisanales. Présentation des créations, histoire de la marque et formulaire de contact — tissus chinés et fait main.',
-    tags: ['React', 'Vite', 'Mobile First', 'Artisanat'],
-    url: 'https://madouce-cie.vercel.app',
-    shots: ['/madouce-1.jpg', '/madouce-2.jpg', '/madouce-3.jpg'],
-  },
-];
 
 const ExternalIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

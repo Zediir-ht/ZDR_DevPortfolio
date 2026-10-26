@@ -1,0 +1,167 @@
+/* References.module.css — bandeau clair compact entre le hero et le portfolio */
+
+.band {
+  position: relative;
+  background: var(--c-bg);
+  padding: var(--sp-xl) 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+/* Filet doré en haut, rappel de la ligne du hero */
+.band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(240px, 40%);
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--c-or), transparent);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-xl);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-rouge);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+.title {
+  font-family: 'Made Tommy', var(--ff);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0.35rem 0 0;
+  white-space: nowrap;
+}
+
+.accent {
+  color: var(--c-rouge);
+}
+
+/* Clients */
+.list {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-xl);
+  margin: 0;
+  padding: 0 0 0 var(--sp-xl);
+  list-style: none;
+  border-left: 1px solid var(--c-border);
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.num {
+  flex: 0 0 2rem;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-or);
+  letter-spacing: 0.1em;
+}
+
+.nom {
+  font-family: 'Made Tommy', var(--ff);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.meta {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+  margin: 0.2rem 0 0;
+}
+
+/* Lien vers le portfolio */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--c-noir);
+  border-radius: var(--r-full);
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  white-space: nowrap;
+  transition: background var(--tr), color var(--tr), border-color var(--tr);
+}
+
+.cta svg {
+  transition: transform var(--tr);
+}
+
+.cta:hover {
+  background: var(--c-rouge);
+  border-color: var(--c-rouge);
+  color: var(--c-blanc);
+}
+
+.cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .list {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    padding: var(--sp-md) 0 0;
+    border-left: none;
+    border-top: 1px solid var(--c-border);
+  }
+}
+
+@media (max-width: 640px) {
+  .band {
+    padding: var(--sp-lg) 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .title {
+    white-space: normal;
+  }
+
+  .list {
+    flex-direction: column;
+    gap: var(--sp-md);
+  }
+
+  .cta {
+    justify-self: start;
+  }
+}
