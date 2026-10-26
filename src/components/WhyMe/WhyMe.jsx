@@ -38,7 +38,7 @@ const REASONS = [
       </svg>
     ),
     title: 'À votre rythme',
-    desc: 'On fixe ensemble la date de mise en ligne, selon votre activité et votre calendrier — pour une ouverture, un lancement ou le début de la saison.',
+    desc: 'On fixe ensemble la date de mise en ligne, selon votre activité et votre calendrier : une ouverture, un lancement, le début de la saison.',
   },
   {
     icon: (
@@ -47,7 +47,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Accompagnement durable',
-    desc: 'Je ne disparais pas après la livraison. Maintenance, mises à jour, conseils — je reste votre partenaire digital.',
+    desc: 'Je ne disparais pas après la livraison. Maintenance, mises à jour, conseils : je reste votre interlocuteur.',
   },
   {
     icon: (

@@ -162,13 +162,13 @@ const CheckIcon = () => (
 export default function Tarifs() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Tarifs Création Site Web Rodez & Aveyron | Zdr_DEV — Développeur Web';
+    document.title = 'Tarifs Création Site Web Rodez & Aveyron | Zdr_DEV, Développeur Web';
 
     // Meta description dynamique pour la page tarifs
     const metaDesc = document.querySelector('meta[name="description"]');
     const originalDesc = metaDesc?.getAttribute('content');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit.');
+      metaDesc.setAttribute('content', 'Création de site internet à Rodez et en Aveyron sur devis. Développeur web freelance pour artisans, commerçants et restaurateurs. Devis gratuit.');
     }
 
     // Canonical pour /tarifs
@@ -227,8 +227,8 @@ export default function Tarifs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Développeur web freelance à Rodez — artisans, commerçants et restaurateurs de l'Aveyron,
-              voici exactement ce que vous obtenez pour chaque offre.
+              Artisans, commerçants et restaurateurs de l'Aveyron : voici ce que comprend
+              chaque offre.
             </motion.p>
           </div>
         </section>
@@ -343,7 +343,7 @@ export default function Tarifs() {
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
-              <span>Sans engagement — résiliable à tout moment, sans justification.</span>
+              <span>Sans engagement, résiliable à tout moment, sans justification.</span>
             </motion.div>
           </div>
         </section>

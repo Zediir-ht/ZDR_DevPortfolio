@@ -102,7 +102,7 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
           <motion.img
             key={current}
             src={images[current]}
-            alt={`${projectName} — vue ${current + 1}`}
+            alt={`${projectName}, vue ${current + 1}`}
             className={styles.image}
             custom={direction}
             variants={variants}

@@ -87,14 +87,14 @@ export default function Footer({ onOpenLegal }) {
               </a>
             </li>
             <li>Rodez, Aveyron (12)</li>
-            <li>Lun – Ven · 9h – 18h</li>
+            <li>Du lundi au vendredi, 9h à 18h</li>
           </ul>
         </motion.div>
       </div>
 
       {/* Bas de page */}
       <motion.div className={`container ${styles.bottom}`} variants={bottomVariants}>
-        <p>© {CURRENT_YEAR} Zdr_DEV — Tous droits réservés.</p>
+        <p>© {CURRENT_YEAR} Zdr_DEV. Tous droits réservés.</p>
         <p className={styles.legal}>
           <button
             type="button"

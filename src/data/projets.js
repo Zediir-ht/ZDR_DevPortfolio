@@ -22,7 +22,7 @@ export const PROJETS = [
     nom: 'Madouce & Cie',
     categorie: 'Artisanat · Création textile',
     lieu: 'Aveyron',
-    desc: 'Site vitrine pour une créatrice de pochettes de lecture artisanales. Présentation des créations, histoire de la marque et formulaire de contact — tissus chinés et fait main.',
+    desc: 'Site vitrine pour une créatrice de pochettes de lecture artisanales. Présentation des créations, histoire de la marque et formulaire de contact. Tissus chinés, fait main.',
     tags: ['React', 'Vite', 'Mobile First', 'Artisanat'],
     url: 'https://madouce-cie.vercel.app',
     shots: ['/madouce-1.jpg', '/madouce-2.jpg', '/madouce-3.jpg'],

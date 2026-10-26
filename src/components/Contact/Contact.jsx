@@ -296,7 +296,7 @@ export default function Contact() {
             </div>
             <div>
               <h4 className={styles.infoTitle}>Disponibilité</h4>
-              <p className={styles.infoText}><span className={styles.keyword}>Lun – Ven</span> · <span className={styles.keyword}>9h – 18h</span><br />RDV à <span className={styles.keyword}>Rodez</span>, Millau ou en visio</p>
+              <p className={styles.infoText}>Du <span className={styles.keyword}>lundi au vendredi</span>, de <span className={styles.keyword}>9h à 18h</span><br />RDV à <span className={styles.keyword}>Rodez</span>, Millau ou en visio</p>
             </div>
           </motion.div>
 

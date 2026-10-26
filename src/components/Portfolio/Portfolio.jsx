@@ -48,7 +48,7 @@ export default function Portfolio() {
           <span className={styles.accent}>livrés et en ligne</span>
         </h2>
         <p className={styles.subtitle}>
-          Artisans, hôteliers, restaurateurs — chaque site est
+          Artisans, hôteliers, restaurateurs : chaque site est
           conçu sur mesure pour votre activité.
         </p>
       </motion.div>
@@ -96,11 +96,11 @@ export default function Portfolio() {
                   key={i}
                   className={`${styles.shotBtn} ${shotClasses[i]}`}
                   onClick={() => setLightbox({ images: projet.shots, index: i, projectName: projet.nom })}
-                  aria-label={`Voir ${projet.nom} — image ${i + 1} en grand`}
+                  aria-label={`Voir ${projet.nom}, image ${i + 1} en grand`}
                 >
                   <img
                     src={src}
-                    alt={`Aperçu ${projet.nom} — vue ${i + 1}`}
+                    alt={`Aperçu ${projet.nom}, vue ${i + 1}`}
                     className={styles.shot}
                     loading="lazy"
                     width="185"

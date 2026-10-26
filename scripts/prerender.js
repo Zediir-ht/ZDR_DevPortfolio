@@ -18,8 +18,8 @@ const ROUTES = [
   {
     url: '/tarifs',
     out: 'tarifs.html',
-    title: 'Tarifs Création Site Web Rodez & Aveyron | Zdr_DEV — Développeur Web',
-    description: 'Création de site internet à Rodez et en Aveyron sur devis. Artisans, commerçants et restaurateurs — développeur web freelance, devis gratuit.',
+    title: 'Tarifs Création Site Web Rodez & Aveyron | Zdr_DEV, Développeur Web',
+    description: 'Création de site internet à Rodez et en Aveyron sur devis. Développeur web freelance pour artisans, commerçants et restaurateurs. Devis gratuit.',
     canonical: 'https://zdrdev.fr/tarifs',
   },
   ...VILLES.map((v) => ({

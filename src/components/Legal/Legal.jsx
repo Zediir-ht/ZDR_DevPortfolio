@@ -103,7 +103,7 @@ function PolitiqueConfidentialite() {
           Le responsable du traitement des données personnelles collectées sur ce site est :
         </p>
         <ul>
-          <li><strong>Corentin Mayrand</strong> – Zdr_DEV</li>
+          <li><strong>Corentin Mayrand</strong>, Zdr_DEV</li>
           <li>Rodez, 12000, Aveyron, France</li>
           <li>Email : <a href="mailto:corentin.mayrand@gmail.com">corentin.mayrand@gmail.com</a></li>
         </ul>
@@ -116,9 +116,9 @@ function PolitiqueConfidentialite() {
           collectées :
         </p>
         <ul>
-          <li><strong>Nom</strong> — pour vous identifier et personnaliser ma réponse.</li>
-          <li><strong>Adresse email</strong> — pour vous recontacter.</li>
-          <li><strong>Message</strong> — pour comprendre votre projet et vos besoins.</li>
+          <li><strong>Nom</strong> : pour vous identifier et personnaliser ma réponse.</li>
+          <li><strong>Adresse email</strong> : pour vous recontacter.</li>
+          <li><strong>Message</strong> : pour comprendre votre projet et vos besoins.</li>
         </ul>
         <p>
           Ces données sont transmises via le service <strong>Formspree</strong> (formspree.io)
@@ -160,7 +160,7 @@ function PolitiqueConfidentialite() {
         <p>Le formulaire de contact utilise le service :</p>
         <ul>
           <li>
-            <strong>Formspree Inc.</strong> — 2261 Market Street #5041, San Francisco, CA 94114, USA.{' '}
+            <strong>Formspree Inc.</strong>, 2261 Market Street #5041, San Francisco, CA 94114, USA.{' '}
             <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
               Politique de confidentialité Formspree
             </a>.
@@ -188,12 +188,12 @@ function PolitiqueConfidentialite() {
           loi Informatique et Libertés, vous disposez des droits suivants :
         </p>
         <ul>
-          <li><strong>Droit d'accès</strong> — obtenir une copie de vos données.</li>
-          <li><strong>Droit de rectification</strong> — corriger des données inexactes.</li>
-          <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données.</li>
-          <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré.</li>
-          <li><strong>Droit d'opposition</strong> — vous opposer au traitement de vos données.</li>
-          <li><strong>Droit de retirer votre consentement</strong> — à tout moment.</li>
+          <li><strong>Droit d'accès</strong> : obtenir une copie de vos données.</li>
+          <li><strong>Droit de rectification</strong> : corriger des données inexactes.</li>
+          <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données.</li>
+          <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré.</li>
+          <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données.</li>
+          <li><strong>Droit de retirer votre consentement</strong>, à tout moment.</li>
         </ul>
         <p>
           Pour exercer ces droits, contactez-moi à :{' '}

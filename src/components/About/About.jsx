@@ -68,7 +68,7 @@ export default function About() {
             <source srcSet="/portrait.webp" type="image/webp" />
             <img
               src="/portrait.png"
-              alt="Corentin Mayrand — Développeur web freelance à Rodez, Aveyron"
+              alt="Corentin Mayrand, développeur web freelance à Rodez, Aveyron"
               className={styles.portrait}
               loading="lazy"
               width="320"

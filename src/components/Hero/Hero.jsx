@@ -37,7 +37,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <h1 className={styles.srOnly}>Développeur Web à Rodez, Aveyron — Création de sites internet sur mesure</h1>
+        <h1 className={styles.srOnly}>Développeur web à Rodez, Aveyron : création de sites internet sur mesure</h1>
         <div className={styles.titleRow}>
           <motion.span className={styles.heroLeft} variants={itemVariants}>
             ZDR

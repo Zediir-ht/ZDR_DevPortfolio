@@ -37,6 +37,9 @@
 
 :root {
   /* ── Palette Occitane ── */
+  /* Croix occitane (masque SVG) : remplace les traits devant les étiquettes de section */
+  --croix-occitane: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22black%22%3E%3Cg%20transform%3D%22rotate%280%2012%2012%29%22%3E%3Cpath%20d%3D%22M12%2012%20L9.2%204.6%20Q12%206.2%2014.8%204.6%20Z%22/%3E%3Ccircle%20cx%3D%228.4%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%222.2%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2215.6%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2890%2012%2012%29%22%3E%3Cpath%20d%3D%22M12%2012%20L9.2%204.6%20Q12%206.2%2014.8%204.6%20Z%22/%3E%3Ccircle%20cx%3D%228.4%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%222.2%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2215.6%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28180%2012%2012%29%22%3E%3Cpath%20d%3D%22M12%2012%20L9.2%204.6%20Q12%206.2%2014.8%204.6%20Z%22/%3E%3Ccircle%20cx%3D%228.4%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%222.2%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2215.6%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28270%2012%2012%29%22%3E%3Cpath%20d%3D%22M12%2012%20L9.2%204.6%20Q12%206.2%2014.8%204.6%20Z%22/%3E%3Ccircle%20cx%3D%228.4%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%222.2%22%20r%3D%221.35%22/%3E%3Ccircle%20cx%3D%2215.6%22%20cy%3D%223.6%22%20r%3D%221.35%22/%3E%3C/g%3E%3C/svg%3E");
+
   --c-rouge:     #9E1B1F;
   --c-rouge-dk:  #7A1518;
   --c-or:        #D4A017;
