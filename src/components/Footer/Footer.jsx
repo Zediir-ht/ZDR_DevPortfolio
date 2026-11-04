@@ -6,6 +6,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { VILLES } from '../../data/villes';
+import DerniereMaj from '../DerniereMaj/DerniereMaj';
 import styles from './Footer.module.css';
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -94,7 +95,10 @@ export default function Footer({ onOpenLegal }) {
 
       {/* Bas de page */}
       <motion.div className={`container ${styles.bottom}`} variants={bottomVariants}>
-        <p>© {CURRENT_YEAR} Zdr_DEV. Tous droits réservés.</p>
+        <div>
+          <p>© {CURRENT_YEAR} Zdr_DEV. Tous droits réservés.</p>
+          <DerniereMaj />
+        </div>
         <p className={styles.legal}>
           <button
             type="button"

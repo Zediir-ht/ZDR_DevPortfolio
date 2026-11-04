@@ -49,19 +49,9 @@
         "alternateName": "Zdr_DEV",
         "description": "Développeur web freelance à Rodez, Aveyron. Création de sites internet sur mesure pour artisans, commerçants et restaurateurs. Site vitrine, e-commerce, référencement local.",
         "url": "https://zdrdev.fr/",
+        "image": "https://zdrdev.fr/og-image.jpg",
         "email": "corentin.mayrand@gmail.com",
-        "founder": {
-          "@type": "Person",
-          "name": "Corentin Mayrand",
-          "jobTitle": "Développeur Web Freelance",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Rodez",
-            "addressRegion": "Aveyron",
-            "postalCode": "12000",
-            "addressCountry": "FR"
-          }
-        },
+        "founder": { "@id": "https://zdrdev.fr/#corentin" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Rodez",
@@ -154,10 +144,29 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://zdrdev.fr/#website",
         "name": "Zdr_DEV",
+        "publisher": { "@id": "https://zdrdev.fr/#business" },
         "url": "https://zdrdev.fr/",
         "description": "Développeur web freelance à Rodez, Aveyron. Création de sites internet sur mesure.",
         "inLanguage": "fr-FR"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://zdrdev.fr/#corentin",
+        "name": "Corentin Mayrand",
+        "jobTitle": "Développeur web freelance",
+        "url": "https://zdrdev.fr/",
+        "worksFor": { "@id": "https://zdrdev.fr/#business" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rodez",
+          "addressRegion": "Aveyron",
+          "postalCode": "12000",
+          "addressCountry": "FR"
+        },
+        "sameAs": ["https://fr.linkedin.com/in/corentin-mayrand-090469ab"]
       }
     ]
     </script>

@@ -1,0 +1,37 @@
+# Zdr_DEV
+
+> Développeur web freelance à Rodez (Aveyron). Création de sites internet pour les artisans, commerçants et restaurateurs de l'Aveyron, devis gratuit.
+
+Zdr_DEV est l'activité de Corentin Mayrand, développeur web indépendant installé à Rodez (12000, Aveyron). Il conçoit des sites vitrines, des sites multi-pages et des sites avec réservation ou vente en ligne, pour des professionnels de Rodez, Millau, Villefranche-de-Rouergue, Decazeville et du reste du département. Il travaille seul : le même interlocuteur s'occupe du rendez-vous, de la création du site et de sa maintenance.
+
+Les projets sont chiffrés sur devis. L'hébergement (chez OVH) et le nom de domaine sont à la charge du client. Dernière mise à jour du contenu : 4 novembre 2026.
+
+## Pages principales
+
+- [Accueil](https://zdrdev.fr/): présentation, services, réalisations, offres et questions fréquentes
+- [Tarifs et offres](https://zdrdev.fr/tarifs): les trois formules (L'Essentiel, L'Atelier, Le Terroir), les formules de maintenance et un tableau comparatif
+
+## Zones d'intervention
+
+- [Création de site internet à Rodez](https://zdrdev.fr/creation-site-internet-rodez): Grand Rodez, Onet-le-Château, Olemps, Luc-la-Primaube
+- [Création de site internet à Millau](https://zdrdev.fr/creation-site-internet-millau): Millau et Sud-Aveyron, activités de pleine nature, artisanat, tourisme
+- [Création de site internet à Villefranche-de-Rouergue](https://zdrdev.fr/creation-site-internet-villefranche-de-rouergue): bastide, producteurs, commerces, hébergeurs
+- [Création de site internet à Decazeville](https://zdrdev.fr/creation-site-internet-decazeville): Decazeville, Aubin, Cransac et le Bassin
+
+## Offres
+
+- L'Essentiel : site d'une page pour artisans et commerçants, avec fiche Google Maps intégrée
+- L'Atelier : site multi-pages (jusqu'à 5 pages), galerie photo, gestion autonome du contenu
+- Le Terroir : site pour restaurants, épiceries fines et producteurs, avec réservation en ligne et click & collect
+- Maintenance : formules Tranquillité et Sérénité (sécurité, sauvegardes, modifications de contenu)
+
+## Réalisations
+
+- [Hôtel Les Carillons](https://hotel-les-carillons.vercel.app): site multi-pages d'un hôtel-restaurant à Cransac-les-Thermes
+- [Madouce & Cie](https://madouce-cie.vercel.app): site vitrine d'une créatrice de pochettes de lecture artisanales
+
+## À propos et contact
+
+- Auteur : Corentin Mayrand, développeur web freelance. Profil professionnel : https://fr.linkedin.com/in/corentin-mayrand-090469ab
+- Contact : corentin.mayrand@gmail.com, formulaire sur https://zdrdev.fr/#contact
+- Disponibilité : du lundi au vendredi, 9h à 18h. Rendez-vous à Rodez, chez le client, ou en visio.

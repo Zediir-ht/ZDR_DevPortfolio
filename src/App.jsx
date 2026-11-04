@@ -7,6 +7,7 @@ import { lazy, Suspense, useState, useCallback, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import PageSchema from './components/PageSchema/PageSchema';
 import { VILLES } from './data/villes';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
@@ -24,6 +25,7 @@ const Footer     = lazy(() => import('./components/Footer/Footer'));
 const Legal      = lazy(() => import('./components/Legal/Legal'));
 const Tarifs     = lazy(() => import('./pages/Tarifs/Tarifs'));
 const LocalPage  = lazy(() => import('./pages/Local/LocalPage'));
+const NotFound   = lazy(() => import('./pages/NotFound/NotFound'));
 
 function HomePage({ onOpenLegal, legalPage, closeLegal }) {
   const { hash } = useLocation();
@@ -41,6 +43,11 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
   }, [hash]);
   return (
     <>
+      <PageSchema
+        path="/"
+        name="Zdr_DEV, développeur web freelance à Rodez (Aveyron)"
+        description="Création de sites internet sur mesure pour artisans, commerçants et restaurateurs de l'Aveyron. Devis gratuit."
+      />
       <Header />
       <main>
         <Hero />
@@ -86,6 +93,7 @@ export default function App() {
         {VILLES.map((ville) => (
           <Route key={ville.slug} path={`/${ville.slug}`} element={<LocalPage ville={ville} />} />
         ))}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

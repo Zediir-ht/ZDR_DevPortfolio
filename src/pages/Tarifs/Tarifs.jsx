@@ -7,6 +7,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import PageSchema from '../../components/PageSchema/PageSchema';
+import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
 import styles from './Tarifs.module.css';
 
 /* ── Packs création ── */
@@ -137,6 +139,30 @@ const RAISONS = [
   },
 ];
 
+/* ── Tableau comparatif : uniquement ce qui est écrit dans les offres ci-dessus ── */
+const COMPARATIF = [
+  ['Type de site', ['Une page', 'Plusieurs pages, jusqu\'à 5', 'Site premium']],
+  ['Idéal pour', [
+    'Artisans et commerçants qui veulent être trouvés sur Google',
+    'Présenter une activité en détail',
+    'Restaurants, épiceries fines et producteurs',
+  ]],
+  ['Référencement local', ['Fiche Google Maps intégrée', 'SEO local avancé', 'SEO local avancé et Google Maps']],
+  ['Contenu et fonctions', [
+    'Formulaire de contact sécurisé',
+    'Galerie photo, formulaire de devis avancé, statistiques de visites',
+    'Menu ou catalogue produits, galerie et photos professionnelles',
+  ]],
+  ['Réservation en ligne et click & collect', ['Non compris', 'Non compris', 'Compris']],
+  ['Formation et suivi', [
+    'Formation à la prise en main (1h)',
+    'Support prioritaire pendant 30 jours',
+    'Formation complète (2h)',
+  ]],
+  ['Hébergement et nom de domaine', ['À la charge du client (OVH)', 'À la charge du client (OVH)', 'À la charge du client (OVH)']],
+  ['Prix', ['Sur devis', 'Sur devis', 'Sur devis']],
+];
+
 /* ── Animations ── */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -186,6 +212,12 @@ export default function Tarifs() {
 
   return (
     <div className={styles.page}>
+      <PageSchema
+        path="/tarifs"
+        name="Tarifs et offres de création de site internet à Rodez et en Aveyron"
+        description="Les trois formules de création de site (L'Essentiel, L'Atelier, Le Terroir), la maintenance et un tableau comparatif."
+        breadcrumb={[{ name: 'Accueil', path: '/' }, { name: 'Tarifs', path: '/tarifs' }]}
+      />
       {/* ── Header minimal ── */}
       <header className={styles.pageHeader}>
         <Link to="/" className={styles.backLink}>
@@ -284,8 +316,46 @@ export default function Tarifs() {
           </div>
         </section>
 
+        {/* ── Tableau comparatif des offres ── */}
+        <section className={`${styles.section} ${styles.sectionLight}`} id="comparatif">
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Quelle offre choisir ?</h2>
+              <p className={styles.sectionSub}>
+                Les trois formules côte à côte. Chaque projet est chiffré sur devis.
+              </p>
+            </div>
+            <p className={styles.compareHint}>Faites glisser le tableau vers la gauche pour voir les autres offres.</p>
+            <div className={styles.compareWrap} role="region" aria-label="Comparatif des offres" tabIndex={0}>
+              <table className={styles.compareTable}>
+                <caption className={styles.compareCaption}>
+                  Comparatif des offres L'Essentiel, L'Atelier et Le Terroir
+                </caption>
+                <thead>
+                  <tr>
+                    <td />
+                    {PACKS.map((pack) => (
+                      <th key={pack.id} scope="col">{pack.name}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARATIF.map(([libelle, valeurs]) => (
+                    <tr key={libelle}>
+                      <th scope="row">{libelle}</th>
+                      {valeurs.map((v, i) => (
+                        <td key={PACKS[i].id}>{v}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* ── Section 2 : Abonnements ── */}
-        <section className={`${styles.section} ${styles.sectionLight}`}>
+        <section className={styles.section}>
           <div className="container">
             <motion.div
               className={styles.sectionHeader}
@@ -422,9 +492,12 @@ export default function Tarifs() {
       {/* ── Footer minimal ── */}
       <footer className={styles.pageFooter}>
         <div className="container">
-          <p className={styles.footerText}>
-            © {new Date().getFullYear()} <span className={styles.logoAccent}>Zdr</span>_DEV · Rodez, Aveyron
-          </p>
+          <div>
+            <p className={styles.footerText}>
+              © {new Date().getFullYear()} <span className={styles.logoAccent}>Zdr</span>_DEV · Rodez, Aveyron
+            </p>
+            <DerniereMaj className={styles.footerText} />
+          </div>
           <Link to="/" className={styles.footerBack}>← Retour à l'accueil</Link>
         </div>
       </footer>

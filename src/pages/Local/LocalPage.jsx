@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { VILLES } from '../../data/villes';
+import PageSchema from '../../components/PageSchema/PageSchema';
+import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
 import styles from '../Tarifs/Tarifs.module.css';
 import local from './LocalPage.module.css';
 
@@ -84,6 +86,11 @@ export default function LocalPage({ ville: v }) {
 
   return (
     <div className={styles.page}>
+      <PageSchema
+        path={`/${v.slug}`}
+        name={`Création de site internet à ${v.ville}`}
+        description={v.description}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(v)) }}
@@ -233,9 +240,12 @@ export default function LocalPage({ ville: v }) {
       {/* ── Footer minimal ── */}
       <footer className={styles.pageFooter}>
         <div className="container">
-          <p className={styles.footerText}>
-            © {new Date().getFullYear()} <span className={styles.logoAccent}>Zdr</span>_DEV · Développeur web à Rodez, Aveyron
-          </p>
+          <div>
+            <p className={styles.footerText}>
+              © {new Date().getFullYear()} <span className={styles.logoAccent}>Zdr</span>_DEV · Développeur web à Rodez, Aveyron
+            </p>
+            <DerniereMaj className={styles.footerText} />
+          </div>
           <Link to="/" className={styles.footerBack}>← Retour à l'accueil</Link>
         </div>
       </footer>
