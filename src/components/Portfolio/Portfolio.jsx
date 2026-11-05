@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import Lightbox from '../Lightbox/Lightbox';
 import { PROJETS } from '../../data/projets';
@@ -27,14 +27,17 @@ export default function Portfolio() {
   return (
     <SectionWrapper id="portfolio" dark>
       {/* Lightbox */}
-      {lightbox && (
-        <Lightbox
-          images={lightbox.images}
-          initialIndex={lightbox.index}
-          projectName={lightbox.projectName}
-          onClose={() => setLightbox(null)}
-        />
-      )}
+      <AnimatePresence>
+        {lightbox && (
+          <Lightbox
+            key="lightbox"
+            images={lightbox.images}
+            initialIndex={lightbox.index}
+            projectName={lightbox.projectName}
+            onClose={() => setLightbox(null)}
+          />
+        )}
+      </AnimatePresence>
       {/* En-tête */}
       <motion.div
         className={styles.header}

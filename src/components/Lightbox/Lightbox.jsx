@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Lightbox.module.css';
-import { EASE_OUT } from '../../motion';
+import { EASE_OUT, DUREE } from '../../motion';
 
 const AUTOPLAY_DELAY = 4000; // ms entre chaque slide
 
@@ -71,9 +71,13 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
   };
 
   return createPortal(
-    <div
+    <motion.div
       className={styles.overlay}
       onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: DUREE.rapide, ease: EASE_OUT }}
       role="dialog"
       aria-modal="true"
       aria-label={`Galerie ${projectName}`}
@@ -99,7 +103,8 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+        {/* popLayout : l'ancienne image sort pendant que la nouvelle entre (avant : 0,7 s d'attente) */}
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.img
             key={current}
             src={images[current]}
@@ -110,7 +115,7 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.35, ease: EASE_OUT }}
+            transition={{ duration: 0.25, ease: EASE_OUT }}
             draggable={false}
           />
         </AnimatePresence>
@@ -157,7 +162,7 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
           </button>
         ))}
       </div>
-    </div>,
+    </motion.div>,
     document.body
   );
 }
