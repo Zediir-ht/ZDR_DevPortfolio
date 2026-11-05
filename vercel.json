@@ -6,5 +6,9 @@
     { "source": "/creation-site-internet-millau", "destination": "/creation-site-internet-millau.html" },
     { "source": "/creation-site-internet-villefranche-de-rouergue", "destination": "/creation-site-internet-villefranche-de-rouergue.html" },
     { "source": "/creation-site-internet-decazeville", "destination": "/creation-site-internet-decazeville.html" }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] }
   ]
 }
