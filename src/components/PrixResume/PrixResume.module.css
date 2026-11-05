@@ -90,7 +90,6 @@
 .packMaintenance {
   font-size: var(--fs-xs);
   color: var(--c-text-light-muted);
-  opacity: 0.6;
   margin-top: var(--sp-sm);
   letter-spacing: 0.02em;
 }

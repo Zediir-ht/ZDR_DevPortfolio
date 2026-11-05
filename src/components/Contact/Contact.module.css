@@ -91,7 +91,7 @@
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(28, 28, 28, 0.45);
+  color: #6b6b66;  /* 5,18:1 sur le fond du champ (avant 2,8:1) */
 }
 
 .input:focus,
@@ -269,7 +269,7 @@
   }
 
   .title {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-3xl);
   }
 
   .labelField,

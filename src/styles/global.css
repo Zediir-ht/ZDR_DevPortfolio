@@ -236,6 +236,19 @@ ul { list-style: none; }
 img { display: block; max-width: 100%; }
 button, input, textarea { font-family: inherit; }
 
+/*
+ * Typographie : plus de mot seul sur la dernière ligne.
+ * Hero exclu (#accueil) : sa mise en page est calée au pixel près.
+ */
+main > section:not(#accueil) :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
+main > section:not(#accueil) :is(p, li, summary),
+footer :is(p, li) {
+  text-wrap: pretty;
+}
+
 /* ── Utilities ── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sp-xl); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
@@ -248,7 +261,7 @@ button, input, textarea { font-family: inherit; }
   :root {
     --fs-5xl: 2.25rem;
     --fs-4xl: 1.875rem;
-    --fs-3xl: 1.5rem;
+    --fs-3xl: 1.75rem;
     --sp-3xl: 4rem;
     --sp-2xl: 3rem;
   }
@@ -257,8 +270,8 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 480px) {
   :root {
     --fs-5xl: 1.875rem;
-    --fs-4xl: 1.5rem;
-    --fs-3xl: 1.375rem;
+    --fs-4xl: 1.75rem;
+    --fs-3xl: 1.75rem;   /* titres de section : 28 px (avant 22 px, presque la taille du texte) */
     --fs-2xl: 1.25rem;
     --sp-3xl: 3rem;
     --sp-2xl: 2rem;
