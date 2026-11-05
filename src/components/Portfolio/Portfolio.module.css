@@ -155,10 +155,10 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--c-text-light-muted);
-  background: rgba(244, 241, 232, 0.06);
+  background: var(--c-blanc-a06);
   padding: 0.25rem 0.65rem;
   border-radius: var(--r-full);
-  border: 1px solid rgba(244, 241, 232, 0.08);
+  border: 1px solid var(--c-blanc-a08);
 }
 
 /* CTA */

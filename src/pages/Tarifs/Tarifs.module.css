@@ -149,21 +149,21 @@
   flex-direction: column;
   padding: var(--sp-xl) var(--sp-lg);
   border-radius: var(--r-lg);
-  border: 1px solid rgba(244, 241, 232, 0.08);
-  background: rgba(244, 241, 232, 0.03);
+  border: 1px solid var(--c-blanc-a08);
+  background: var(--c-blanc-a03);
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .packCard:hover {
-    border-color: rgba(212, 160, 23, 0.2);
+    border-color: var(--c-or-a20);
     transform: translateY(-4px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
   }
 }
 
 .packFeatured {
-  border-color: rgba(212, 160, 23, 0.3);
+  border-color: var(--c-or-a30);
   background: rgba(212, 160, 23, 0.04);
 }
 
@@ -290,20 +290,20 @@
 .aboCard {
   padding: var(--sp-xl) var(--sp-lg);
   border-radius: var(--r-lg);
-  border: 1px solid rgba(244, 241, 232, 0.08);
-  background: rgba(244, 241, 232, 0.03);
+  border: 1px solid var(--c-blanc-a08);
+  background: var(--c-blanc-a03);
   transition: border-color 0.3s, transform 0.3s;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .aboCard:hover {
-    border-color: rgba(212, 160, 23, 0.2);
+    border-color: var(--c-or-a20);
     transform: translateY(-3px);
   }
 }
 
 .aboFeatured {
-  border-color: rgba(212, 160, 23, 0.3);
+  border-color: var(--c-or-a30);
   background: rgba(212, 160, 23, 0.04);
 }
 
@@ -362,7 +362,7 @@
   padding: 0.9rem 1.8rem;
   border-radius: var(--r-md);
   background: rgba(28, 28, 28, 0.8);
-  border: 1px solid rgba(244, 241, 232, 0.06);
+  border: 1px solid var(--c-blanc-a06);
   font-size: var(--fs-sm);
   color: var(--c-text-light-muted);
 }
@@ -382,7 +382,7 @@
 .raisonCard {
   padding: var(--sp-lg);
   border-radius: var(--r-lg);
-  border: 1px solid rgba(244, 241, 232, 0.06);
+  border: 1px solid var(--c-blanc-a06);
   background: rgba(244, 241, 232, 0.025);
   transition: border-color 0.3s, background 0.3s;
 }
@@ -479,7 +479,7 @@
   .finalCtaBtn:hover {
     background: var(--c-rouge-dk);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(158, 27, 31, 0.35);
+    box-shadow: 0 8px 24px var(--c-rouge-a35);
   }
 }
 
@@ -519,7 +519,7 @@
 /* ── Tableau comparatif ── */
 .compareWrap {
   overflow-x: auto;
-  border: 1px solid rgba(244, 241, 232, 0.08);
+  border: 1px solid var(--c-blanc-a08);
   border-radius: var(--r-lg);
 }
 
@@ -545,7 +545,7 @@
   text-align: left;
   vertical-align: top;
   line-height: 1.5;
-  border-bottom: 1px solid rgba(244, 241, 232, 0.08);
+  border-bottom: 1px solid var(--c-blanc-a08);
 }
 
 .compareTable tbody tr:last-child th,

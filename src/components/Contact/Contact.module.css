@@ -204,7 +204,7 @@
   .infoCard:hover {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
-    border-color: rgba(212, 160, 23, 0.3);
+    border-color: var(--c-or-a30);
   }
 }
 

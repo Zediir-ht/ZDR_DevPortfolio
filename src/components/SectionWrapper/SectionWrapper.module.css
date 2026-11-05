@@ -58,7 +58,7 @@
 }
 
 .orbLight.orb2 {
-  background: radial-gradient(circle, rgba(212, 160, 23, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--c-or-a06) 0%, transparent 70%);
 }
 
 @media (max-width: 768px) {

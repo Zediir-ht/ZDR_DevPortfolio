@@ -100,7 +100,7 @@
 @media (hover: hover) and (pointer: fine) {
   .btnPrimary:hover {
     background: var(--c-accent-dk);
-    box-shadow: 0 8px 30px rgba(158, 27, 31, 0.35);
+    box-shadow: 0 8px 30px var(--c-rouge-a35);
   }
 }
 

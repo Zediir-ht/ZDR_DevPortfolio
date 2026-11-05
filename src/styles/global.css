@@ -23,6 +23,15 @@
   --c-or-soft:   rgba(212, 160, 23, 0.15);
   --c-noir:      #1C1C1C;
   --c-noir-soft: #2A2A2A;
+
+  /* Transparences récurrentes de la palette (bordures, fonds de cartes, halos) */
+  --c-blanc-a03: rgba(244, 241, 232, 0.03);
+  --c-blanc-a06: rgba(244, 241, 232, 0.06);
+  --c-blanc-a08: rgba(244, 241, 232, 0.08);
+  --c-or-a06:    rgba(212, 160, 23, 0.06);
+  --c-or-a20:    rgba(212, 160, 23, 0.2);
+  --c-or-a30:    rgba(212, 160, 23, 0.3);
+  --c-rouge-a35: rgba(158, 27, 31, 0.35);
   --c-blanc:     #F4F1E8;
   --c-blanc-alt: #EBE7DA;
 

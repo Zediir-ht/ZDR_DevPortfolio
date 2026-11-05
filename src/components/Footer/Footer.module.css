@@ -32,7 +32,7 @@
   grid-template-columns: 2fr 1fr 1.3fr 1.5fr;
   gap: var(--sp-xl);
   padding-bottom: var(--sp-2xl);
-  border-bottom: 1px solid rgba(244, 241, 232, 0.06);
+  border-bottom: 1px solid var(--c-blanc-a06);
 }
 
 /* Marque */

@@ -59,17 +59,17 @@
 .serviceCard {
   padding: var(--sp-lg);
   border-radius: var(--r-lg);
-  border: 1px solid rgba(244, 241, 232, 0.06);
-  background: rgba(244, 241, 232, 0.03);
+  border: 1px solid var(--c-blanc-a06);
+  background: var(--c-blanc-a03);
   transition: border-color var(--tr), background var(--tr), transform var(--tr), box-shadow var(--tr);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .serviceCard:hover {
-    border-color: rgba(212, 160, 23, 0.2);
+    border-color: var(--c-or-a20);
     background: rgba(244, 241, 232, 0.05);
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(212, 160, 23, 0.06);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px var(--c-or-a06);
   }
 }
 
@@ -93,7 +93,7 @@
 
 .serviceDetail {
   padding-left: var(--sp-sm);
-  border-left: 2px solid rgba(212, 160, 23, 0.2);
+  border-left: 2px solid var(--c-or-a20);
 }
 
 .detailLabel {
@@ -137,7 +137,7 @@
   position: relative;
   overflow: hidden;
   background: var(--c-bg-dark-alt);
-  border: 1px solid rgba(244, 241, 232, 0.06);
+  border: 1px solid var(--c-blanc-a06);
   border-radius: var(--r-lg);
   padding: var(--sp-xl) var(--sp-lg);
   display: flex;
@@ -250,44 +250,6 @@
   gap: 0.5rem;
   font-size: var(--fs-sm);
   color: var(--c-text-light-muted);
-}
-
-/* Bouton */
-.cardBtn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 0.75rem 0;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  border-radius: var(--r-md);
-  border: 1.5px solid rgba(244, 241, 232, 0.12);
-  color: var(--c-blanc);
-  transition: all var(--tr);
-  margin-top: auto;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cardBtn:hover {
-    background: var(--c-accent);
-    color: var(--c-blanc);
-    border-color: var(--c-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(158, 27, 31, 0.3);
-  }
-}
-
-.cardHighlight .cardBtn {
-  background: var(--c-accent);
-  color: var(--c-blanc);
-  border-color: var(--c-accent);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cardHighlight .cardBtn:hover {
-    background: var(--c-accent-dk);
-    box-shadow: 0 4px 16px rgba(158, 27, 31, 0.35);
-  }
 }
 
 /* ── Responsive ── */

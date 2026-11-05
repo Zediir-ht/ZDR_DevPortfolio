@@ -80,19 +80,19 @@ div.publicsGrid {
 }
 
 .faqItem {
-  border: 1px solid rgba(244, 241, 232, 0.08);
+  border: 1px solid var(--c-blanc-a08);
   border-radius: var(--r-lg);
   background: rgba(244, 241, 232, 0.025);
   transition: border-color var(--tr);
 }
 
 .faqItem[open] {
-  border-color: rgba(212, 160, 23, 0.3);
+  border-color: var(--c-or-a30);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .faqItem:hover {
-    border-color: rgba(212, 160, 23, 0.3);
+    border-color: var(--c-or-a30);
   }
 }
 
