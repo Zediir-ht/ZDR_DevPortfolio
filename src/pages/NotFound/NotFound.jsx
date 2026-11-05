@@ -29,7 +29,6 @@ export default function NotFound() {
       <main className={styles.main} id="contenu" tabIndex={-1}>
         <section className={styles.hero}>
           <div className="container">
-            <span className={styles.heroLabel}>Erreur 404</span>
             <h1 className={styles.heroTitle}>Cette page n'existe pas</h1>
             <p className={styles.heroSub}>
               L'adresse est peut-être erronée, ou la page a été déplacée. Voici où aller.

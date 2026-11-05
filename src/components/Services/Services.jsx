@@ -74,15 +74,6 @@ export default function Services() {
   return (
     <SectionWrapper id="services" dark>
       <div className={styles.header}>
-        <motion.span
-          className={styles.label}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={headerVariants}
-        >
-          Services
-        </motion.span>
         <motion.h2
           className={styles.title}
           initial="hidden"

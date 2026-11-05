@@ -46,7 +46,6 @@ export default function Portfolio() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <span className={styles.label}>Réalisations</span>
         <h2 className={styles.title}>
           Quelques sites que j'ai réalisés
         </h2>

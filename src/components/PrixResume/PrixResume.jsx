@@ -48,7 +48,6 @@ export default function PrixResume() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <span className={styles.label}>Offres</span>
         <h2 className={styles.title}>
           Trois formules de départ
         </h2>

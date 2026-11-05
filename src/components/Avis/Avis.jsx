@@ -52,7 +52,6 @@ export default function Avis() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <span className={styles.label}>Témoignages</span>
         <h2 className={styles.title}>
           Ce que disent mes clients
         </h2>

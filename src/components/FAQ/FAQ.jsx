@@ -73,15 +73,6 @@ export default function FAQ() {
 
       {/* En-tête */}
       <div className={styles.header}>
-        <motion.span
-          className={styles.label}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={headerVariants}
-        >
-          FAQ
-        </motion.span>
         <motion.h2
           className={styles.title}
           initial="hidden"

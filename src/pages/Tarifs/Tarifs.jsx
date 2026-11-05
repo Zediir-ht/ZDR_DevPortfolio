@@ -239,14 +239,6 @@ export default function Tarifs() {
         {/* ── Hero titre ── */}
         <section className={styles.hero}>
           <div className="container">
-            <motion.span
-              className={styles.heroLabel}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Offres &amp; tarifs
-            </motion.span>
             <motion.h1
               className={styles.heroTitle}
               initial={{ opacity: 0, y: 20 }}

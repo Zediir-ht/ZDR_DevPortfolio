@@ -10,11 +10,6 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './About.module.css';
 import { EASE_OUT } from '../../motion';
 
-const labelVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE_OUT } },
-};
-
 const titleVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT, delay: 0.1 } },
@@ -38,15 +33,6 @@ export default function About() {
       <div className={styles.glassPanel}>
       {/* En-tête de section */}
       <div className={styles.header}>
-        <motion.span
-          className={styles.label}
-          variants={labelVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          À propos
-        </motion.span>
         <motion.h2
           className={styles.title}
           variants={titleVariants}

@@ -14,7 +14,6 @@ import { VILLES } from './data/villes';
 import { scrollToId } from './utils/scrollToId';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
-const References = lazy(() => import('./components/References/References'));
 const About      = lazy(() => import('./components/About/About'));
 const Avis       = lazy(() => import('./components/Avis/Avis'));
 const Portfolio  = lazy(() => import('./components/Portfolio/Portfolio'));
@@ -23,7 +22,6 @@ const PrixResume = lazy(() => import('./components/PrixResume/PrixResume'));
 const WhyMe      = lazy(() => import('./components/WhyMe/WhyMe'));
 const FAQ        = lazy(() => import('./components/FAQ/FAQ'));
 const Contact    = lazy(() => import('./components/Contact/Contact'));
-const CTAFinal   = lazy(() => import('./components/CTAFinal/CTAFinal'));
 const Footer     = lazy(() => import('./components/Footer/Footer'));
 const Legal      = lazy(() => import('./components/Legal/Legal'));
 const Tarifs     = lazy(() => import('./pages/Tarifs/Tarifs'));
@@ -55,7 +53,6 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
         <Hero />
         <Suspense fallback={null}>
           {/* <Avis /> — désactivé temporairement, réactiver quand les vrais avis Google seront prêts */}
-          <References />
           <Portfolio />
           <About />
           <Services />
@@ -63,7 +60,6 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
           <WhyMe />
           <FAQ />
           <Contact />
-          <CTAFinal />
         </Suspense>
       </main>
       <Suspense fallback={null}>

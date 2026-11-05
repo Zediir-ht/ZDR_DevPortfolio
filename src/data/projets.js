@@ -1,7 +1,7 @@
 /**
  * projets.js
  * ----------
- * Réalisations clients — utilisées par le Portfolio et la section Références.
+ * Réalisations clients, utilisées par la section Portfolio.
  */
 
 export const PROJETS = [

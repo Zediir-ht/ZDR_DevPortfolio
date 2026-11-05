@@ -5,28 +5,6 @@
   margin-bottom: var(--sp-2xl);
 }
 
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: var(--c-or);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: var(--sp-xs);
-}
-
-.label::before {
-  content: '';
-  width: 1em;
-  height: 1em;
-  background: currentColor;
-  -webkit-mask: var(--croix-occitane) center / contain no-repeat;
-  mask: var(--croix-occitane) center / contain no-repeat;
-  flex-shrink: 0;
-}
-
 .title {
   font-family: var(--ff-titre);
   font-weight: 700;
