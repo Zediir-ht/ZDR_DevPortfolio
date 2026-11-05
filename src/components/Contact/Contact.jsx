@@ -10,6 +10,7 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { sanitizeInput, isValidEmail } from '../../utils/sanitize';
 import styles from './Contact.module.css';
 import { EASE_OUT } from '../../motion';
+import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 
 const INITIAL_FORM = { name: '', email: '', message: '', honeypot: '' };
 const MAX_SUBMISSIONS = 5;
@@ -248,6 +249,20 @@ export default function Contact() {
           whileInView="visible"
           viewport={{ once: true }}
         >
+          <motion.div className={styles.infoCard} variants={infoCardVariants}>
+            <div className={styles.infoIcon} aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className={styles.infoTitle}>Téléphone</h3>
+              <a href={`tel:${TEL_LIEN}`} className={styles.infoLink}>
+                {TEL_AFFICHE}
+              </a>
+            </div>
+          </motion.div>
+
           <motion.div className={styles.infoCard} variants={infoCardVariants}>
             <div className={styles.infoIcon} aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

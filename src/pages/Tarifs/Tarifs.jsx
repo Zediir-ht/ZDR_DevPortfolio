@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageSchema from '../../components/PageSchema/PageSchema';
+import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 import SkipLink from '../../components/SkipLink/SkipLink';
 import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
 import styles from './Tarifs.module.css';
@@ -477,6 +478,9 @@ export default function Tarifs() {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </a>
+                <p className={styles.telLine}>
+                  ou appelez le <a href={`tel:${TEL_LIEN}`}>{TEL_AFFICHE}</a>
+                </p>
               </motion.div>
             </motion.div>
           </div>

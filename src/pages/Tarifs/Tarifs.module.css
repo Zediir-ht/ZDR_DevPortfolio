@@ -568,6 +568,22 @@
   color: var(--c-text-light-muted);
 }
 
+/* Ligne « ou appelez le … » sous les boutons d'appel à l'action */
+.telLine {
+  margin-top: var(--sp-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-text-light-muted);
+}
+
+.telLine a {
+  display: inline-block;
+  padding: 0.4rem 0;  /* cible tactile d'au moins 24 px de haut */
+  color: var(--c-or);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .packsGrid {

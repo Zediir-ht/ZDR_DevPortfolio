@@ -8,6 +8,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Header.module.css';
+import { TEL_LIEN } from '../../data/site';
 
 const NAV_LINKS = [
   { href: '#portfolio', label: 'Réalisations' },
@@ -152,6 +153,9 @@ export default function Header() {
                   <a href={href} onClick={handleLinkClick}>{label}</a>
                 </li>
               ))}
+              <li>
+                <a href={`tel:${TEL_LIEN}`} onClick={handleLinkClick}>Appeler</a>
+              </li>
               <li>
                 <a href="#contact" onClick={handleLinkClick} className={styles.mobileCta}>
                   Contact

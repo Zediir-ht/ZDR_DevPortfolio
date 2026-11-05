@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { VILLES } from '../../data/villes';
+import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 import PageSchema from '../../components/PageSchema/PageSchema';
 import SkipLink from '../../components/SkipLink/SkipLink';
 import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
@@ -137,6 +138,9 @@ export default function LocalPage({ ville: v }) {
             <a href="/#contact" className={`${styles.finalCtaBtn} ${local.heroCta}`}>
               Demander un devis gratuit
             </a>
+            <p className={styles.telLine}>
+              ou appelez le <a href={`tel:${TEL_LIEN}`}>{TEL_AFFICHE}</a>
+            </p>
           </div>
         </section>
 

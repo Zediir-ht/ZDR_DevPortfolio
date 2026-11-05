@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Legal.module.css';
 import { EASE_OUT } from '../../motion';
+import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 
 const overlayVariants = {
   hidden: { opacity: 0 },
@@ -25,7 +26,7 @@ function MentionsLegales() {
   return (
     <>
       <h2 className={styles.title}>Mentions légales</h2>
-      <p className={styles.updated}>Dernière mise à jour : 23 octobre 2026</p>
+      <p className={styles.updated}>Dernière mise à jour : 5 novembre 2026</p>
 
       <section className={styles.block}>
         <h3>1. Éditeur du site</h3>
@@ -37,6 +38,7 @@ function MentionsLegales() {
           <li><strong>Statut :</strong> Entrepreneur individuel (EI)</li>
           <li><strong>Siège social :</strong> Rodez, 12000, Aveyron, France</li>
           <li><strong>Email :</strong> <a href="mailto:corentin.mayrand@gmail.com">corentin.mayrand@gmail.com</a></li>
+          <li><strong>Téléphone :</strong> <a href={`tel:${TEL_LIEN}`}>{TEL_AFFICHE}</a></li>
           <li><strong>SIRET :</strong> 10103383500014 </li>
           <li><strong>Directeur de la publication :</strong> Corentin Mayrand</li>
         </ul>
@@ -96,7 +98,7 @@ function PolitiqueConfidentialite() {
   return (
     <>
       <h2 className={styles.title}>Politique de confidentialité</h2>
-      <p className={styles.updated}>Dernière mise à jour : 23 octobre 2026</p>
+      <p className={styles.updated}>Dernière mise à jour : 5 novembre 2026</p>
 
       <section className={styles.block}>
         <h3>1. Responsable du traitement</h3>
@@ -107,6 +109,7 @@ function PolitiqueConfidentialite() {
           <li><strong>Corentin Mayrand</strong>, Zdr_DEV</li>
           <li>Rodez, 12000, Aveyron, France</li>
           <li>Email : <a href="mailto:corentin.mayrand@gmail.com">corentin.mayrand@gmail.com</a></li>
+          <li>Téléphone : <a href={`tel:${TEL_LIEN}`}>{TEL_AFFICHE}</a></li>
         </ul>
       </section>
 

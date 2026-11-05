@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { VILLES } from '../../data/villes';
 import DerniereMaj from '../DerniereMaj/DerniereMaj';
+import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 import styles from './Footer.module.css';
 import { EASE_OUT } from '../../motion';
 
@@ -83,6 +84,9 @@ export default function Footer({ onOpenLegal }) {
         <motion.div className={styles.contact} variants={colVariants}>
           <h3 className={styles.colTitle}>Contact</h3>
           <ul>
+            <li>
+              <a href={`tel:${TEL_LIEN}`}>{TEL_AFFICHE}</a>
+            </li>
             <li>
               <a href="mailto:corentin.mayrand@gmail.com">
                 corentin.mayrand@gmail.com
