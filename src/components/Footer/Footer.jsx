@@ -43,9 +43,9 @@ export default function Footer({ onOpenLegal }) {
       <div className={`container ${styles.grid}`}>
         {/* Colonne 1 – Marque */}
         <motion.div className={styles.brand} variants={colVariants}>
-          <h4 className={styles.logo}>
+          <p className={styles.logo}>
             <span className={styles.logoAccent}>Zdr</span>_DEV
-          </h4>
+          </p>
           <p className={styles.tagline}>
             Développeur web freelance<br />Rodez · Aveyron (12)
           </p>
@@ -57,7 +57,7 @@ export default function Footer({ onOpenLegal }) {
 
         {/* Colonne 2 – Navigation */}
         <motion.div className={styles.links} variants={colVariants}>
-          <h5 className={styles.colTitle}>Navigation</h5>
+          <h3 className={styles.colTitle}>Navigation</h3>
           <ul>
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#a-propos">À propos</a></li>
@@ -71,7 +71,7 @@ export default function Footer({ onOpenLegal }) {
 
         {/* Colonne 3 – Zones d'intervention (pages locales) */}
         <motion.div className={styles.links} variants={colVariants}>
-          <h5 className={styles.colTitle}>Zones d'intervention</h5>
+          <h3 className={styles.colTitle}>Zones d'intervention</h3>
           <ul>
             {VILLES.map((v) => (
               <li key={v.slug}><Link to={`/${v.slug}`}>Site internet {v.ville}</Link></li>
@@ -81,7 +81,7 @@ export default function Footer({ onOpenLegal }) {
 
         {/* Colonne 4 – Contact */}
         <motion.div className={styles.contact} variants={colVariants}>
-          <h5 className={styles.colTitle}>Contact</h5>
+          <h3 className={styles.colTitle}>Contact</h3>
           <ul>
             <li>
               <a href="mailto:corentin.mayrand@gmail.com">

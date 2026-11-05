@@ -251,7 +251,7 @@ export default function Contact() {
         </motion.form>
 
         {/* Informations de contact */}
-        <motion.aside
+        <motion.div
           className={styles.info}
           initial="hidden"
           whileInView="visible"
@@ -265,7 +265,7 @@ export default function Contact() {
               </svg>
             </div>
             <div>
-              <h4 className={styles.infoTitle}>Email</h4>
+              <h3 className={styles.infoTitle}>Email</h3>
               <a href="mailto:corentin.mayrand@gmail.com" className={styles.infoLink}>
                 corentin.mayrand@gmail.com
               </a>
@@ -280,7 +280,7 @@ export default function Contact() {
               </svg>
             </div>
             <div>
-              <h4 className={styles.infoTitle}>Localisation</h4>
+              <h3 className={styles.infoTitle}>Localisation</h3>
               <p className={styles.infoText}>Rodez, Aveyron (12)</p>
               <p className={styles.infoText} style={{ marginTop: '0.5rem' }}>
                 Basé à Rodez, j'interviens dans tout l'Aveyron : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
@@ -296,13 +296,13 @@ export default function Contact() {
               </svg>
             </div>
             <div>
-              <h4 className={styles.infoTitle}>Disponibilité</h4>
+              <h3 className={styles.infoTitle}>Disponibilité</h3>
               <p className={styles.infoText}>Du lundi au vendredi, de 9h à 18h<br />RDV à Rodez, Millau ou en visio</p>
             </div>
           </motion.div>
 
 
-        </motion.aside>
+        </motion.div>
       </div>
       </div>
     </SectionWrapper>

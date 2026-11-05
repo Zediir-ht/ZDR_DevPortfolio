@@ -229,6 +229,7 @@
 
 .infoTitle {
   font-size: var(--fs-lg);
+  line-height: 1.2;
   font-weight: 700;
   color: var(--c-noir);
   margin-bottom: 0.15rem;

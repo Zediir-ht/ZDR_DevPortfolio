@@ -33,7 +33,7 @@
   --c-bg-dark-alt:     #242424;
   --c-text:            #1C1C1C;
   --c-text-soft:       #3D3D3D;
-  --c-text-muted:      #7A7A6E;
+  --c-text-muted:      #666659;   /* 5,15:1 sur --c-bg, 4,70:1 sur --c-bg-alt (WCAG AA) */
   --c-text-light:      #F4F1E8;
   --c-text-light-muted:#B8B5AA;
   --c-accent:          #9E1B1F;
@@ -139,7 +139,8 @@ body {
 }
 
 .reveal {
-  animation: revealUp var(--reveal-duration, 0.6s) var(--ease-out) var(--reveal-delay, 0s) both;
+  /* backwards : l'état de départ s'applique pendant le délai ; à la fin l'élément reprend son style normal */
+  animation: revealUp var(--reveal-duration, 0.6s) var(--ease-out) var(--reveal-delay, 0s) backwards;
 }
 
 /* ── Lien d'évitement : visible seulement au clavier ── */
@@ -161,6 +162,11 @@ body {
 }
 
 /* ── Selection ── */
+/* La cible du lien d'évitement reçoit le focus sans être interactive : pas de contour */
+main[tabindex="-1"]:focus {
+  outline: none;
+}
+
 ::selection {
   background: var(--c-accent);
   color: var(--c-blanc);

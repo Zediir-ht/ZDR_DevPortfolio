@@ -25,7 +25,7 @@ function MentionsLegales() {
   return (
     <>
       <h2 className={styles.title}>Mentions légales</h2>
-      <p className={styles.updated}>Dernière mise à jour : 23 février 2026</p>
+      <p className={styles.updated}>Dernière mise à jour : 23 octobre 2026</p>
 
       <section className={styles.block}>
         <h3>1. Éditeur du site</h3>
@@ -96,7 +96,7 @@ function PolitiqueConfidentialite() {
   return (
     <>
       <h2 className={styles.title}>Politique de confidentialité</h2>
-      <p className={styles.updated}>Dernière mise à jour : 23 février 2026</p>
+      <p className={styles.updated}>Dernière mise à jour : 23 octobre 2026</p>
 
       <section className={styles.block}>
         <h3>1. Responsable du traitement</h3>

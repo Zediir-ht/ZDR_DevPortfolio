@@ -9,6 +9,7 @@
 }
 
 .breadcrumb a {
+  padding: 0.4rem 0;  /* cible tactile d'au moins 24 px de haut */
   color: var(--c-or);
 }
 
@@ -143,6 +144,10 @@ div.publicsGrid {
   color: var(--c-text-light-muted);
 }
 
+.autres p {
+  color: inherit;
+}
+
 .autres ul {
   display: flex;
   flex-wrap: wrap;
@@ -154,6 +159,8 @@ div.publicsGrid {
 }
 
 .autres a {
+  display: inline-block;
+  padding: 0.4rem 0;  /* cible tactile d'au moins 24 px de haut */
   color: var(--c-or);
 }
 

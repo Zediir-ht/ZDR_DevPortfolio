@@ -502,6 +502,8 @@
 }
 
 .footerBack {
+  display: inline-block;
+  padding: 0.6rem 0;  /* cible tactile d'au moins 24 px de haut */
   font-size: var(--fs-xs);
   color: var(--c-text-light-muted);
   text-decoration: none;

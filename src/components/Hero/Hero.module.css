@@ -252,8 +252,6 @@
     text-align: left;
     padding-left: 2vw;
     letter-spacing: 0.165em;
-    transform: scaleY(10);
-    transform-origin: left top;
   }
 
   .heroRight {
@@ -264,8 +262,6 @@
     padding-left: 42vw;
     margin-top: 66vw;
     letter-spacing: 0.165em;
-    transform: scaleY(10);
-    transform-origin: left top;
   }
 
   /* Sous-texte : DÃ©veloppeur Web Ã  gauche, Aveyron Ã  droite */

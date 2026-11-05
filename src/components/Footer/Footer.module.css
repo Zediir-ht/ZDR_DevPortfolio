@@ -40,6 +40,7 @@
   font-family: var(--ff-logo);
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 300;
+  line-height: 1.2;
   letter-spacing: calc(2px + 0.175em);
   text-transform: uppercase;
   color: var(--c-blanc);
@@ -58,6 +59,8 @@
 
 /* Colonnes */
 .colTitle {
+  font-family: var(--ff);
+  line-height: inherit;
   font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--c-or);
