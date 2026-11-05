@@ -95,14 +95,18 @@
   transition: width var(--tr);
 }
 
-.links a:hover,
-.contact a:hover {
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .links a:hover,
+  .contact a:hover {
+    color: var(--c-blanc);
+  }
 }
 
-.links a:hover::after,
-.contact a:hover::after {
-  width: 100%;
+@media (hover: hover) and (pointer: fine) {
+  .links a:hover::after,
+  .contact a:hover::after {
+    width: 100%;
+  }
 }
 
 .contact li {
@@ -140,8 +144,10 @@
   transition: color var(--tr-fast);
 }
 
-.legalBtn:hover {
-  color: var(--c-accent);
+@media (hover: hover) and (pointer: fine) {
+  .legalBtn:hover {
+    color: var(--c-accent);
+  }
 }
 
 .sep {

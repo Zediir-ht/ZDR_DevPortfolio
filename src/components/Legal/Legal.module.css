@@ -48,10 +48,12 @@
   transition: color var(--tr-fast), border-color var(--tr-fast), background var(--tr-fast);
 }
 
-.closeBtn:hover {
-  color: var(--c-accent);
-  border-color: var(--c-accent);
-  background: rgba(227, 83, 54, 0.06);
+@media (hover: hover) and (pointer: fine) {
+  .closeBtn:hover {
+    color: var(--c-accent);
+    border-color: var(--c-accent);
+    background: rgba(227, 83, 54, 0.06);
+  }
 }
 
 /* ─── Contenu scrollable ─── */
@@ -128,9 +130,11 @@
   transition: color var(--tr-fast);
 }
 
-.block a:hover {
-  color: var(--c-accent-dk);
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .block a:hover {
+    color: var(--c-accent-dk);
+    text-decoration: underline;
+  }
 }
 
 /* ─── Responsive ─── */

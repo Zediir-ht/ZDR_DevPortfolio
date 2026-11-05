@@ -85,9 +85,14 @@ div.publicsGrid {
   transition: border-color var(--tr);
 }
 
-.faqItem:hover,
 .faqItem[open] {
   border-color: rgba(212, 160, 23, 0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .faqItem:hover {
+    border-color: rgba(212, 160, 23, 0.3);
+  }
 }
 
 .faqQuestion {

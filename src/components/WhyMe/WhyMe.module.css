@@ -86,11 +86,13 @@
   transition: border-color var(--tr), background var(--tr), transform var(--tr), box-shadow var(--tr);
 }
 
-.card:hover {
-  border-color: rgba(212, 160, 23, 0.2);
-  background: rgba(244, 241, 232, 0.05);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(212, 160, 23, 0.06);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: rgba(212, 160, 23, 0.2);
+    background: rgba(244, 241, 232, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(212, 160, 23, 0.06);
+  }
 }
 
 .icon {
@@ -99,8 +101,10 @@
   transition: transform 0.4s ease;
 }
 
-.card:hover .icon {
-  transform: scale(1.15) rotate(-5deg);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
 }
 
 .cardTitle {

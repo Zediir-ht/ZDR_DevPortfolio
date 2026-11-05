@@ -79,10 +79,12 @@
   transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr);
 }
 
-.card:hover {
-  border-color: rgba(158, 27, 31, 0.2);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 40px rgba(158, 27, 31, 0.04);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: rgba(158, 27, 31, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 40px rgba(158, 27, 31, 0.04);
+  }
 }
 
 /* Guillemets decoratifs */

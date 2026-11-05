@@ -207,8 +207,10 @@
   border: 0;
 }
 
-.scrollHint:hover {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .scrollHint:hover {
+    opacity: 1;
+  }
 }
 
 /* â”€â”€ Responsive â”€â”€ */

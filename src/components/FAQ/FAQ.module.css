@@ -63,10 +63,16 @@
   transition: border-color var(--tr), box-shadow var(--tr);
 }
 
-.item:hover,
 .item[open] {
   border-color: rgba(158, 27, 31, 0.25);
   box-shadow: var(--shadow-md);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    border-color: rgba(158, 27, 31, 0.25);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 .question {

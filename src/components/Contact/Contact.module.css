@@ -153,9 +153,11 @@
   transition: background var(--tr), box-shadow var(--tr);
 }
 
-.submitBtn:hover {
-  background: var(--c-accent-dk);
-  box-shadow: 0 4px 20px rgba(158, 27, 31, 0.25);
+@media (hover: hover) and (pointer: fine) {
+  .submitBtn:hover {
+    background: var(--c-accent-dk);
+    box-shadow: 0 4px 20px rgba(158, 27, 31, 0.25);
+  }
 }
 
 .success {
@@ -198,10 +200,12 @@
   transition: border-color var(--tr), box-shadow var(--tr), transform var(--tr);
 }
 
-.infoCard:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
-  border-color: rgba(212, 160, 23, 0.3);
+@media (hover: hover) and (pointer: fine) {
+  .infoCard:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    border-color: rgba(212, 160, 23, 0.3);
+  }
 }
 
 .infoIcon {
@@ -217,8 +221,10 @@
   transition: transform var(--tr);
 }
 
-.infoCard:hover .infoIcon {
-  transform: scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+  .infoCard:hover .infoIcon {
+    transform: scale(1.08);
+  }
 }
 
 .infoTitle {
@@ -235,8 +241,10 @@
   transition: color var(--tr-fast);
 }
 
-.infoLink:hover {
-  color: var(--c-or);
+@media (hover: hover) and (pointer: fine) {
+  .infoLink:hover {
+    color: var(--c-or);
+  }
 }
 
 .infoText {

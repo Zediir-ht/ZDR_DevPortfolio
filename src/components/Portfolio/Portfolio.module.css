@@ -179,11 +179,13 @@
   width: fit-content;
 }
 
-.ctaLink:hover {
-  color: var(--c-blanc);
-  background: rgba(212, 160, 23, 0.14);
-  border-color: var(--c-or);
-  gap: 0.75rem;
+@media (hover: hover) and (pointer: fine) {
+  .ctaLink:hover {
+    color: var(--c-blanc);
+    background: rgba(212, 160, 23, 0.14);
+    border-color: var(--c-or);
+    gap: 0.75rem;
+  }
 }
 
 /* ── Visuels — composition 3 photos style polaroid ── */
@@ -233,10 +235,16 @@
   transition: background 0.3s, opacity 0.3s;
   pointer-events: none;
 }
-.shotBtn:hover .shotOverlay,
 .shotBtn:focus-visible .shotOverlay {
   background: rgba(0, 0, 0, 0.42);
   opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shotBtn:hover .shotOverlay {
+    background: rgba(0, 0, 0, 0.42);
+    opacity: 1;
+  }
 }
 
 /* Photo 1 — gauche, legere inclinaison vers la gauche */
@@ -264,25 +272,39 @@
 }
 
 /* Hover : les photos s'ecartent et se soulèvent */
-.visuals:hover .shot1 {
-  transform: rotate(-4deg) translate(-10px, -10px);
+
+
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot1 {
+    transform: rotate(-4deg) translate(-10px, -10px);
+  }
 }
-.visuals:hover .shot1 .shot {
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot1 .shot {
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
 }
 
-.visuals:hover .shot2 {
-  transform: rotate(3.5deg) translateY(-14px);
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot2 {
+    transform: rotate(3.5deg) translateY(-14px);
+  }
 }
-.visuals:hover .shot2 .shot {
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 8px 20px rgba(0, 0, 0, 0.35);
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot2 .shot {
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 8px 20px rgba(0, 0, 0, 0.35);
+  }
 }
 
-.visuals:hover .shot3 {
-  transform: rotate(-2deg) translate(10px, -8px);
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot3 {
+    transform: rotate(-2deg) translate(10px, -8px);
+  }
 }
-.visuals:hover .shot3 .shot {
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
+@media (hover: hover) and (pointer: fine) {
+  .visuals:hover .shot3 .shot {
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
 }
 
 /* ── Responsive ── */

@@ -61,8 +61,10 @@
   transition: color var(--tr-fast);
 }
 
-.centerNav a:hover {
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .centerNav a:hover {
+    color: var(--c-blanc);
+  }
 }
 
 /* ── Contact à droite ── */
@@ -77,10 +79,12 @@
   transition: background var(--tr-fast), border-color var(--tr-fast);
 }
 
-.rightLink:hover {
-  background: var(--c-rouge);
-  border-color: var(--c-rouge);
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .rightLink:hover {
+    background: var(--c-rouge);
+    border-color: var(--c-rouge);
+    color: var(--c-blanc);
+  }
 }
 
 /* ── Hamburger ── */
@@ -144,8 +148,10 @@
   transition: color var(--tr-fast);
 }
 
-.mobileNav a:hover {
-  color: var(--c-accent);
+@media (hover: hover) and (pointer: fine) {
+  .mobileNav a:hover {
+    color: var(--c-accent);
+  }
 }
 
 .mobileCta {

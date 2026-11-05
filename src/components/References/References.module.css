@@ -119,14 +119,18 @@
   transition: transform var(--tr);
 }
 
-.cta:hover {
-  background: var(--c-rouge);
-  border-color: var(--c-rouge);
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    background: var(--c-rouge);
+    border-color: var(--c-rouge);
+    color: var(--c-blanc);
+  }
 }
 
-.cta:hover svg {
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover svg {
+    transform: translateX(3px);
+  }
 }
 
 /* Responsive */

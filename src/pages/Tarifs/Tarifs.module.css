@@ -32,8 +32,10 @@
   transition: color 0.2s;
 }
 
-.backLink:hover {
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .backLink:hover {
+    color: var(--c-blanc);
+  }
 }
 
 .headerLogo {
@@ -152,10 +154,12 @@
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.packCard:hover {
-  border-color: rgba(212, 160, 23, 0.2);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+@media (hover: hover) and (pointer: fine) {
+  .packCard:hover {
+    border-color: rgba(212, 160, 23, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .packFeatured {
@@ -163,8 +167,10 @@
   background: rgba(212, 160, 23, 0.04);
 }
 
-.packFeatured:hover {
-  border-color: rgba(212, 160, 23, 0.5);
+@media (hover: hover) and (pointer: fine) {
+  .packFeatured:hover {
+    border-color: rgba(212, 160, 23, 0.5);
+  }
 }
 
 .packBadge {
@@ -251,9 +257,11 @@
   margin-top: auto;
 }
 
-.packCta:hover {
-  border-color: rgba(244, 241, 232, 0.5);
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .packCta:hover {
+    border-color: rgba(244, 241, 232, 0.5);
+    color: var(--c-blanc);
+  }
 }
 
 .packCtaFeatured {
@@ -262,10 +270,12 @@
   color: var(--c-blanc);
 }
 
-.packCtaFeatured:hover {
-  background: var(--c-rouge-dk);
-  border-color: var(--c-rouge-dk);
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .packCtaFeatured:hover {
+    background: var(--c-rouge-dk);
+    border-color: var(--c-rouge-dk);
+    color: var(--c-blanc);
+  }
 }
 
 /* ── Abonnements ── */
@@ -285,9 +295,11 @@
   transition: border-color 0.3s, transform 0.3s;
 }
 
-.aboCard:hover {
-  border-color: rgba(212, 160, 23, 0.2);
-  transform: translateY(-3px);
+@media (hover: hover) and (pointer: fine) {
+  .aboCard:hover {
+    border-color: rgba(212, 160, 23, 0.2);
+    transform: translateY(-3px);
+  }
 }
 
 .aboFeatured {
@@ -375,9 +387,11 @@
   transition: border-color 0.3s, background 0.3s;
 }
 
-.raisonCard:hover {
-  border-color: rgba(212, 160, 23, 0.15);
-  background: rgba(244, 241, 232, 0.04);
+@media (hover: hover) and (pointer: fine) {
+  .raisonCard:hover {
+    border-color: rgba(212, 160, 23, 0.15);
+    background: rgba(244, 241, 232, 0.04);
+  }
 }
 
 .raisonIcon {
@@ -461,10 +475,12 @@
   transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
 }
 
-.finalCtaBtn:hover {
-  background: var(--c-rouge-dk);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(158, 27, 31, 0.35);
+@media (hover: hover) and (pointer: fine) {
+  .finalCtaBtn:hover {
+    background: var(--c-rouge-dk);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(158, 27, 31, 0.35);
+  }
 }
 
 /* ── Footer minimal ── */
@@ -492,8 +508,10 @@
   transition: color 0.2s;
 }
 
-.footerBack:hover {
-  color: var(--c-blanc);
+@media (hover: hover) and (pointer: fine) {
+  .footerBack:hover {
+    color: var(--c-blanc);
+  }
 }
 
 /* ── Tableau comparatif ── */
