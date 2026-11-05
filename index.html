@@ -171,19 +171,13 @@
     ]
     </script>
 
-    <!-- Preload police du hero (Antonio) -->
+    <!-- Polices préchargées : Antonio (logo, hero), Figtree (texte), Outfit (titres) -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/antonio-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/figtree-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
 
     <!-- Preload LCP hero image -->
     <link rel="preload" as="image" type="image/webp" href="/croix-occitane.webp" fetchpriority="high" />
-
-    <!-- Fonts – preconnect + swap pour perf -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..700&family=Outfit:wght@500..800&family=Poiret+One&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..700&family=Outfit:wght@500..800&family=Poiret+One&display=swap" rel="stylesheet" />
-    </noscript>
 
     <!-- Sans JavaScript : les éléments d'apparition au défilement restent visibles -->
     <noscript>
