@@ -22,252 +22,62 @@
   margin-top: var(--sp-sm);
 }
 
-/* ── Grille 4 services ── */
-.servicesGrid {
+/* ── Liste typographique ── */
+.list {
+  list-style: none;
+  margin: 0 0 var(--sp-3xl);
+  padding: 0;
+  border-top: 1px solid var(--c-blanc-a08);
+}
+
+.row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-lg);
-  margin-bottom: var(--sp-3xl);
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 1.1fr);
+  column-gap: var(--sp-lg);
+  align-items: center;
+  padding: var(--sp-lg) 0;
+  border-bottom: 1px solid var(--c-blanc-a08);
 }
 
-.serviceCard:nth-child(even) {
-  margin-top: var(--sp-xl);
+.num {
+  font-family: var(--ff-logo);
+  font-size: var(--fs-xl);
+  color: var(--c-or);
+  letter-spacing: 0.04em;
 }
 
-.serviceCard {
-  padding: var(--sp-lg);
-  border-radius: var(--r-lg);
-  border: 1px solid var(--c-blanc-a06);
-  background: var(--c-blanc-a03);
-  transition: border-color var(--tr), background var(--tr), transform var(--tr), box-shadow var(--tr);
+.rowTitle {
+  font-family: var(--ff-logo);
+  font-weight: 700;
+  font-size: clamp(var(--fs-2xl), 3.4vw, var(--fs-4xl));
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--c-blanc);
+  margin: 0;
+  transition: color var(--tr);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .serviceCard:hover {
-    border-color: var(--c-or-a20);
-    background: rgba(244, 241, 232, 0.05);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px var(--c-or-a06);
+  .row:hover .rowTitle {
+    color: var(--c-or);
   }
 }
 
-.serviceIcon {
-  color: var(--c-or);
-  margin-bottom: var(--sp-sm);
-}
-
-.serviceTitle {
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--c-blanc);
-  margin-bottom: var(--sp-md);
-}
-
-.serviceDetails {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-sm);
-}
-
-.serviceDetail {
-  padding-left: var(--sp-sm);
-  border-left: 2px solid var(--c-or-a20);
-}
-
-.detailLabel {
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: var(--c-or);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  display: block;
-  margin-bottom: 0.15rem;
-}
-
-.serviceDetail p {
-  font-size: var(--fs-sm);
+.rowDesc {
+  font-size: var(--fs-base);
   color: var(--c-text-light-muted);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
 }
 
-/* ── En-tête secondaire ── */
-.headerSub {
-  margin: var(--sp-3xl) 0 var(--sp-2xl);
-}
-
-/* ── Grille 2 colonnes (offres création) ── */
-.gridTwo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-lg);
-}
-
-/* ── Grille 3 colonnes (abonnements) ── */
-.gridThree {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-lg);
-}
-
-/* ── Carte tarif ── */
-.card {
-  position: relative;
-  overflow: hidden;
-  background: var(--c-bg-dark-alt);
-  border: 1px solid var(--c-blanc-a06);
-  border-radius: var(--r-lg);
-  padding: var(--sp-xl) var(--sp-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: box-shadow 0.4s ease, border-color 0.4s ease, transform var(--tr);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-    transform: translateY(-4px);
-  }
-}
-
-/* Carte mise en avant */
-.cardHighlight {
-  border-color: var(--c-accent);
-  box-shadow: 0 0 0 1px var(--c-accent);
-}
-
-.cardHighlight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--c-accent);
-}
-
-/* Badge */
-.cardBadge {
-  position: absolute;
-  top: var(--sp-sm);
-  right: var(--sp-sm);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  color: var(--c-blanc);
-  background: var(--c-accent);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--r-full);
-  letter-spacing: 0.02em;
-}
-
-.cardType {
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: var(--c-or);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 0.25rem;
-}
-
-.cardName {
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--c-blanc);
-  margin-bottom: var(--sp-xs);
-}
-
-/* Prix */
-.pricing {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: var(--sp-sm);
-}
-
-.price {
-  font-size: var(--fs-4xl);
-  font-weight: 800;
-  color: var(--c-blanc);
-}
-
-.period {
-  font-size: var(--fs-lg);
-  font-weight: 500;
-  color: var(--c-text-light-muted);
-}
-
-.engagement {
-  font-size: var(--fs-xs);
-  color: var(--c-or);
-  font-weight: 600;
-  margin-bottom: var(--sp-xs);
-}
-
-.desc {
-  font-size: var(--fs-sm);
-  line-height: 1.7;
-  color: var(--c-text-light-muted);
-  margin-bottom: var(--sp-md);
-}
-
-/* Features */
-.features {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-  margin-bottom: var(--sp-lg);
-  flex: 1;
-  width: 100%;
-}
-
-.features li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-sm);
-  color: var(--c-text-light-muted);
-}
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .gridThree {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
-}
-
-@media (max-width: 900px) {
-  .gridTwo {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
-
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
-
-  .serviceCard:nth-child(even) {
-    margin-top: 0;
-  }
-}
-
 @media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
+  .row {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    row-gap: var(--sp-xs);
   }
 
-  .card {
-    padding: var(--sp-md);
-  }
-
-  .serviceCard {
-    padding: var(--sp-md);
-  }
-
-  .price {
-    font-size: var(--fs-3xl);
+  .rowDesc {
+    grid-column: 2;
   }
 }

@@ -2,7 +2,7 @@
  * PrixResume.jsx
  * --------------
  * Section résumée des offres tarifaires — homepage.
- * 3 packs minimalistes + CTA vers /tarifs.
+ * 3 formules en colonnes ouvertes + CTA vers /tarifs.
  */
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -13,17 +13,14 @@ import { EASE_OUT } from '../../motion';
 const PACKS = [
   {
     name: "L'Essentiel",
-    price: 'Sur devis',
     desc: 'Un site d\'une page, lisible sur mobile, avec votre fiche Google Maps et un formulaire de contact.',
   },
   {
     name: "L'Atelier",
-    price: 'Sur devis',
     desc: 'Jusqu\'à 5 pages, une galerie photo et un espace pour modifier vos contenus vous-même.',
   },
   {
     name: 'Le Terroir',
-    price: 'Sur devis',
     desc: 'Carte ou catalogue, réservation en ligne et click & collect, pour les restaurants et les producteurs.',
   },
 ];
@@ -63,14 +60,14 @@ export default function PrixResume() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {PACKS.map((pack) => (
+        {PACKS.map((pack, i) => (
           <motion.div
             key={pack.name}
             className={styles.card}
             variants={itemVariants}
           >
+            <span className={styles.packNum} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             <h3 className={styles.packName}>{pack.name}</h3>
-            <p className={styles.packPrice}>{pack.price}</p>
             <p className={styles.packDesc}>{pack.desc}</p>
             <p className={styles.packMaintenance}>Maintenance possible en option</p>
           </motion.div>

@@ -20,77 +20,54 @@
   margin-top: var(--sp-sm);
 }
 
-/* ── Grille 3 packs ── */
+/* ── 3 colonnes ouvertes, séparées par un filet ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-lg);
+  gap: 0;
   margin-bottom: var(--sp-2xl);
+  border-top: 1px solid var(--c-blanc-a08);
 }
 
 .card {
-  position: relative;
-  padding: var(--sp-xl) var(--sp-lg);
-  border-radius: var(--r-lg);
-  border: 1px solid var(--c-blanc-a06);
-  background: var(--c-blanc-a03);
-  transition: border-color var(--tr), background var(--tr), transform var(--tr), box-shadow var(--tr);
+  padding: var(--sp-lg) var(--sp-lg) var(--sp-lg) 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    border-color: var(--c-or-a20);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 40px var(--c-or-a06);
-  }
+.card + .card {
+  padding-left: var(--sp-lg);
+  border-left: 1px solid var(--c-blanc-a08);
 }
 
-.cardFeatured {
-  border-color: var(--c-or-a30);
-  background: rgba(212, 160, 23, 0.05);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cardFeatured:hover {
-    border-color: rgba(212, 160, 23, 0.5);
-  }
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
+.packNum {
+  display: block;
+  font-family: var(--ff-logo);
+  font-size: var(--fs-xl);
   color: var(--c-or);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   margin-bottom: var(--sp-sm);
 }
 
 .packName {
-  font-family: var(--ff-titre);
+  font-family: var(--ff-logo);
   font-weight: 700;
-  font-size: var(--fs-2xl);
+  font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--c-blanc);
-  margin-bottom: var(--sp-xs);
-}
-
-.packPrice {
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--c-or);
   margin-bottom: var(--sp-sm);
 }
 
 .packDesc {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   color: var(--c-text-light-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .packMaintenance {
   font-size: var(--fs-xs);
   color: var(--c-text-light-muted);
-  margin-top: var(--sp-sm);
+  margin-top: var(--sp-md);
   letter-spacing: 0.02em;
 }
 
@@ -134,6 +111,15 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-md);
+  }
+
+  .card,
+  .card + .card {
+    padding: var(--sp-lg) 0;
+    border-left: 0;
+  }
+
+  .card + .card {
+    border-top: 1px solid var(--c-blanc-a08);
   }
 }
