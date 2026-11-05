@@ -11,6 +11,7 @@ import Hero from './components/Hero/Hero';
 import PageSchema from './components/PageSchema/PageSchema';
 import SkipLink from './components/SkipLink/SkipLink';
 import { VILLES } from './data/villes';
+import { scrollToId } from './utils/scrollToId';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
 const References = lazy(() => import('./components/References/References'));
@@ -35,12 +36,10 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '');
+      let arreter = () => {};
       // Laisser le DOM se rendre avant de scroller
-      const timer = setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 120);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => { arreter = scrollToId(id); }, 120);
+      return () => { clearTimeout(timer); arreter(); };
     }
   }, [hash]);
   return (

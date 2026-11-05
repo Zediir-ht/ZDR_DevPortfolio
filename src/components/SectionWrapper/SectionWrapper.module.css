@@ -7,6 +7,11 @@
   overflow: hidden;
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
+  /*
+   * content-visibility: auto repousse le calcul des sections hors écran (premier affichage
+   * plus rapide). Leur hauteur n'est alors qu'une estimation : les liens d'ancre passent par
+   * scrollToId (src/utils/scrollToId.js), qui recale le défilement une fois la section dessinée.
+   */
 }
 
 .dark {
