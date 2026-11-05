@@ -5,9 +5,11 @@
  */
 import { lazy, Suspense, useState, useCallback, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import PageSchema from './components/PageSchema/PageSchema';
+import SkipLink from './components/SkipLink/SkipLink';
 import { VILLES } from './data/villes';
 
 /* Below-fold : chargement différé pour un premier affichage ultra-rapide */
@@ -43,13 +45,14 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
   }, [hash]);
   return (
     <>
+      <SkipLink />
       <PageSchema
         path="/"
         name="Zdr_DEV, développeur web freelance à Rodez (Aveyron)"
         description="Création de sites internet sur mesure pour artisans, commerçants et restaurateurs de l'Aveyron. Devis gratuit."
       />
       <Header />
-      <main>
+      <main id="contenu" tabIndex={-1}>
         <Hero />
         <Suspense fallback={null}>
           {/* <Avis /> — désactivé temporairement, réactiver quand les vrais avis Google seront prêts */}
@@ -77,6 +80,7 @@ export default function App() {
   const closeLegal = useCallback(() => setLegalPage(null), []);
 
   return (
+    <MotionConfig reducedMotion="user">
     <Suspense fallback={null}>
       <Routes>
         <Route
@@ -96,5 +100,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
+    </MotionConfig>
   );
 }

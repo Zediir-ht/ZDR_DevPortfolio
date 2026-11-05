@@ -21,11 +21,21 @@ const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 const CHARS = '!@#$%^&*():{};|,.<>/?';
 
-function ScrambleLink({ href, children, className, variants, ...props }) {
+/* Le brouillage n'a de sens qu'avec une souris : sur écran tactile, un appui déclenche un faux survol */
+const peutBrouiller = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function ScrambleLink({ href, children, className = '', style }) {
   const intervalRef = useRef(null);
   const [text, setText] = useState(children);
 
+  useEffect(() => () => clearInterval(intervalRef.current), []);
+
   const scramble = () => {
+    if (!peutBrouiller()) return;
+    clearInterval(intervalRef.current);
     let pos = 0;
     intervalRef.current = setInterval(() => {
       const scrambled = children
@@ -51,46 +61,18 @@ function ScrambleLink({ href, children, className, variants, ...props }) {
   };
 
   return (
-    <motion.a
+    <a
       href={href}
-      className={className}
-      variants={variants}
+      className={`${className} reveal`}
+      style={style}
+      aria-label={children}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      {...props}
     >
       {text}
-    </motion.a>
+    </a>
   );
 }
-
-const headerVariants = {
-  hidden: { y: -100, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
-  },
-};
-
-const navItemVariants = {
-  hidden: { opacity: 0, y: -15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-};
-
-const navContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.4 } },
-};
-
-const logoVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { type: 'spring', stiffness: 200, damping: 15, delay: 0.2 },
-  },
-};
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -105,45 +87,39 @@ export default function Header() {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <motion.header
-      className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
-      variants={headerVariants}
-      initial="hidden"
-      animate="visible"
+    <header
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''} reveal`}
+      style={{ '--reveal-y': '-100px', '--reveal-duration': '0.5s' }}
     >
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <motion.a
+        <a
           href="#accueil"
-          className={styles.logo}
+          className={`${styles.logo} reveal`}
           aria-label="Retour à l'accueil"
-          variants={logoVariants}
-          initial="hidden"
-          animate="visible"
+          style={{ '--reveal-y': '8px', '--reveal-duration': '0.5s', '--reveal-delay': '0.1s' }}
         >
           <span className={styles.logoAccent}>Zdr</span>_DEV
-        </motion.a>
+        </a>
 
         {/* Navigation — centrée */}
-        <motion.nav
-          className={styles.centerNav}
-          aria-label="Navigation principale"
-          variants={navContainerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {NAV_LINKS.map(({ href, label }) => (
-            <ScrambleLink key={href} href={href} variants={navItemVariants}>{label}</ScrambleLink>
+        <nav className={styles.centerNav} aria-label="Navigation principale">
+          {NAV_LINKS.map(({ href, label }, i) => (
+            <ScrambleLink
+              key={href}
+              href={href}
+              style={{ '--reveal-y': '-15px', '--reveal-duration': '0.4s', '--reveal-delay': `${0.2 + i * 0.06}s` }}
+            >
+              {label}
+            </ScrambleLink>
           ))}
-        </motion.nav>
+        </nav>
 
         {/* Contact — bouton à droite */}
         <ScrambleLink
           href="#contact"
           className={styles.rightLink}
-          variants={navItemVariants}
-          initial="hidden"
-          animate="visible"
+          style={{ '--reveal-y': '-15px', '--reveal-duration': '0.4s', '--reveal-delay': '0.1s' }}
         >
           Contact
         </ScrambleLink>
@@ -185,6 +161,6 @@ export default function Header() {
           </motion.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

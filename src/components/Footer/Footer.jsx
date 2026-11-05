@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { VILLES } from '../../data/villes';
 import DerniereMaj from '../DerniereMaj/DerniereMaj';
 import styles from './Footer.module.css';
+import { EASE_OUT } from '../../motion';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -21,7 +22,7 @@ const colVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: EASE_OUT },
   },
 };
 

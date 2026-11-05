@@ -180,6 +180,18 @@
   color: var(--c-noir);
   opacity: 0.4;
   transition: opacity var(--tr);
+  /* Apparition après 1,5 s puis léger va-et-vient (CSS, hors du thread JavaScript) */
+  animation: hintIn 0.6s var(--ease-out) 1.5s both, hintBob 2s ease-in-out infinite;
+}
+
+@keyframes hintIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes hintBob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
 }
 
 /* SR-only H1 for SEO — visually hidden but crawlable */

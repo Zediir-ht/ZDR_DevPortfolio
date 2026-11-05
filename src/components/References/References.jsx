@@ -8,13 +8,14 @@
 import { motion } from 'framer-motion';
 import { PROJETS } from '../../data/projets';
 import styles from './References.module.css';
+import { EASE_OUT } from '../../motion';
 
 const fade = {
   hidden: { opacity: 0, y: 16 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: i * 0.12, duration: 0.55, ease: EASE_OUT },
   }),
 };
 

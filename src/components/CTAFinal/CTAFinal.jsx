@@ -6,6 +6,7 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './CTAFinal.module.css';
+import { EASE_OUT } from '../../motion';
 
 const containerVariants = {
   hidden: {},
@@ -14,7 +15,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
 };
 
 export default function CTAFinal() {

@@ -4,6 +4,7 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import Lightbox from '../Lightbox/Lightbox';
 import { PROJETS } from '../../data/projets';
 import styles from './Portfolio.module.css';
+import { EASE_OUT } from '../../motion';
 
 const ExternalIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -17,7 +18,7 @@ const shotClasses = [styles.shot1, styles.shot2, styles.shot3];
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE_OUT } },
 };
 
 export default function Portfolio() {

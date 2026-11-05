@@ -6,12 +6,14 @@
  */
 import { Link } from 'react-router-dom';
 import { VILLES } from '../../data/villes';
+import SkipLink from '../../components/SkipLink/SkipLink';
 import styles from '../Tarifs/Tarifs.module.css';
 import local from '../Local/LocalPage.module.css';
 
 export default function NotFound() {
   return (
     <div className={styles.page}>
+      <SkipLink />
       <header className={styles.pageHeader}>
         <Link to="/" className={styles.backLink}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -24,7 +26,7 @@ export default function NotFound() {
         </span>
       </header>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="contenu" tabIndex={-1}>
         <section className={styles.hero}>
           <div className="container">
             <span className={styles.heroLabel}>Erreur 404</span>

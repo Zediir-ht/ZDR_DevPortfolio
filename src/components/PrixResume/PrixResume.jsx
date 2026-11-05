@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './PrixResume.module.css';
+import { EASE_OUT } from '../../motion';
 
 const PACKS = [
   {
@@ -34,7 +35,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_OUT } },
 };
 
 export default function PrixResume() {

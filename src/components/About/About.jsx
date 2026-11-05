@@ -8,23 +8,26 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './About.module.css';
+import { EASE_OUT } from '../../motion';
 
 const labelVariants = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE_OUT } },
 };
 
 const titleVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut', delay: 0.1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT, delay: 0.1 } },
 };
 
+/* Jamais depuis scale(0) : rien n'apparaît de nulle part. Léger ressort, rebond discret. */
 const valueBadgeVariants = {
-  hidden: { opacity: 0, scale: 0 },
+  hidden: { opacity: 0, scale: 0.95, y: 8 },
   visible: (i) => ({
     opacity: 1,
     scale: 1,
-    transition: { type: 'spring', stiffness: 250, damping: 12, delay: 0.3 + i * 0.08 },
+    y: 0,
+    transition: { type: 'spring', duration: 0.5, bounce: 0.2, delay: 0.3 + i * 0.08 },
   }),
 };
 
@@ -62,7 +65,7 @@ export default function About() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: EASE_OUT }}
         >
           <picture>
             <source srcSet="/portrait.webp" type="image/webp" />

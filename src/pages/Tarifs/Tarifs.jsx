@@ -8,8 +8,10 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageSchema from '../../components/PageSchema/PageSchema';
+import SkipLink from '../../components/SkipLink/SkipLink';
 import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
 import styles from './Tarifs.module.css';
+import { EASE_OUT } from '../../motion';
 
 /* ── Packs création ── */
 const PACKS = [
@@ -169,7 +171,7 @@ const fadeUp = {
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: i * 0.1, duration: 0.55, ease: EASE_OUT },
   }),
 };
 
@@ -212,6 +214,7 @@ export default function Tarifs() {
 
   return (
     <div className={styles.page}>
+      <SkipLink />
       <PageSchema
         path="/tarifs"
         name="Tarifs et offres de création de site internet à Rodez et en Aveyron"
@@ -231,7 +234,7 @@ export default function Tarifs() {
         </span>
       </header>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="contenu" tabIndex={-1}>
 
         {/* ── Hero titre ── */}
         <section className={styles.hero}>

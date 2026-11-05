@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Lightbox.module.css';
+import { EASE_OUT } from '../../motion';
 
 const AUTOPLAY_DELAY = 4000; // ms entre chaque slide
 
@@ -109,7 +110,7 @@ export default function Lightbox({ images, initialIndex = 0, projectName, onClos
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.35, ease: EASE_OUT }}
             draggable={false}
           />
         </AnimatePresence>

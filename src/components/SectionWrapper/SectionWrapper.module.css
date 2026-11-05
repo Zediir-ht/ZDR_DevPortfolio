@@ -19,7 +19,7 @@
   z-index: 2;
 }
 
-/* ── Orbes décoratives (CSS-only, no JS) ── */
+/* ── Halos décoratifs : dégradés fixes, sans animation en boucle (économie de batterie sur mobile) ── */
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -34,7 +34,6 @@
   height: 420px;
   top: -8%;
   right: -10%;
-  animation: driftOrb1 16s ease-in-out infinite;
 }
 
 .orb2 {
@@ -42,7 +41,6 @@
   height: 350px;
   bottom: -8%;
   left: -8%;
-  animation: driftOrb2 20s ease-in-out infinite;
 }
 
 /* Couleurs sections sombres */
@@ -61,18 +59,6 @@
 
 .orbLight.orb2 {
   background: radial-gradient(circle, rgba(212, 160, 23, 0.06) 0%, transparent 70%);
-}
-
-@keyframes driftOrb1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%      { transform: translate(-25px, 35px) scale(1.06); }
-  66%      { transform: translate(18px, -18px) scale(0.94); }
-}
-
-@keyframes driftOrb2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%      { transform: translate(30px, -25px) scale(1.07); }
-  66%      { transform: translate(-15px, 20px) scale(0.95); }
 }
 
 @media (max-width: 768px) {

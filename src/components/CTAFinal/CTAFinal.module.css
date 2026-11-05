@@ -90,7 +90,8 @@
   border-radius: var(--r-md);
   background: var(--c-accent);
   color: var(--c-blanc);
-  transition: all var(--tr);
+  /* Pas de « all » : scale et y sont animés par Framer Motion au survol */
+  transition: background-color var(--tr), box-shadow var(--tr);
   cursor: pointer;
   position: relative;
   z-index: 1;

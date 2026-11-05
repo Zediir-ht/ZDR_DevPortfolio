@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { useGoogleReviews } from '../../utils/useGoogleReviews';
 import styles from './Avis.module.css';
+import { EASE_OUT } from '../../motion';
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
@@ -31,7 +32,7 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_OUT } },
 };
 
 export default function Avis() {

@@ -146,13 +146,13 @@
   border-radius: var(--r-full);
   border: 1px solid rgba(28, 28, 28, 0.25);
   background: rgba(28, 28, 28, 0.06);
-  transition: all var(--tr);
+  /* Pas de « all » : le déplacement est géré par Framer Motion, la CSS ne gère que les couleurs */
+  transition: background-color var(--tr), border-color var(--tr);
 }
 
 .valueBadge:hover {
   background: rgba(158, 27, 31, 0.08);
   border-color: var(--c-accent);
-  transform: translateY(-2px);
 }
 
 /* Responsive */

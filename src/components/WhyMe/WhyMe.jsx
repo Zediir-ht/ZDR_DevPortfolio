@@ -7,6 +7,7 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import styles from './WhyMe.module.css';
+import { EASE_OUT } from '../../motion';
 
 const REASONS = [
   {
@@ -76,7 +77,7 @@ const cardVariants = {
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: i * 0.1, duration: 0.5, ease: EASE_OUT },
   }),
 };
 

@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { sanitizeInput, isValidEmail } from '../../utils/sanitize';
 import styles from './Contact.module.css';
+import { EASE_OUT } from '../../motion';
 
 const INITIAL_FORM = { name: '', email: '', message: '', honeypot: '' };
 const MAX_SUBMISSIONS = 5;
@@ -20,12 +21,12 @@ const headerVariants = {
 
 const fieldVariants = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE_OUT } },
 };
 
 const infoCardVariants = {
   hidden: { opacity: 0, x: 30 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE_OUT } },
 };
 
 export default function Contact() {

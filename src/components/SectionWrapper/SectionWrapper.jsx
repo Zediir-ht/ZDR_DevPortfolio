@@ -1,21 +1,20 @@
 /**
  * SectionWrapper.jsx
  * ------------------
- * HOC de section avec animations au scroll, parallaxe et orbes flottantes.
+ * HOC de section : apparition au défilement et halos décoratifs fixes.
  */
 import { motion } from 'framer-motion';
 import styles from './SectionWrapper.module.css';
+import { EASE_OUT } from '../../motion';
 
+/*
+ * Un seul niveau de mouvement par section : seul le contenu intérieur glisse.
+ * La section elle-même ne bouge pas (son fond ne se décale plus).
+ */
 const sectionVariants = {
-  hidden: { y: 60 },
+  hidden: {},
   visible: {
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
 };
 
@@ -23,10 +22,7 @@ const innerVariants = {
   hidden: { y: 30 },
   visible: {
     y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
+    transition: { duration: 0.6, ease: EASE_OUT },
   },
 };
 

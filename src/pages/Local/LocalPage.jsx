@@ -9,9 +9,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { VILLES } from '../../data/villes';
 import PageSchema from '../../components/PageSchema/PageSchema';
+import SkipLink from '../../components/SkipLink/SkipLink';
 import DerniereMaj from '../../components/DerniereMaj/DerniereMaj';
 import styles from '../Tarifs/Tarifs.module.css';
 import local from './LocalPage.module.css';
+import { EASE_OUT } from '../../motion';
 
 const SITE = 'https://zdrdev.fr';
 
@@ -20,7 +22,7 @@ const fadeUp = {
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: i * 0.1, duration: 0.55, ease: EASE_OUT },
   }),
 };
 
@@ -86,6 +88,7 @@ export default function LocalPage({ ville: v }) {
 
   return (
     <div className={styles.page}>
+      <SkipLink />
       <PageSchema
         path={`/${v.slug}`}
         name={`Création de site internet à ${v.ville}`}
@@ -109,7 +112,7 @@ export default function LocalPage({ ville: v }) {
         </span>
       </header>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="contenu" tabIndex={-1}>
 
         {/* ── Hero ── */}
         <section className={styles.hero}>

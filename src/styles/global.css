@@ -89,6 +89,10 @@
   --tr:      250ms ease;
   --tr-slow: 500ms ease;
 
+  /* Courbes (équivalents CSS de src/motion.js) */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);   /* entrées et sorties */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);  /* déplacements à l'écran */
+
   --max-w: 1600px;
 }
 
@@ -110,14 +114,50 @@ body {
   overflow-x: hidden;
 }
 
-/* Reduce motion for users who prefer it */
+/*
+ * Mouvement réduit : moins de mouvement, pas zéro retour visuel.
+ * On supprime les déplacements et les animations en boucle, mais on garde les
+ * changements de couleur, d'ombre et d'opacité qui indiquent l'état d'un élément.
+ * Les animations Framer Motion sont gérées par <MotionConfig reducedMotion="user">.
+ */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-property: color, background-color, border-color, opacity, box-shadow, fill, stroke !important;
   }
+}
+
+/* ── Entrée en CSS pur : démarre au premier affichage, sans attendre le JavaScript ── */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(var(--reveal-y, 30px)); }
+  to   { opacity: 1; transform: none; }
+}
+
+.reveal {
+  animation: revealUp var(--reveal-duration, 0.6s) var(--ease-out) var(--reveal-delay, 0s) both;
+}
+
+/* ── Lien d'évitement : visible seulement au clavier ── */
+.skip-link {
+  position: fixed;
+  top: var(--sp-xs);
+  left: var(--sp-xs);
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--r-md);
+  background: var(--c-accent);
+  color: var(--c-blanc);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
 }
 
 /* ── Selection ── */

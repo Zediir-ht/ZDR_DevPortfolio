@@ -7,6 +7,7 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Legal.module.css';
+import { EASE_OUT } from '../../motion';
 
 const overlayVariants = {
   hidden: { opacity: 0 },
@@ -15,7 +16,7 @@ const overlayVariants = {
 
 const panelVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: EASE_OUT } },
   exit: { opacity: 0, y: 30, transition: { duration: 0.2 } },
 };
 
