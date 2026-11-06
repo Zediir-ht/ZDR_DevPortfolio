@@ -4,7 +4,7 @@
 
 Zdr_DEV est l'activité de Corentin Mayrand, développeur web indépendant installé à Rodez (12000, Aveyron). Il conçoit des sites vitrines, des sites multi-pages et des sites avec réservation ou vente en ligne, pour des professionnels de Rodez, Millau, Villefranche-de-Rouergue, Decazeville et du reste du département. Il travaille seul : le même interlocuteur s'occupe du rendez-vous, de la création du site et de sa maintenance.
 
-Les projets sont chiffrés sur devis. L'hébergement (chez OVH) et le nom de domaine sont à la charge du client. Dernière mise à jour du contenu : 5 novembre 2026.
+Les projets sont chiffrés sur devis. L'hébergement (chez OVH) et le nom de domaine sont à la charge du client. Dernière mise à jour du contenu : 6 novembre 2026.
 
 ## Pages principales
 
@@ -33,5 +33,5 @@ Les projets sont chiffrés sur devis. L'hébergement (chez OVH) et le nom de dom
 ## À propos et contact
 
 - Auteur : Corentin Mayrand, développeur web freelance. Profil professionnel : https://fr.linkedin.com/in/corentin-mayrand-090469ab
-- Contact : téléphone 06 32 91 53 77 (+33 6 32 91 53 77), corentin.mayrand@gmail.com, formulaire sur https://zdrdev.fr/#contact
+- Contact : téléphone 06 32 91 53 77 (+33 6 32 91 53 77), corentin.mayrand@gmail.com, formulaire sur https://zdrdev.fr/#contact, fiche Google : https://share.google/Dfllr78xD0LBp34BC
 - Disponibilité : du lundi au vendredi, 9h à 18h. Rendez-vous à Rodez, chez le client, ou en visio.

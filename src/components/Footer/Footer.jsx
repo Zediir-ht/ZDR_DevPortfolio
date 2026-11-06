@@ -6,6 +6,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { VILLES } from '../../data/villes';
+import { FICHE_GOOGLE_URL } from '../../data/site';
 import DerniereMaj from '../DerniereMaj/DerniereMaj';
 import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
 import styles from './Footer.module.css';
@@ -93,6 +94,11 @@ export default function Footer({ onOpenLegal }) {
               </a>
             </li>
             <li>Rodez, Aveyron (12)</li>
+            <li>
+              <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer">
+                Voir ma fiche Google
+              </a>
+            </li>
             <li>Du lundi au vendredi, 9h à 18h</li>
           </ul>
         </motion.div>

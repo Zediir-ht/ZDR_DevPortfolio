@@ -10,7 +10,7 @@ import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import { sanitizeInput, isValidEmail } from '../../utils/sanitize';
 import styles from './Contact.module.css';
 import { EASE_OUT } from '../../motion';
-import { TEL_AFFICHE, TEL_LIEN } from '../../data/site';
+import { TEL_AFFICHE, TEL_LIEN, FICHE_GOOGLE_URL } from '../../data/site';
 
 const INITIAL_FORM = { name: '', email: '', message: '', honeypot: '' };
 const MAX_SUBMISSIONS = 5;
@@ -291,6 +291,9 @@ export default function Contact() {
               <p className={styles.infoText} style={{ marginTop: '0.5rem' }}>
                 Basé à Rodez, j'interviens dans tout l'Aveyron : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
               </p>
+              <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className={styles.infoLink} style={{ marginTop: '0.5rem', display: 'inline-block' }}>
+                Voir ma fiche Google
+              </a>
             </div>
           </motion.div>
 

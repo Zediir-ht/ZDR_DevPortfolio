@@ -13,9 +13,12 @@ export const LINKEDIN_URL = 'https://fr.linkedin.com/in/corentin-mayrand-090469a
 export const TEL_AFFICHE = '06 32 91 53 77';
 export const TEL_LIEN = '+33632915377';
 
+/* Fiche d'établissement Google (Google Business Profile) */
+export const FICHE_GOOGLE_URL = 'https://share.google/Dfllr78xD0LBp34BC';
+
 /*
  * Date de dernière mise à jour du contenu (AAAA-MM-JJ).
  * À modifier à la main quand les textes ou les offres changent : elle est affichée
  * en bas des pages, ajoutée en dateModified dans le JSON-LD et dans le sitemap.
  */
-export const DATE_MAJ = '2026-11-05';
+export const DATE_MAJ = '2026-11-06';
