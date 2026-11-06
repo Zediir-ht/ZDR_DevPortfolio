@@ -77,7 +77,7 @@ export default function About() {
         >
           <p>
             Je m'appelle Corentin et je suis <strong>développeur web à Rodez</strong>. Je crée des sites
-            internet pour les artisans, les commerçants et les restaurateurs de l'Aveyron.
+            internet pour les artisans, les commerçants et les restaurateurs de l'Aveyron et des alentours.
           </p>
           <p>
             Je travaille seul : c'est moi que vous rencontrez au premier rendez-vous, moi qui construis

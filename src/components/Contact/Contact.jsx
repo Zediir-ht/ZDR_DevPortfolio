@@ -289,7 +289,7 @@ export default function Contact() {
               <h3 className={styles.infoTitle}>Localisation</h3>
               <p className={styles.infoText}>Rodez, Aveyron (12)</p>
               <p className={styles.infoText} style={{ marginTop: '0.5rem' }}>
-                Basé à Rodez, j'interviens dans tout l'Aveyron : Millau, Villefranche-de-Rouergue, Decazeville, Espalion…
+                Basé à Rodez, j'interviens dans tout l'Aveyron (Millau, Villefranche-de-Rouergue, Decazeville, Espalion) et dans les départements alentour, jusqu'en Dordogne. Sur place ou en visio.
               </p>
               <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className={styles.infoLink} style={{ marginTop: '0.5rem', display: 'inline-block' }}>
                 Voir ma fiche Google

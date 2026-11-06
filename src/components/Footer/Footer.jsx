@@ -53,7 +53,7 @@ export default function Footer({ onOpenLegal }) {
           </p>
           <p className={styles.tagline}>
             Création de sites internet sur mesure pour artisans,<br />
-            commerçants et restaurateurs de l'Aveyron.
+            commerçants et restaurateurs, en Aveyron et alentours.
           </p>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function Footer({ onOpenLegal }) {
                 corentin.mayrand@gmail.com
               </a>
             </li>
-            <li>Rodez, Aveyron (12)</li>
+            <li>Rodez, Aveyron (12) et alentours</li>
             <li>
               <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer">
                 Voir ma fiche Google

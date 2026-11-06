@@ -46,7 +46,7 @@ function HomePage({ onOpenLegal, legalPage, closeLegal }) {
       <PageSchema
         path="/"
         name="Zdr_DEV, développeur web freelance à Rodez (Aveyron)"
-        description="Création de sites internet sur mesure pour artisans, commerçants et restaurateurs de l'Aveyron. Devis gratuit."
+        description="Création de sites internet sur mesure pour artisans, commerçants et restaurateurs en Aveyron et alentours. Devis gratuit."
       />
       <Header />
       <main id="contenu" tabIndex={-1}>

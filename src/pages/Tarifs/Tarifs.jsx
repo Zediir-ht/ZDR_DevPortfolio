@@ -255,7 +255,7 @@ export default function Tarifs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Artisans, commerçants et restaurateurs de l'Aveyron : voici ce que comprend
+              Artisans, commerçants et restaurateurs, en Aveyron et alentours : voici ce que comprend
               chaque offre.
             </motion.p>
           </div>

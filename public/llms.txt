@@ -1,8 +1,8 @@
 # Zdr_DEV
 
-> Développeur web freelance à Rodez (Aveyron). Création de sites internet pour les artisans, commerçants et restaurateurs de l'Aveyron, devis gratuit.
+> Développeur web freelance à Rodez (Aveyron). Création de sites internet pour les artisans, commerçants et restaurateurs de l'Aveyron et des départements alentour, devis gratuit.
 
-Zdr_DEV est l'activité de Corentin Mayrand, développeur web indépendant installé à Rodez (12000, Aveyron). Il conçoit des sites vitrines, des sites multi-pages et des sites avec réservation ou vente en ligne, pour des professionnels de Rodez, Millau, Villefranche-de-Rouergue, Decazeville et du reste du département. Il travaille seul : le même interlocuteur s'occupe du rendez-vous, de la création du site et de sa maintenance.
+Zdr_DEV est l'activité de Corentin Mayrand, développeur web indépendant installé à Rodez (12000, Aveyron). Il conçoit des sites vitrines, des sites multi-pages et des sites avec réservation ou vente en ligne, pour des professionnels de Rodez, Millau, Villefranche-de-Rouergue, Decazeville et du reste du département. L'Aveyron reste son secteur principal, mais il travaille aussi avec des clients des départements alentour (Lot, Tarn, Cantal, Lozère) et jusqu'en Dordogne, sur place ou en visio. Il est seul : le même interlocuteur s'occupe du rendez-vous, de la création du site et de sa maintenance.
 
 Les projets sont chiffrés sur devis. L'hébergement (chez OVH) et le nom de domaine sont à la charge du client. Dernière mise à jour du contenu : 6 novembre 2026.
 

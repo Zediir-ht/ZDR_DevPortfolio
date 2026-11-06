@@ -20,7 +20,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Dans quelles villes intervenez-vous ?',
-    a: 'J\'interviens à Rodez, Onet-le-Château, Millau, Villefranche-de-Rouergue, Decazeville et dans tout l\'Aveyron. Je travaille aussi à distance pour les professionnels situés hors du département.',
+    a: 'Je suis basé à Rodez et l\'Aveyron reste mon secteur principal : Rodez, Onet-le-Château, Millau, Villefranche-de-Rouergue, Decazeville. Je travaille aussi avec des professionnels des départements alentour (Lot, Tarn, Cantal, Lozère) et jusqu\'en Dordogne. Les rendez-vous se font sur place ou en visio, selon la distance.',
   },
   {
     q: 'Mon site sera-t-il visible sur Google ?',

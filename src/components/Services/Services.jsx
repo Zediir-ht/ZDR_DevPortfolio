@@ -63,7 +63,7 @@ export default function Services() {
           variants={headerVariants}
         >
           Du site d'une page pour un artisan à la boutique en ligne d'un producteur,
-          voici les projets sur lesquels je travaille en Aveyron.
+          voici les projets sur lesquels je travaille, en Aveyron et au-delà.
         </motion.p>
       </div>
 
