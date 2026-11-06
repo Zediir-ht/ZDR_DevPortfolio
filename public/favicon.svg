@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#111827"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Inter,sans-serif" font-weight="800" font-size="28" fill="#e35336">Z</text>
+  <rect width="64" height="64" rx="14" fill="#F4F1E8"/>
+  <g transform="translate(32 32) scale(0.0255 -0.0255) translate(-378.5 -774.5)">
+    <path fill="#9E1B1F" d="M63 0V238L428 1529H96V1760H709V1543L344 231H701V0Z"/>
+    <path fill="#D4A017" d="M48 -211V-28H699V-211Z"/>
+  </g>
 </svg>
